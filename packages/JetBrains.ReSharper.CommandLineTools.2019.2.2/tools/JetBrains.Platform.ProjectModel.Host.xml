@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Platform.ProjectModel.Host</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.IProjectsHostLiveTrackingZone">
+            <summary>
+            Zone that enables live tracking of changed files.
+            Must be enabled in Rider and ReSharper if it uses <see cref="T:JetBrains.ProjectModel.ProjectsHost.SolutionLoader"/> and wants to track changed files
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostModifications">
+            <summary>
+            Cookie for prevent any project modifications in some cases
+              e.g. from file system changes
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.Impl.ProjectMarkTypeGuidProvider">
+            <summary>
+            Allows to override type guid specified in the solution file for a project 
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.Impl.Wildcards.WildcardContainer.myStore">
+            <summary>
+            Store information about all patterns in all projects in format:
+              IncludePattern -> ProjectMark[] -> ExcludePattern[]
+            - We have one general list of all include patterns from all projects
+            - Each include pattern can be presented in several projects
+            - Each include pattern in an project can be presented several times with different exclude patterns
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.Impl.Wildcards.WildcardContainer.myFoldersToWatch">
+            <summary>
+            Store all tracking folders and set of dependant projects
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.Impl.Wildcards.WildcardContainer.myFolderFilters">
+            <summary>
+            Store all folders which should be excluded from tracking
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.MsBuild.Extensions.XamarinIOSModificator">
+            <summary>
+            Run targets to generate objc bindings, see
+             https://github.com/xamarin/xamarin-macios/blob/master/msbuild/Xamarin.Mac.Tasks/Xamarin.Mac.ObjCBinding.CSharp.targets
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.MsBuild.MsBuildDefaultBuildActionsProvider">
+            <summary>
+            Represents default project file build actions in a project
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.MsBuild.MsBuildDefaultBuildActionsProvider.DefaultBuildActions">
+            <summary>
+            Collection of build actions applied to this project by default
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.MsBuild.MsBuildDefaultBuildActionsProvider.GetFromProjectItem(JetBrains.Platform.MsBuildHost.Models.RdProjectItem)">
+            <summary>
+            Allows to produce default project build action from project item
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.MsBuild.IMsBuildModificationSettingsProvider.SmartModificationsFilter">
+            <summary>
+            Returns array of project file extensions
+              where MsBuild Task should use simple modifications instead of default (smart) behavior
+            Extension should be specified without dot
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.MsBuild.IMsBuildProjectListener.OnProjectLoaded(JetBrains.ProjectModel.ProjectsHost.IProjectMark,JetBrains.ProjectModel.ProjectsHost.MsBuild.MsBuildProject,JetBrains.ProjectModel.Update.IProjectDescriptor)">
+            <summary>
+            Method is called each time after project was loaded/reloaded 
+            Call happens immediately after getting results from MsBuild:
+              - usually on background thread 
+              - before updating R# project model
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.MsBuild.Internal.MsBuildCommonBuildActionsProvider.ourBuildActions">
+            <summary>
+            Default MsBuild item types, allowed in any type of msbuild project.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.MsBuild.Internal.MsBuildProjectLoadModificatorService">
+            <summary>
+            Allows to modify project properties and targets before load
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.MsBuild.Internal.MsBuildProjectTypeService">
+            <summary>
+            Discovers project type using loaded msbuild project and a number of hacks
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.MsBuild.Structure.MsBuildProjectStructureBuilderForItems.ourPriorityBuildActions">
+            <summary>
+            Items with next build actions will be filtered by any other specified items with the same include
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.MsBuild.Structure.MsBuildProjectStructureBuilderForItems.HiddenChecker.GetPriority(JetBrains.Platform.MsBuildHost.Models.RdProjectItem)">
+            <summary>
+            Prefer these items when we have several items with different build actions
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.MsBuild.Wildcards.MsBuildWildcardPatternBuilder">
+            <summary>
+            Build wildcard pattern based on Microsoft.Build.Shared.FileMatcher implementation
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.MsBuild.Wildcards.MsBuildWildcardPatternBuilder.PreprocessFileSpecForSplitting(System.String,System.String@,System.String@,System.String@)">
+            <summary>
+            Do most of the grunt work of splitting the filespec into parts.
+            Does not handle post-processing common to the different matching
+            paths.
+            </summary>
+            <param name="filespec">The filespec to be decomposed.</param>
+            <param name="fixedDirectoryPart">Receives the fixed directory part.</param>
+            <param name="wildcardDirectoryPart">The wildcard directory part.</param>
+            <param name="filenamePart">The filename part.</param>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.IProjectStructureBuilderOperations`1.CanOmitExternalFolder(`0,JetBrains.Util.FileSystemPath)">
+            <summary>
+            Return true if an external folder could be hidden from project hierarchy
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.IProjectStructureBuilderOperations`1.FilterDuplicate(`0,JetBrains.ProjectModel.BuildAction,System.Collections.Generic.IReadOnlyCollection{JetBrains.ProjectModel.Update.ProjectFileDescriptor})">
+            <summary>
+            Returns true if duplicated by item type and path item should be filtered
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectStructureBuilder`1.GetLogicalPath(`0)">
+            <summary>
+            Logical path to the element in project model and solution explorer
+            Can be null, that means physical path is the same as logical path
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectStructureBuilder`1.GetPhysicalPath(`0)">
+            <summary>
+            Physical path to the element in file system (can point to any path on any disk)
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectTrieNodeFolder`1.ProjectPhysicalPath">
+            <summary>
+            Non-linked folder path inside a project, used to resolve conflicts
+              between several physical (linked) folders, see myPhysicalPaths field
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectTrieNodeFolder`1.myPhysicalPaths">
+            <summary>
+            One project folder can be used for several physical paths (one - inside a project and others - linked)
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectTrieNodeFolder`1.myCasingNames">
+            <summary>
+            Folder names and counts to choose the most actual case for the folder name
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectTrieNodeBase`1.Builder">
+            <summary>
+             Specific builder for project structure
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectTrieNodeFile`1.PhysicalPath">
+            <summary>
+             Physical path to the element in file system (can point to any path on any disk)
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Impl.SolutionHostLoadingQueue">
+            <summary>
+            Component tracks all current changes in project model in two ways
+              1) Active reloading projects
+              2) Active reloading processes count (there are changes without affected projects, but we want to track them anyway)
+            Also component allows to queue (or execute immediately) an action as soon as no loading processes executing now
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Impl.SolutionHost.LoadEventsContainer">
+            <summary>
+            All these event fire from background thread
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Impl.SolutionHostManager">
+            <summary>
+            Controls ReSharper Solution life-cycle listening to <see cref="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Impl.SolutionHostManager"/>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Interop.ReferencePatcherServiceSuppressor">
+            <summary>
+            We should not patch references in that way when we have actual (real) project model
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.ISolutionHostLoadingQueue">
+            <summary>
+            Monitors state of loading/reloading/unloading ant projects in SolutionHost
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.SolutionHost.ISolutionHostLoadingQueue.Idle">
+            <summary>
+            True when SolutionHost performs any loading project operations
+            Changes only on UI thread
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.ISolutionHostLoadingQueue.ExecuteWhenQueueIsEmpty(System.Action)">
+            <summary>
+            Execute action when there is no pending loading operations and on UI thread
+            Method can be invoked from UI/Background threads
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.SolutionLoader">
+            <summary>
+            Util component to load or update solution once without control solutuion lifecycle <see cref="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Impl.SolutionHostManager"/>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.ProjectsHostComponentAttribute">
+            <summary>
+            Components for loading solution/project file and create project descriptors
+            Use <see cref="T:JetBrains.ProjectModel.ProjectsHost.SolutionLoader"/> for update existing solution or load descriptors from disk
+            Use <see cref="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Impl.SolutionHostManager"/> from <see cref="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.IHostSolutionZone"/> control solution lifecycle inside resharper
+            This component container allows to compose a component container each time when we need to load solution or project, SolutionInstance component container doesn't allow this
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectMark.IterateChildren``1(``0,System.Action{JetBrains.ProjectModel.ProjectsHost.IProjectMark,``0})">
+            <summary>
+            Method to iterate all children without any boxing and allocations
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.IForceUpdateProjectsPolicy">
+            <summary>
+            Allows to update a specific project even if it was not changed in the solution definition file
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,2219 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Feature.Services.Web</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Web.resources.Html.HtmlResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Feature.Services.Web.resources.Html.HtmlResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Feature.Services.Web.resources.Html.HtmlResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Feature.Services.Web.resources.Html.HtmlResources.HtmlDescriptions">
+            <summary>
+              Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.AspFileTypeSpecificOwnerUtil.GetRelatedAndFilterHidden(JetBrains.ReSharper.Psi.Tree.ITypeDeclaration)">
+            <summary>
+            By default: yield return declaration
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.AspFileTypeSpecificOwnerUtil.IsHidden(JetBrains.ReSharper.Psi.Tree.ITypeDeclaration)">
+            <summary>
+            Works on auto-generated code-behind classed. By default - false
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.AspFileTypeSpecificOwnerUtil.IsCodeBehindClass(JetBrains.ReSharper.Psi.Tree.ITypeDeclaration)">
+            <summary>
+            By default - false
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.AspFileTypeSpecificOwnerUtil.IsUserTextDeclaration(JetBrains.ReSharper.Psi.Tree.IDeclaration)">
+            <summary>
+            Works on auto-generated type members. By default - true
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.AspFileTypeSpecificOwnerUtil.GetFolderForElementsMovedToExternalScope(JetBrains.ProjectModel.IProjectFile,System.String,JetBrains.ReSharper.Psi.Tree.ITreeNode)">
+            <summary>
+            Default - projectFile.Location.Directory
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.AspFileTypeSpecificOwnerUtil.GetPrettyName(JetBrains.ReSharper.Psi.Tree.ITypeDeclaration,System.Boolean)">
+            <summary>
+            Default - element.DeclaredName
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Asp.Caches.IMvcCacheProcessor">
+            <summary>
+            Detecting ASP.NET MVC layout and ASP.NET MVC 4 Display Modes changes
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.Caches.MvcCache.GetData(JetBrains.ReSharper.Psi.IPsiSourceFile,System.Boolean)">
+            <param name="sourceFile"></param>
+            <param name="full"><c>false</c> - rough search for candidates, <c>true</c> - accurate search with resolve</param>
+            <returns></returns>
+            <remarks>ViewLocationFormats converted to windows path format for optimization in MvcViewReference resolve</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.Caches.MvcCache.GetLocations(JetBrains.ReSharper.Psi.Modules.IPsiModule,JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcViewLocationType,System.Boolean,System.Boolean)">
+            <remarks>View location formats are normalized for current platform</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.Caches.MvcCache.GetLocationsInternal(JetBrains.ReSharper.Psi.Modules.IPsiModule,JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcViewLocationType,System.Boolean)">
+            <remarks>View location formats are normalized for current platform</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.CodeStructure.AspRenderBlockCodeStructureElement.GetNestedLevel(JetBrains.ReSharper.Psi.Asp.Tree.IAspRenderBlock)">
+            <summary>
+            Nested level of codeblock
+            First - minimu level, Second - last level (right)
+            </summary>
+            <param name="block"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.IMvcViewResolver">
+             <remarks>
+               Use assembly level annotations attributes:
+               <see cref="T:JetBrains.Annotations.AspMvcAreaMasterLocationFormatAttribute">AspMvcAreaMasterLocationFormat</see>,
+               <see cref="T:JetBrains.Annotations.AspMvcAreaPartialViewLocationFormatAttribute">AspMvcAreaPartialViewLocationFormat</see>,
+               <see cref="T:JetBrains.Annotations.AspMvcAreaViewLocationFormatAttribute">AspMvcAreaViewLocationFormat</see>,
+               <see cref="T:JetBrains.Annotations.AspMvcMasterLocationFormatAttribute">AspMvcMasterLocationFormat</see>,
+               <see cref="T:JetBrains.Annotations.AspMvcPartialViewLocationFormatAttribute">AspMvcPartialViewLocationFormat</see>,
+               <see cref="T:JetBrains.Annotations.AspMvcViewLocationFormatAttribute">AspMvcViewLocationFormat</see>.
+             </remarks>
+             <example>
+               <code>
+               [assembly: JetBrains.Annotations.AspMvcAreaMasterLocationFormatAttribute("~\Areas\{2}\Views\{1}\{0}.master")]
+               [assembly: JetBrains.Annotations.AspMvcAreaMasterLocationFormatAttribute("~\Areas\{2}\Views\Shared\{0}.master")]
+            
+               [assembly: JetBrains.Annotations.AspMvcAreaPartialViewLocationFormatAttribute("~\Areas\{2}\Views\{1}\{0}.aspx")]
+               [assembly: JetBrains.Annotations.AspMvcAreaPartialViewLocationFormatAttribute("~\Areas\{2}\Views\{1}\{0}.ascx")]
+               [assembly: JetBrains.Annotations.AspMvcAreaPartialViewLocationFormatAttribute("~\Areas\{2}\Views\Shared\{0}.aspx")]
+               [assembly: JetBrains.Annotations.AspMvcAreaPartialViewLocationFormatAttribute("~\Areas\{2}\Views\Shared\{0}.ascx")]
+            
+               [assembly: JetBrains.Annotations.AspMvcViewLocationFormatAttribute("~\Areas\Views\{1}\{0}.aspx")]
+               [assembly: JetBrains.Annotations.AspMvcViewLocationFormatAttribute("~\Areas\Views\{1}\{0}.ascx")]
+               [assembly: JetBrains.Annotations.AspMvcViewLocationFormatAttribute("~\Areas\Views\Shared\{0}.aspx")]
+               [assembly: JetBrains.Annotations.AspMvcViewLocationFormatAttribute("~\Areas\Views\Shared\{0}.ascx")]
+            
+               [assembly: JetBrains.Annotations.AspMvcMasterLocationFormatAttribute("~\Views\{1}\{0}.master")]
+               [assembly: JetBrains.Annotations.AspMvcMasterLocationFormatAttribute("~\Views\Shared\{0}.master")]
+            
+               [assembly: JetBrains.Annotations.AspMvcPartialViewLocationFormatAttribute("~\Views\{1}\{0}.aspx")]
+               [assembly: JetBrains.Annotations.AspMvcPartialViewLocationFormatAttribute("~\Views\{1}\{0}.ascx")]
+               [assembly: JetBrains.Annotations.AspMvcPartialViewLocationFormatAttribute("~\Views\Shared\{0}.aspx")]
+               [assembly: JetBrains.Annotations.AspMvcPartialViewLocationFormatAttribute("~\Views\Shared\{0}.ascx")]
+            
+               [assembly: JetBrains.Annotations.AspMvcViewLocationFormatAttribute("~\Views\{1}\{0}.aspx")]
+               [assembly: JetBrains.Annotations.AspMvcViewLocationFormatAttribute("~\Views\{1}\{0}.ascx")]
+               [assembly: JetBrains.Annotations.AspMvcViewLocationFormatAttribute("~\Views\Shared\{0}.aspx")]
+               [assembly: JetBrains.Annotations.AspMvcViewLocationFormatAttribute("~\Views\Shared\{0}.ascx")]
+               </code>
+             </example>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.IMvcViewResolverEx.GetViewLocationFormats(JetBrains.ReSharper.Psi.Modules.IPsiModule,JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcViewLocationType)">
+            <remarks>Attention! All paths must be normalized (windows format)</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcCacheEx.ParseLocationFormatString(System.String,JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcKind,System.String,System.String,System.Boolean)">
+            <returns>Empty array means "skip it"</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcReference`1.InternalBindTo(JetBrains.ReSharper.Psi.IDeclaredElement)">
+            <summary>
+            
+            </summary>
+            <param name="element"></param>
+            <returns>element holds reference (new one, if rebinded, or old one - if not binded) </returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcReferenceProvider`3.#ctor(System.Version,JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcKind)">
+            <param name="version">Version of MVC assembly</param>
+            <param name="necessaryMvcKinds">Necessary MVC kinds for which create references</param>
+        </member>
+        <member name="P:JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.IMvcActionControllerReference.Controllers">
+            <summary>
+            Collection of controllers infos: area, controller name and controller's class
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcUtil.GetAvailableControllers(JetBrains.ReSharper.Psi.Modules.IPsiModule,System.Collections.Generic.ISet{JetBrains.ReSharper.Psi.Modules.IPsiModule},System.Boolean,JetBrains.ReSharper.Psi.ITypeElement)">
+            <summary> Get all available controllers in module</summary>
+            <param name="module"></param>
+            <param name="modulesFilter"></param>
+            <param name="includingIntermediateControllers">Including abstract controllers, not ending 'Controller' suffix and etc</param>
+            <param name="baseClass">Base class for controllers to check, by default <c>System.Web.Mvc.IController</c> or <c>System.Web.Http.Controllers.IHttpController</c> </param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcUtil.IsAction(JetBrains.ReSharper.Psi.IMethod)">
+            <see href="https://github.com/aspnet/Mvc/blob/8d66f104f7f2ca42ee8b21f75b0e2b3e1abe2e00/src/Microsoft.AspNetCore.Mvc.Core/ApplicationModels/DefaultApplicationModelProvider.cs"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcUtil.GetControllers(JetBrains.ReSharper.Psi.Tree.IArgumentsOwner,JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcKind)">
+            <summary>
+            Get controller names and their resolved types (explicit or implicit) for specified method invocation
+            </summary>
+            <param name="argumentsOwner"></param>
+            <param name="controllerKind"></param>
+            <returns>Collection of tuples of area, controller name, controller's determination kind, and controllers' classes corresponded to name</returns>
+            <remarks>Controller name can be null, indicating this way that controller's name is calculated at runtime</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcUtil.DetermineActionParameters(JetBrains.ReSharper.Psi.Tree.ITreeNode,System.Version)">
+            <returns>First is return type, rest - arguments types</returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.DeterminationKind">
+            <summary>
+            Enum telling how controllers/actions have been determined
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcViewReference.GetReferenceSymbolTable(JetBrains.ReSharper.Psi.IPsiServices,System.String,System.String,System.String,JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcKind,JetBrains.ReSharper.Psi.Modules.IPsiModule,System.Version,JetBrains.Util.FileSystemPath)">
+            <summary>
+            Get views symbol table
+            </summary>
+            <param name="psiServices" />
+            <param name="area">Area name</param>
+            <param name="controller">Controller name</param>
+            <param name="view">View name. Can be just name (View), relative path (Views/Bla/View.aspx) and rooted path (~/Views/Bla/View.aspx)</param>
+            <param name="mvcKind">Type of target - MasterPage, view or template</param>
+            <param name="psiModule">Project</param>
+            <param name="version">MVC version</param>
+            <param name="baseLocation"></param>
+            <returns>Symbol table</returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcViewResolverAttribute">
+             <remarks>
+               Use assembly level annotations attributes:
+               <see cref="T:JetBrains.Annotations.AspMvcAreaMasterLocationFormatAttribute">AspMvcAreaMasterLocationFormat</see>,
+               <see cref="T:JetBrains.Annotations.AspMvcAreaPartialViewLocationFormatAttribute">AspMvcAreaPartialViewLocationFormat</see>,
+               <see cref="T:JetBrains.Annotations.AspMvcAreaViewLocationFormatAttribute">AspMvcAreaViewLocationFormat</see>,
+               <see cref="T:JetBrains.Annotations.AspMvcMasterLocationFormatAttribute">AspMvcMasterLocationFormat</see>,
+               <see cref="T:JetBrains.Annotations.AspMvcPartialViewLocationFormatAttribute">AspMvcPartialViewLocationFormat</see>,
+               <see cref="T:JetBrains.Annotations.AspMvcViewLocationFormatAttribute">AspMvcViewLocationFormat</see>.
+             </remarks>
+             <example>
+               <code>
+               [assembly: JetBrains.Annotations.AspMvcAreaMasterLocationFormatAttribute("~\Areas\{2}\Views\{1}\{0}.master")]
+               [assembly: JetBrains.Annotations.AspMvcAreaMasterLocationFormatAttribute("~\Areas\{2}\Views\Shared\{0}.master")]
+            
+               [assembly: JetBrains.Annotations.AspMvcAreaPartialViewLocationFormatAttribute("~\Areas\{2}\Views\{1}\{0}.aspx")]
+               [assembly: JetBrains.Annotations.AspMvcAreaPartialViewLocationFormatAttribute("~\Areas\{2}\Views\{1}\{0}.ascx")]
+               [assembly: JetBrains.Annotations.AspMvcAreaPartialViewLocationFormatAttribute("~\Areas\{2}\Views\Shared\{0}.aspx")]
+               [assembly: JetBrains.Annotations.AspMvcAreaPartialViewLocationFormatAttribute("~\Areas\{2}\Views\Shared\{0}.ascx")]
+            
+               [assembly: JetBrains.Annotations.AspMvcViewLocationFormatAttribute("~\Areas\Views\{1}\{0}.aspx")]
+               [assembly: JetBrains.Annotations.AspMvcViewLocationFormatAttribute("~\Areas\Views\{1}\{0}.ascx")]
+               [assembly: JetBrains.Annotations.AspMvcViewLocationFormatAttribute("~\Areas\Views\Shared\{0}.aspx")]
+               [assembly: JetBrains.Annotations.AspMvcViewLocationFormatAttribute("~\Areas\Views\Shared\{0}.ascx")]
+            
+               [assembly: JetBrains.Annotations.AspMvcMasterLocationFormatAttribute("~\Views\{1}\{0}.master")]
+               [assembly: JetBrains.Annotations.AspMvcMasterLocationFormatAttribute("~\Views\Shared\{0}.master")]
+            
+               [assembly: JetBrains.Annotations.AspMvcPartialViewLocationFormatAttribute("~\Views\{1}\{0}.aspx")]
+               [assembly: JetBrains.Annotations.AspMvcPartialViewLocationFormatAttribute("~\Views\{1}\{0}.ascx")]
+               [assembly: JetBrains.Annotations.AspMvcPartialViewLocationFormatAttribute("~\Views\Shared\{0}.aspx")]
+               [assembly: JetBrains.Annotations.AspMvcPartialViewLocationFormatAttribute("~\Views\Shared\{0}.ascx")]
+            
+               [assembly: JetBrains.Annotations.AspMvcViewLocationFormatAttribute("~\Views\{1}\{0}.aspx")]
+               [assembly: JetBrains.Annotations.AspMvcViewLocationFormatAttribute("~\Views\{1}\{0}.ascx")]
+               [assembly: JetBrains.Annotations.AspMvcViewLocationFormatAttribute("~\Views\Shared\{0}.aspx")]
+               [assembly: JetBrains.Annotations.AspMvcViewLocationFormatAttribute("~\Views\Shared\{0}.ascx")]
+               </code>
+             </example>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Asp.OptionPages.AspxPage">
+            <summary>
+            Root options page for the ASP.NET language options.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Css.OptionPages.CssOptionsPage">
+            <summary>
+            Root options page for the CSS language options.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Css.QuickDoc.CssXmlDocRichTextPresenter">
+            <summary>
+            <see cref="T:JetBrains.ReSharper.Psi.Util.XmlDocRichTextPresenter"/> with simple HTML markup support.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Html.CodeStructure.HtmlCodeStructureElement`1.GetPresentation(JetBrains.Application.UI.Controls.TreeView.PresentationState)">
+            <summary>
+            
+            </summary>
+            <returns>Triple of image, main text and additional description</returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Html.Options.HtmlPage">
+            <summary>
+            Root options page for the Html language options.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Html.SelectEmbracingConstruct.HtmlTokenPartSelection`1.GetParentCalculationData(JetBrains.ReSharper.Psi.Parsing.TokenNodeType,System.String)">
+            <returns>
+            prefix length, suffix length, is token selection allowed
+            </returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Html.TypingAssist.HtmlLexerUtils.GetHeaderByFooter(JetBrains.ReSharper.Psi.Parsing.CachingLexer,JetBrains.ReSharper.Psi.Html.Parsing.IHtmlTokenNodeTypes,JetBrains.ReSharper.Feature.Services.Html.TypingAssist.HtmlLexerUtils.TagNameContainerInfo)">
+            <summary>
+            Position lexer at header's tag name. Return true if successful. Lexer position otherwise is undefined.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Html.TypingAssist.HtmlLexerUtils.FindHeader(JetBrains.ReSharper.Psi.Parsing.CachingLexer,JetBrains.ReSharper.Psi.Html.Parsing.IHtmlTokenNodeTypes,System.Int32,System.String,System.Boolean)">
+            <summary>
+            Position lexer at header's tag name. Return true if successful. Lexer position otherwise is undefined.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Html.TypingAssist.HtmlLexerUtils.GetFooterByHeader(JetBrains.ReSharper.Psi.Parsing.CachingLexer,JetBrains.ReSharper.Psi.Html.Parsing.IHtmlTokenNodeTypes,JetBrains.ReSharper.Feature.Services.Html.TypingAssist.HtmlLexerUtils.TagNameContainerInfo)">
+            <summary>
+            Position lexer at footer's tag name. Return true if successful. Lexer position otherwise is undefined.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Html.TypingAssist.HtmlLexerUtils.FindFooter(JetBrains.ReSharper.Psi.Parsing.CachingLexer,JetBrains.ReSharper.Psi.Html.Parsing.IHtmlTokenNodeTypes,System.Int32,System.String,System.Boolean)">
+            <summary>
+            Position lexer at footer's tag name. Return true if successful. Lexer position otherwise is undefined.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Html.TypingAssist.HtmlLexerUtils.SkipAnotherLanguageInjects(JetBrains.ReSharper.Psi.Parsing.CachingLexer,JetBrains.ReSharper.Psi.Html.Parsing.IHtmlTokenNodeTypes)">
+            <summary>
+            Skips injects backwards
+            Returns if injects contain only another language tokens or text/spaces/errors
+            Also returns true if no injects found
+            If inject contains other tokens (for example, ASP directive can contain eq, attribute names and values),
+            stops processing and return false
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.IChildTransformersOwner.ApplyRecursivelyTo(JetBrains.ReSharper.Psi.Tree.ITreeNode,JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformerMatchContext,JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.LocalTransformerDataContext)">
+            <summary>
+            Apply child transformers recursively to specified root
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.IChildTransformersOwner.ApplyTo(System.Collections.Generic.IList{JetBrains.ReSharper.Psi.Tree.ITreeNode},JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformerMatchContext,JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.LocalTransformerDataContext)">
+            <summary>
+            Apply child transformers to the sequence of elements without checking what all elements are applicable.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.IChildTransformersOwner.ApplyToAll(System.Collections.Generic.IList{JetBrains.ReSharper.Psi.Tree.ITreeNode},JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformerMatchContext,JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.LocalTransformerDataContext)">
+            <summary>
+            Apply child transformers to the sequence of elements. Use, if sequence of elements are satisfy predicate <see cref="M:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.IChildTransformersOwner.CheckAllElementsAreMatched(System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Psi.Tree.ITreeNode},JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformerMatchContext)"/>.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.IChildTransformersOwner.ApplyTo(JetBrains.ReSharper.Psi.Tree.ITreeNode@,JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformerMatchContext,JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.LocalTransformerDataContext)">
+            <summary>
+            Apply child transformers to the element. Use, if sequence of elements are satisfy predicate <see cref="M:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.IChildTransformersOwner.CheckAnyElementIsMatched(System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Psi.Tree.ITreeNode},JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformerMatchContext,JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.ITransformerMatchResult@)"/>.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.IChildTransformersOwner.CheckAllElementsAreMatched(System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Psi.Tree.ITreeNode},JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformerMatchContext)">
+            <summary>
+            Checks what at least one child transformer are applicable to element in sequence.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.INoopReplacement">
+            <summary>
+            stub replacement
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.LastDefinitionFinder.FindLastDefintionAndCopyFor``1(JetBrains.ReSharper.Psi.JavaScript.Impl.Resolve.IReferenceExpressionReferenceOwner,JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.IDefinitionType{``0},JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformerDataContext)">
+            <summary>
+            Finds last reaching definition for read usage <paramref name="referenceOwner"/> and copies it.
+            This is simple approximation.
+            Notes: control flow analysis doesn't give better effect.
+            </summary>   
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.LastDefinitionFinder.FindLastDefintionFor``1(JetBrains.ReSharper.Psi.JavaScript.Impl.Resolve.IReferenceExpressionReferenceOwner,JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.IDefinitionType{``0},JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformerDataContext)">
+            <summary>
+            Finds last reaching definition for read usage <paramref name="referenceOwner"/> without copying.
+            </summary>    
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.LastDefinitionFinder.HasLastStrictDefintionFor``1(JetBrains.ReSharper.Psi.JavaScript.Impl.Resolve.IReferenceExpressionReferenceOwner,JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.IDefinitionType{``0},JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformerDataContext)">
+            <summary>
+            Note: put to cache original node, not copy.
+            Use in pair with <see cref="M:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.LastDefinitionFinder.FindLastDefintionFor``1(JetBrains.ReSharper.Psi.JavaScript.Impl.Resolve.IReferenceExpressionReferenceOwner,JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.IDefinitionType{``0},JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformerDataContext)"/>.
+            </summary>    
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.LeafTransformer`1">
+            <summary>
+            This is kind of transformer, which transforms tree and can produce new nodes
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.LeafProducer`1">
+            <summary>
+            This is kind of transformer, which produces new nodes into consumer and delegates other actions to parent transformer.
+            That pass doesn't update caches.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformerBase`1.CreatePattern">
+            <summary>    
+            If you use placeholder from parent pattern, you should create equivalently placeholder into child pattern.
+            DON'T USE placeholder with same name as from parent pattern for other target.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformerBase`1.CheckPreCondition(JetBrains.ReSharper.Psi.Tree.ITreeNode,JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformerMatchContext)">
+            <summary>
+            Checks additional simple syntax invariant as like location of node; before structural pattern matching
+            </summary>    
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformerBase`1.CheckPostCondition(JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.ITransformerMatchResult)">
+            <summary>
+            Checks additional sematic invariant; after structural pattern matching
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.LocalTransformerDataContext">
+            <summary>
+            LocalTransformerDataContext is shared among child transformers and their owner.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.GlobalTransformerDataContext">
+            <summary>
+            GlobalTransformerDataContext is shared among transformers working on same file.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformerManager.GetAllTransformerPasses``1">
+            <summary>
+            for unit tests only
+            </summary>    
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformersImpl.OverloadSignaturesInferring.Inspector.WideParameterTypeEx.GetParameterTypeByStringValue(System.String)">
+            <summary>
+            Returns ParameterType corresponding returned string of op 'typeof'
+            </summary>    
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformersImpl.OverloadSignaturesInferring.Inspector.ParameterTypeEx.Merge(JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformersImpl.OverloadSignaturesInferring.Inspector.ParameterType,JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformersImpl.OverloadSignaturesInferring.Inspector.ParameterType)">
+            <summary>
+            This is meet operator.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.JavaScript.js2tsTools.TransformersImpl.PrototypeClass.PrototypeClassUtil.ProcessMethodNameOverlap(System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Psi.JavaScript.Tree.TypeScript.ITsObjectPropertyDeclaration})">
+            <summary>
+            Emulates behavior of Prototype.js: in cases of method name overlap, later arguments take precedence over earlier arguments.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.JavaScript.OptionPages.JavaScriptPage">
+            <summary>
+            Root options page for the Js language options.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.JavaScript.OptionPages.JsonPage">
+            <summary>
+            Root options page for the Js language options.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.JavaScript.OptionPages.TypeScriptPage">
+            <summary>
+            Root options page for the TypeScript language options.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.JavaScript.QuickDoc.JsDocPresenterUtil.MemberPresentationStyle">
+            <summary>
+            The same as <see cref="T:JetBrains.ReSharper.Psi.Util.XmlDocPresenterUtil"/>,
+            but with Js specific -- types always should presented QUALIFIED in docs.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.JavaScript.StructuralSearch.TypeScript.TsStructuralSearchReplacer.CreateReplacementTreeNode``1(JetBrains.ReSharper.Feature.Services.StructuralSearch.IStructuralMatchResult,System.String,System.Collections.Generic.IDictionary{System.String,JetBrains.ReSharper.Feature.Services.StructuralSearch.IPlaceholder},System.Boolean)">
+            <summary>
+            It is used into js2ts transformations.
+            Creates typed replacement tree node.
+            </summary> 
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.JavaScript.StructuralSearch.JavaScriptStructuralSearchPatternFromCodeCreator.IsLocalSymbol(JetBrains.ReSharper.Psi.IDeclaredElement)">
+            <summary>
+            Checks what it is local symbol exclude function's property "arguments"
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.JavaScript.StructuralSearch.Matchers.CompoundOrSimpleExpressionMatcher">
+            <summary>
+            wrapper for simple expression matcher
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.JavaScript.StructuralSearch.Matchers.StatementOrBlockMatcher">
+            <summary>
+            wrapper for no block statement matcher
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Razor.CodeStructure.RazorDirectiveCodeStructureElement.GetPresentation(JetBrains.Application.UI.Controls.TreeView.PresentationState)">
+            <returns>Triple of image, main text and additional description</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Razor.CodeStructure.RazorHelperCodeStructureElement.GetPresentation(JetBrains.Application.UI.Controls.TreeView.PresentationState)">
+            <returns>Triple of image, main text and additional description</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Razor.CodeStructure.RazorHtmlMarkupCodeStructureElement.GetPresentation(JetBrains.Application.UI.Controls.TreeView.PresentationState)">
+            <returns>Triple of image, main text and additional description</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Razor.CodeStructure.RazorSectionCodeStructureElement.GetPresentation(JetBrains.Application.UI.Controls.TreeView.PresentationState)">
+            <summary>
+            
+            </summary>
+            <returns>Triple of image, main text and additional description</returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Razor.Options.RazorPage">
+            <summary>
+            Root options page for the Html language options.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Razor.RazorFileTypeSpecificOwnerUtil.IsOperationPossibleOnUnmappedRange(JetBrains.ReSharper.Psi.ITreeRange)">
+            <summary>
+            Default - false
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Razor.RazorFileTypeSpecificOwnerUtil.CanDeclarationBeOverloaded(JetBrains.ReSharper.Psi.Tree.IDeclaration)">
+            <summary>
+            Default - true
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Razor.References.TagHelpers.Mvc.RazorTagHelperMvcAreaReference">
+            <remarks>
+            Heavily copy-pasted from <see cref="T:JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcAreaReference`1" />
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Razor.References.TagHelpers.Mvc.RazorTagHelperMvcViewReference">
+            <remarks>
+            Heavily copy-pasted from <see cref="T:JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcViewReference`2" />
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Razor.References.TagHelpers.Mvc.RazorTagHelperMvcActionReference">
+            <remarks>
+            Heavily copy-pasted from <see cref="T:JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcActionReference`1" />
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Razor.References.TagHelpers.Mvc.RazorTagHelperMvcControllerReference">
+            <remarks>
+            Heavily copy-pasted from <see cref="T:JetBrains.ReSharper.Feature.Services.Asp.CustomReferences.MvcControllerBaseReference`1" />
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons">
+             <summary>
+            	<para>
+            		<para>Autogenerated identifier classes and identifier objects to Themed Icons registered with <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see>.</para>
+            		<para>Identifier classes should be used in attributes, XAML, or generic parameters. Where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected, use the identifier object in the <c>Id</c> field of the identifier class.</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>This code was compile-time generated to support Themed Icons in the JetBrains application.</para>
+            	<para>It has two primary goals: load the icons of this assembly to be registered with <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> so that they were WPF-accessible and theme-sensitive; and emit early-bound accessors for referencing icons in codebehind in a compile-time-validated manner.</para>
+            	<h1>XAML</h1>
+            	<para>For performance reasons, the icons are not individually exposed with application resources. There is a custom markup extension to bind an image source in markup.</para>
+            	<para>To use an icon from XAML, set an <see cref="T:System.Windows.Media.ImageSource"></see> property to the <see cref="T:System.CodeDom.CodeTypeReference"></see> markup extension, which takes an icon identifier class (nested in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons"></see> class) as a parameter.</para>
+            	<para>Example:</para>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:FeaturesWebOptionsThemedIcons+Trinity}" /&gt;</code>
+            	<h1>Attributes</h1>
+            	<para>Sometimes you have to reference an icon from a type attriute when you're defining objects in code. Typical examples are Options pages and Tool Windows.</para>
+            	<para>To avoid the use of string IDs which are not validated very well, we've emitted identifier classes to be used with <c>typeof()</c> expression, one per each icon. Use the attribute overload which takes a <see cref="T:System.Type"></see> for an image, and choose your icon class from nested classes in the <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons"></see> class.</para>
+            	<para>Example:</para>
+            	<code>[Item(Name="Sample", Icon=typeof(FeaturesWebOptionsThemedIcons.Trinity))]</code>
+            	<h1>CodeBehind</h1>
+            	<para>In codebehind, we have two distinct tasks: (a) specify some icon in the APIs and (b) render icon images onscreen.</para>
+            	<para>On the APIs stage you should only manipulate icon identifier objects (of type <see cref="T:JetBrains.UI.Icons.IconId"></see>, statically defined in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons"></see> in <c>Id</c> fields). Icon identifier classes (nested in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons"></see>) should be turned into icon identifier objects as early as possible. Rendering is about getting an <see cref="T:System.Windows.Media.ImageSource"></see> to assign to WPF, or <see cref="T:System.Drawing.Bitmap"></see> to use with GDI+ / Windows Forms.</para>
+            	<para>You should turn an identifier object into a rendered image as late as possible. The identifier is static and lightweight and does not depend on the current theme, while the image is themed and has to be loaded or generated/rasterized. You need an <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> instance to get the image out of an icon identifier object. Once you got the image, you should take care to change it with theme changes — either by using a live image property, or by listening to the theme change event. See <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> and its extensions for the related facilities.</para>
+            	<para>Example:</para>
+            	<code>// Getting IconId identifier object to use with APIs
+            IconId iconid = FeaturesWebOptionsThemedIcons.Trinity.Id;</code>
+            	<code>// Getting IconId out of an Icon Identifier Class type
+            IconId iconid = new JetBrains.Application.Icons.CompiledIconsCs.CompiledIconCsId(typeof(FeaturesWebOptionsThemedIcons.Trinity));</code>
+            	<code>// Getting image for screen rendering by IconId
+            themediconmanager.Icons[icnoid]</code>
+            	<code>// Getting image for screen rendering by Icon Identifier Class
+            themediconmanager.GetIcon&lt;FeaturesWebOptionsThemedIcons.Trinity&gt;()</code>
+            	<h1>Icons Origin</h1>
+            	<para>This code was generated by a pre-compile build task from a set of input files which are XAML files adhering to a certain convention, as convenient for exporting them from the Illustrator workspace, plus separate PNG files with raster icons. In the projects, these files are designated with <c>ThemedIconsXamlV3</c> and <c>ThemedIconPng</c> build actions and do not themselves get into the output assembly. All of such files are processed, vector images for different themes of the same icon are split and combined into the single list of icons in this assembly. This list is then written into the genearted XAML file (compiled into BAML within assembly), and serves as the source for this generated code.</para>
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.AspNetOptionPage">
+             <summary>
+            	<para>
+            		<para>AspNetOptionPage Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.AspNetOptionPage"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.AspNetOptionPage.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                 IIIIIIIIIIIIIII/`           
+                 uu''''''''''''^7u/`         
+                 oo''''''''''''''~iu*`       
+                 ee''''        ''''~lj*`     
+                 aa----        ------~l5+    
+                 yy----            ----yy    
+                 VV----            ----VV    
+                 kk----            ----kk    
+              `!IuuuuuuuuuuuuuuuuuuuL,-KK    
+             =CT_    11=`    11    _Txrhh    
+             {{``{{``{{``{{{{{{``{{``{{XX    
+             ll``ll``ll"````^ll````-+ll44    
+             ii``````iiiiii``ii``iiiiiiww    
+             TT``TT``TT`````,TT``TTbbbbbb    
+             ))))))))))))))))))))))          
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:FeaturesWebOptionsThemedIcons+AspNetOptionPage}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(FeaturesWebOptionsThemedIcons.AspNetOptionPage))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = FeaturesWebOptionsThemedIcons.AspNetOptionPage.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;FeaturesWebOptionsThemedIcons.AspNetOptionPage&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.AspNetOptionPage.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.AspNetOptionPage">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.AspNetOptionPage.Load_Color">
+            <summary>Loads the image for Themed Icon AspNetOptionPage theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.AspNetOptionPage.Load_Gray">
+            <summary>Loads the image for Themed Icon AspNetOptionPage theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.AspNetOptionPage.Load_GrayDark">
+            <summary>Loads the image for Themed Icon AspNetOptionPage theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.AspNetOptionPage.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon AspNetOptionPage.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.CssOptionPage">
+             <summary>
+            	<para>
+            		<para>CssOptionPage Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.CssOptionPage"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.CssOptionPage.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                 IIIIIIIIIIIIIII/`           
+                 uu''''''''''''^7u/`         
+                 oo''''''''''''''~iu*`       
+                 ee''''        ''''~lj*`     
+                 aa----        ------~l5+    
+                 yy----            ----yy    
+                 VV----            ----VV    
+                 kk----            ----kk    
+              `rE$$$$$$$$$$$$$$$$$$$$$$KK    
+             _RDr,```NNT.````NNT.````NNhh    
+             y8"`=p8888``888888``888888XX    
+             RR``XRRRRR\```-+RR\```-+RR44    
+             2G".+dGGGGGGGG..GGGGGG..GGww    
+             ,US!_---ww-----;ww-----;wwbb    
+              .+3Phhhhhhhhhhhhhhhhhhhhh      
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:FeaturesWebOptionsThemedIcons+CssOptionPage}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(FeaturesWebOptionsThemedIcons.CssOptionPage))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = FeaturesWebOptionsThemedIcons.CssOptionPage.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;FeaturesWebOptionsThemedIcons.CssOptionPage&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.CssOptionPage.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.CssOptionPage">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.CssOptionPage.Load_Color">
+            <summary>Loads the image for Themed Icon CssOptionPage theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.CssOptionPage.Load_Gray">
+            <summary>Loads the image for Themed Icon CssOptionPage theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.CssOptionPage.Load_GrayDark">
+            <summary>Loads the image for Themed Icon CssOptionPage theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.CssOptionPage.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon CssOptionPage.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.Js2OptionPage">
+             <summary>
+            	<para>
+            		<para>Js2OptionPage Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.Js2OptionPage"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.Js2OptionPage.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                 uuuuuuuuuuuuuu3/`           
+                 oo------------~Jo\`         
+                 22--------------~lo+`       
+                 aa----````````----~t5+`     
+                 yy----        ------=}a+    
+                 VV----            ----VV    
+                 kk----            ----kk    
+                 EE----            ----EE    
+                 bbbbbbbbbbbbbb    ----hh    
+                 XX..XXr-....XX    ----XX    
+                 VV..VV..VVVVVV    ----66    
+             /=~,oo--oo;---_!oo--------ww    
+             xx7Cxx--xxxxxx--xx________bb    
+             7l"____~ll_____~lCdddddddddd    
+             .;LTTTTTTTTTTT|+=`              
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:FeaturesWebOptionsThemedIcons+Js2OptionPage}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(FeaturesWebOptionsThemedIcons.Js2OptionPage))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = FeaturesWebOptionsThemedIcons.Js2OptionPage.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;FeaturesWebOptionsThemedIcons.Js2OptionPage&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.Js2OptionPage.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.Js2OptionPage">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.Js2OptionPage.Load_Color">
+            <summary>Loads the image for Themed Icon Js2OptionPage theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.Js2OptionPage.Load_Gray">
+            <summary>Loads the image for Themed Icon Js2OptionPage theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.Js2OptionPage.Load_GrayDark">
+            <summary>Loads the image for Themed Icon Js2OptionPage theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.Js2OptionPage.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon Js2OptionPage.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.JsonOptionPage">
+             <summary>
+            	<para>
+            		<para>JsonOptionPage Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.JsonOptionPage"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.JsonOptionPage.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                 IIIIIIIIIIIIIII/`           
+                 uu''''''''''''^su/`         
+                 oo''''''''''''''~iu*`       
+                 22----        ----~lj*`     
+                 aa----        ------~t5+    
+                 yy----            ----yy    
+                 VV----            ----VV    
+                 kk----            ----kk    
+               bbbbbbIkbbbbbb/TooT/bbbbbbbbbb
+               UU``UU+-````UU1=__~tUU``rU``UU
+               SS..SS..SSSSSS-.iJ.'SS...r..SS
+               uu''uu='''-!uu''uu''uu''!'''uu
+             FFFF--FFFFFF--FF_-lt--FF--F;--FF
+             JJ---^JJ-----~JJr^__"+JJ--JJ--JJ
+             |||||r|||||||?~-;L|)+=||||||||||
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:FeaturesWebOptionsThemedIcons+JsonOptionPage}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(FeaturesWebOptionsThemedIcons.JsonOptionPage))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = FeaturesWebOptionsThemedIcons.JsonOptionPage.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;FeaturesWebOptionsThemedIcons.JsonOptionPage&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.JsonOptionPage.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.JsonOptionPage">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.JsonOptionPage.Load_Color">
+            <summary>Loads the image for Themed Icon JsonOptionPage theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.JsonOptionPage.Load_Gray">
+            <summary>Loads the image for Themed Icon JsonOptionPage theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.JsonOptionPage.Load_GrayDark">
+            <summary>Loads the image for Themed Icon JsonOptionPage theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.JsonOptionPage.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon JsonOptionPage.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.JsOptionPage">
+             <summary>
+            	<para>
+            		<para>JsOptionPage Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.JsOptionPage"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.JsOptionPage.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                 uuuuuuuuuuuuuu3/`           
+                 oo------------~Jo\`         
+                 22--------------~lo+`       
+                 aa----````````----~t5+`     
+                 yy----        ------=}a+    
+                 VV----            ----VV    
+                 kk----            ----kk    
+                 EE----            ----EE    
+                 bbbbbbbbbbbbbb    ----hh    
+                 XX..XXr-....XX    ----XX    
+                 VV..VV..VVVVVV    ----66    
+             /=~,oo--oo;---_!oo--------ww    
+             xx7Cxx--xxxxxx--xx________bb    
+             7l"____~ll_____~lCdddddddddd    
+             .;LTTTTTTTTTTT|+=`              
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:FeaturesWebOptionsThemedIcons+JsOptionPage}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(FeaturesWebOptionsThemedIcons.JsOptionPage))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = FeaturesWebOptionsThemedIcons.JsOptionPage.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;FeaturesWebOptionsThemedIcons.JsOptionPage&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.JsOptionPage.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.JsOptionPage">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.JsOptionPage.Load_Color">
+            <summary>Loads the image for Themed Icon JsOptionPage theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.JsOptionPage.Load_Gray">
+            <summary>Loads the image for Themed Icon JsOptionPage theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.JsOptionPage.Load_GrayDark">
+            <summary>Loads the image for Themed Icon JsOptionPage theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.JsOptionPage.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon JsOptionPage.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.TsOptionPage">
+             <summary>
+            	<para>
+            		<para>TsOptionPage Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.TsOptionPage"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.TsOptionPage.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                 nnnnnnnnnnnnnn3/`           
+                 oo------------~iu\`         
+                 22--------------~lo+`       
+                 55----````````----~le+`     
+                 yy----        ------=ta+    
+                 VV----            ----VV    
+                 kk----            ----kk    
+                 EE----            ----EE    
+             bbbbbbbbbbbbbbbbbb    ----ZZ    
+             XX......XXr-....XX    ----XX    
+             VVVV..VVVV..VVVVVV    ----66    
+               oo--oooo;---_!oo________99    
+               ]]--]]]]]]]]--]]________bb    
+               ll__llll_____~lCdddddddddd    
+               TTTTTTTTTTTT|+~`              
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:FeaturesWebOptionsThemedIcons+TsOptionPage}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(FeaturesWebOptionsThemedIcons.TsOptionPage))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = FeaturesWebOptionsThemedIcons.TsOptionPage.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;FeaturesWebOptionsThemedIcons.TsOptionPage&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.TsOptionPage.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.TsOptionPage">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.TsOptionPage.Load_Color">
+            <summary>Loads the image for Themed Icon TsOptionPage theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.TsOptionPage.Load_Gray">
+            <summary>Loads the image for Themed Icon TsOptionPage theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.TsOptionPage.Load_GrayDark">
+            <summary>Loads the image for Themed Icon TsOptionPage theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Web.FeaturesWebOptionsThemedIcons.TsOptionPage.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon TsOptionPage.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons">
+             <summary>
+            	<para>
+            		<para>Autogenerated identifier classes and identifier objects to Themed Icons registered with <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see>.</para>
+            		<para>Identifier classes should be used in attributes, XAML, or generic parameters. Where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected, use the identifier object in the <c>Id</c> field of the identifier class.</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>This code was compile-time generated to support Themed Icons in the JetBrains application.</para>
+            	<para>It has two primary goals: load the icons of this assembly to be registered with <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> so that they were WPF-accessible and theme-sensitive; and emit early-bound accessors for referencing icons in codebehind in a compile-time-validated manner.</para>
+            	<h1>XAML</h1>
+            	<para>For performance reasons, the icons are not individually exposed with application resources. There is a custom markup extension to bind an image source in markup.</para>
+            	<para>To use an icon from XAML, set an <see cref="T:System.Windows.Media.ImageSource"></see> property to the <see cref="T:System.CodeDom.CodeTypeReference"></see> markup extension, which takes an icon identifier class (nested in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons"></see> class) as a parameter.</para>
+            	<para>Example:</para>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesHtmlThemedIcons+Trinity}" /&gt;</code>
+            	<h1>Attributes</h1>
+            	<para>Sometimes you have to reference an icon from a type attriute when you're defining objects in code. Typical examples are Options pages and Tool Windows.</para>
+            	<para>To avoid the use of string IDs which are not validated very well, we've emitted identifier classes to be used with <c>typeof()</c> expression, one per each icon. Use the attribute overload which takes a <see cref="T:System.Type"></see> for an image, and choose your icon class from nested classes in the <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons"></see> class.</para>
+            	<para>Example:</para>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesHtmlThemedIcons.Trinity))]</code>
+            	<h1>CodeBehind</h1>
+            	<para>In codebehind, we have two distinct tasks: (a) specify some icon in the APIs and (b) render icon images onscreen.</para>
+            	<para>On the APIs stage you should only manipulate icon identifier objects (of type <see cref="T:JetBrains.UI.Icons.IconId"></see>, statically defined in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons"></see> in <c>Id</c> fields). Icon identifier classes (nested in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons"></see>) should be turned into icon identifier objects as early as possible. Rendering is about getting an <see cref="T:System.Windows.Media.ImageSource"></see> to assign to WPF, or <see cref="T:System.Drawing.Bitmap"></see> to use with GDI+ / Windows Forms.</para>
+            	<para>You should turn an identifier object into a rendered image as late as possible. The identifier is static and lightweight and does not depend on the current theme, while the image is themed and has to be loaded or generated/rasterized. You need an <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> instance to get the image out of an icon identifier object. Once you got the image, you should take care to change it with theme changes — either by using a live image property, or by listening to the theme change event. See <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> and its extensions for the related facilities.</para>
+            	<para>Example:</para>
+            	<code>// Getting IconId identifier object to use with APIs
+            IconId iconid = ServicesHtmlThemedIcons.Trinity.Id;</code>
+            	<code>// Getting IconId out of an Icon Identifier Class type
+            IconId iconid = new JetBrains.Application.Icons.CompiledIconsCs.CompiledIconCsId(typeof(ServicesHtmlThemedIcons.Trinity));</code>
+            	<code>// Getting image for screen rendering by IconId
+            themediconmanager.Icons[icnoid]</code>
+            	<code>// Getting image for screen rendering by Icon Identifier Class
+            themediconmanager.GetIcon&lt;ServicesHtmlThemedIcons.Trinity&gt;()</code>
+            	<h1>Icons Origin</h1>
+            	<para>This code was generated by a pre-compile build task from a set of input files which are XAML files adhering to a certain convention, as convenient for exporting them from the Illustrator workspace, plus separate PNG files with raster icons. In the projects, these files are designated with <c>ThemedIconsXamlV3</c> and <c>ThemedIconPng</c> build actions and do not themselves get into the output assembly. All of such files are processed, vector images for different themes of the same icon are split and combined into the single list of icons in this assembly. This list is then written into the genearted XAML file (compiled into BAML within assembly), and serves as the source for this generated code.</para>
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagAttributeIcon">
+             <summary>
+            	<para>
+            		<para>HtmlTagAttributeIcon Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagAttributeIcon"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagAttributeIcon.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                        `   ~TTTTTT_         
+                      `rV   T7``.is.         
+                    `rEPP  ,l!``=laEr`       
+                  `?h[_XX  |}-``i{X_[h?`     
+                .LX1,  44 -CL``~Cy4  ,1XL.   
+              .cwu"  -sbb r1"``71wbs-  "uwc. 
+             (bo"``-lHHHH.ut.`"u)HHHHl-``"ob(
+             1At_``~5AAAA/o;..)o:AAAA5~``_tA1
+              _3R{_``~SRRoo-._5C RRS~``_{R3_ 
+                _oDx,..DGyr''ry= DD..,xDo_   
+                  _jDI"DZV,--}}}}}}}}}}}}}}}}
+                    :58DEl--/11            11
+                      :Xh=--joo            oo
+                      '666666VV````````````VV
+                             XXXXXXXXXXXXXXXX
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesHtmlThemedIcons+HtmlTagAttributeIcon}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesHtmlThemedIcons.HtmlTagAttributeIcon))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesHtmlThemedIcons.HtmlTagAttributeIcon.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesHtmlThemedIcons.HtmlTagAttributeIcon&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagAttributeIcon.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagAttributeIcon">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagAttributeIcon.Load_Color">
+            <summary>Loads the image for Themed Icon HtmlTagAttributeIcon theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagAttributeIcon.Load_Gray">
+            <summary>Loads the image for Themed Icon HtmlTagAttributeIcon theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagAttributeIcon.Load_GrayDark">
+            <summary>Loads the image for Themed Icon HtmlTagAttributeIcon theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagAttributeIcon.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon HtmlTagAttributeIcon.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagAttributeValueIcon">
+             <summary>
+            	<para>
+            		<para>HtmlTagAttributeValueIcon Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagAttributeValueIcon"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagAttributeValueIcon.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                        `   ~TTTTTT_         
+                      `rV   T7``.is.         
+                    `rEPP  ,l!``=laEr`       
+                  `?h[_XX  |}-``i{X_[h?`     
+                .LX1,  44 -CL``~Cy4  ,1XL.   
+              .cwu"  -sbb r1"``71wbs-  "uwc. 
+             (bo"``-lHHHH.ut.qqqqqqqqqqqqqqqq
+             1At_``~5AAAA/o;.##------------##
+              _3R{_``~SRRoo-.DD""""""""""""DD
+                _oDx,..DGyr''DD;;;;;;;;;;;;DD
+                  _jDI"DZV,--DDDDDDDDDDDDDDDD
+                    :58DEl--/DD            DD
+                      :Xh=--jOO            OO
+                      '666666bb````````````bb
+                             UUUUUUUUUUUUUUUU
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesHtmlThemedIcons+HtmlTagAttributeValueIcon}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesHtmlThemedIcons.HtmlTagAttributeValueIcon))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesHtmlThemedIcons.HtmlTagAttributeValueIcon.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesHtmlThemedIcons.HtmlTagAttributeValueIcon&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagAttributeValueIcon.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagAttributeValueIcon">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagAttributeValueIcon.Load_Color">
+            <summary>Loads the image for Themed Icon HtmlTagAttributeValueIcon theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagAttributeValueIcon.Load_Gray">
+            <summary>Loads the image for Themed Icon HtmlTagAttributeValueIcon theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagAttributeValueIcon.Load_GrayDark">
+            <summary>Loads the image for Themed Icon HtmlTagAttributeValueIcon theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagAttributeValueIcon.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon HtmlTagAttributeValueIcon.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagIcon">
+             <summary>
+            	<para>
+            		<para>HtmlTagIcon Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagIcon"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagIcon.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                        `   ~TTTTTT_         
+                      `rV   TT``.77.         
+                    `rkEE  ,l!``=l5kr`       
+                  `?PF_UU  (t-``z}U_FP?`     
+                .LXx:  66 -F?``^Fa6  :xXL.   
+              .c9I,  -7ww rx,``Tx4w7-  ,I9c. 
+             )bo"  -Jdddd.Il``,I)ddddJ-  "ob)
+             xGl_``^eGGGG!o=``co:GGGGe^``_lGx
+              _I#}_``~a#Roo-._eF ##a~``_}#I_ 
+                _uDC:``DGar..+a= DD``:CDu_   
+                  _oD1,DPV_.-5a` DD,1Do_     
+                    :58DkJ''/kr  8885:       
+                      :UP=--oP.  8y:         
+                      'XXXXXXJ   ,           
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesHtmlThemedIcons+HtmlTagIcon}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesHtmlThemedIcons.HtmlTagIcon))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesHtmlThemedIcons.HtmlTagIcon.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesHtmlThemedIcons.HtmlTagIcon&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagIcon.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagIcon">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagIcon.Load_Color">
+            <summary>Loads the image for Themed Icon HtmlTagIcon theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagIcon.Load_Gray">
+            <summary>Loads the image for Themed Icon HtmlTagIcon theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagIcon.Load_GrayDark">
+            <summary>Loads the image for Themed Icon HtmlTagIcon theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Html.ServicesHtmlThemedIcons.HtmlTagIcon.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon HtmlTagIcon.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.AspCSharp.ServicesAspCSharpThemedIcons">
+             <summary>
+            	<para>
+            		<para>Autogenerated identifier classes and identifier objects to Themed Icons registered with <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see>.</para>
+            		<para>Identifier classes should be used in attributes, XAML, or generic parameters. Where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected, use the identifier object in the <c>Id</c> field of the identifier class.</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>This code was compile-time generated to support Themed Icons in the JetBrains application.</para>
+            	<para>It has two primary goals: load the icons of this assembly to be registered with <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> so that they were WPF-accessible and theme-sensitive; and emit early-bound accessors for referencing icons in codebehind in a compile-time-validated manner.</para>
+            	<h1>XAML</h1>
+            	<para>For performance reasons, the icons are not individually exposed with application resources. There is a custom markup extension to bind an image source in markup.</para>
+            	<para>To use an icon from XAML, set an <see cref="T:System.Windows.Media.ImageSource"></see> property to the <see cref="T:System.CodeDom.CodeTypeReference"></see> markup extension, which takes an icon identifier class (nested in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.AspCSharp.ServicesAspCSharpThemedIcons"></see> class) as a parameter.</para>
+            	<para>Example:</para>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesAspCSharpThemedIcons+Trinity}" /&gt;</code>
+            	<h1>Attributes</h1>
+            	<para>Sometimes you have to reference an icon from a type attriute when you're defining objects in code. Typical examples are Options pages and Tool Windows.</para>
+            	<para>To avoid the use of string IDs which are not validated very well, we've emitted identifier classes to be used with <c>typeof()</c> expression, one per each icon. Use the attribute overload which takes a <see cref="T:System.Type"></see> for an image, and choose your icon class from nested classes in the <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.AspCSharp.ServicesAspCSharpThemedIcons"></see> class.</para>
+            	<para>Example:</para>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesAspCSharpThemedIcons.Trinity))]</code>
+            	<h1>CodeBehind</h1>
+            	<para>In codebehind, we have two distinct tasks: (a) specify some icon in the APIs and (b) render icon images onscreen.</para>
+            	<para>On the APIs stage you should only manipulate icon identifier objects (of type <see cref="T:JetBrains.UI.Icons.IconId"></see>, statically defined in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.AspCSharp.ServicesAspCSharpThemedIcons"></see> in <c>Id</c> fields). Icon identifier classes (nested in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.AspCSharp.ServicesAspCSharpThemedIcons"></see>) should be turned into icon identifier objects as early as possible. Rendering is about getting an <see cref="T:System.Windows.Media.ImageSource"></see> to assign to WPF, or <see cref="T:System.Drawing.Bitmap"></see> to use with GDI+ / Windows Forms.</para>
+            	<para>You should turn an identifier object into a rendered image as late as possible. The identifier is static and lightweight and does not depend on the current theme, while the image is themed and has to be loaded or generated/rasterized. You need an <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> instance to get the image out of an icon identifier object. Once you got the image, you should take care to change it with theme changes — either by using a live image property, or by listening to the theme change event. See <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> and its extensions for the related facilities.</para>
+            	<para>Example:</para>
+            	<code>// Getting IconId identifier object to use with APIs
+            IconId iconid = ServicesAspCSharpThemedIcons.Trinity.Id;</code>
+            	<code>// Getting IconId out of an Icon Identifier Class type
+            IconId iconid = new JetBrains.Application.Icons.CompiledIconsCs.CompiledIconCsId(typeof(ServicesAspCSharpThemedIcons.Trinity));</code>
+            	<code>// Getting image for screen rendering by IconId
+            themediconmanager.Icons[icnoid]</code>
+            	<code>// Getting image for screen rendering by Icon Identifier Class
+            themediconmanager.GetIcon&lt;ServicesAspCSharpThemedIcons.Trinity&gt;()</code>
+            	<h1>Icons Origin</h1>
+            	<para>This code was generated by a pre-compile build task from a set of input files which are XAML files adhering to a certain convention, as convenient for exporting them from the Illustrator workspace, plus separate PNG files with raster icons. In the projects, these files are designated with <c>ThemedIconsXamlV3</c> and <c>ThemedIconPng</c> build actions and do not themselves get into the output assembly. All of such files are processed, vector images for different themes of the same icon are split and combined into the single list of icons in this assembly. This list is then written into the genearted XAML file (compiled into BAML within assembly), and serves as the source for this generated code.</para>
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.AspCSharp.ServicesAspCSharpThemedIcons.ScopeAspcs">
+             <summary>
+            	<para>
+            		<para>ScopeAspcs Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.AspCSharp.ServicesAspCSharpThemedIcons.ScopeAspcs"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.AspCSharp.ServicesAspCSharpThemedIcons.ScopeAspcs.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                     -/lI7?!_ -{11t/,`       
+                   `Tx=.```~F7CF.`"31,       
+                  `tu_ "T7= .u1- `iIIUL.     
+                `+6oj- ;I3+ `3- `l2_`"36c.   
+              `r9o^-f1^`  `,l- `la4l_``^ob). 
+             rb5~``_}6EVyyyo- `towGGGt_``~5d|
+             l#{,..=y###A[5- `FVVkPXby=..,{#I
+              -}Rx"..=kRPa_``}/-..-;a1_"xRu_ 
+                -FDI"-_XS_`.1"`~FC!`-KkDo_   
+                  -18o5k_`.IX_`*VkL`'XZ:     
+                    :Z6;`.uUaV=.```~aV-      
+                    -!t6ww6" ^l56w9o=`       
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesAspCSharpThemedIcons+ScopeAspcs}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesAspCSharpThemedIcons.ScopeAspcs))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesAspCSharpThemedIcons.ScopeAspcs.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesAspCSharpThemedIcons.ScopeAspcs&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.AspCSharp.ServicesAspCSharpThemedIcons.ScopeAspcs.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.AspCSharp.ServicesAspCSharpThemedIcons.ScopeAspcs">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.AspCSharp.ServicesAspCSharpThemedIcons.ScopeAspcs.Load_Color">
+            <summary>Loads the image for Themed Icon ScopeAspcs theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.AspCSharp.ServicesAspCSharpThemedIcons.ScopeAspcs.Load_Gray">
+            <summary>Loads the image for Themed Icon ScopeAspcs theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.AspCSharp.ServicesAspCSharpThemedIcons.ScopeAspcs.Load_GrayDark">
+            <summary>Loads the image for Themed Icon ScopeAspcs theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.AspCSharp.ServicesAspCSharpThemedIcons.ScopeAspcs.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon ScopeAspcs.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.AspVB.ServicesAspVBThemedIcons">
+             <summary>
+            	<para>
+            		<para>Autogenerated identifier classes and identifier objects to Themed Icons registered with <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see>.</para>
+            		<para>Identifier classes should be used in attributes, XAML, or generic parameters. Where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected, use the identifier object in the <c>Id</c> field of the identifier class.</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>This code was compile-time generated to support Themed Icons in the JetBrains application.</para>
+            	<para>It has two primary goals: load the icons of this assembly to be registered with <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> so that they were WPF-accessible and theme-sensitive; and emit early-bound accessors for referencing icons in codebehind in a compile-time-validated manner.</para>
+            	<h1>XAML</h1>
+            	<para>For performance reasons, the icons are not individually exposed with application resources. There is a custom markup extension to bind an image source in markup.</para>
+            	<para>To use an icon from XAML, set an <see cref="T:System.Windows.Media.ImageSource"></see> property to the <see cref="T:System.CodeDom.CodeTypeReference"></see> markup extension, which takes an icon identifier class (nested in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.AspVB.ServicesAspVBThemedIcons"></see> class) as a parameter.</para>
+            	<para>Example:</para>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesAspVBThemedIcons+Trinity}" /&gt;</code>
+            	<h1>Attributes</h1>
+            	<para>Sometimes you have to reference an icon from a type attriute when you're defining objects in code. Typical examples are Options pages and Tool Windows.</para>
+            	<para>To avoid the use of string IDs which are not validated very well, we've emitted identifier classes to be used with <c>typeof()</c> expression, one per each icon. Use the attribute overload which takes a <see cref="T:System.Type"></see> for an image, and choose your icon class from nested classes in the <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.AspVB.ServicesAspVBThemedIcons"></see> class.</para>
+            	<para>Example:</para>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesAspVBThemedIcons.Trinity))]</code>
+            	<h1>CodeBehind</h1>
+            	<para>In codebehind, we have two distinct tasks: (a) specify some icon in the APIs and (b) render icon images onscreen.</para>
+            	<para>On the APIs stage you should only manipulate icon identifier objects (of type <see cref="T:JetBrains.UI.Icons.IconId"></see>, statically defined in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.AspVB.ServicesAspVBThemedIcons"></see> in <c>Id</c> fields). Icon identifier classes (nested in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.AspVB.ServicesAspVBThemedIcons"></see>) should be turned into icon identifier objects as early as possible. Rendering is about getting an <see cref="T:System.Windows.Media.ImageSource"></see> to assign to WPF, or <see cref="T:System.Drawing.Bitmap"></see> to use with GDI+ / Windows Forms.</para>
+            	<para>You should turn an identifier object into a rendered image as late as possible. The identifier is static and lightweight and does not depend on the current theme, while the image is themed and has to be loaded or generated/rasterized. You need an <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> instance to get the image out of an icon identifier object. Once you got the image, you should take care to change it with theme changes — either by using a live image property, or by listening to the theme change event. See <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> and its extensions for the related facilities.</para>
+            	<para>Example:</para>
+            	<code>// Getting IconId identifier object to use with APIs
+            IconId iconid = ServicesAspVBThemedIcons.Trinity.Id;</code>
+            	<code>// Getting IconId out of an Icon Identifier Class type
+            IconId iconid = new JetBrains.Application.Icons.CompiledIconsCs.CompiledIconCsId(typeof(ServicesAspVBThemedIcons.Trinity));</code>
+            	<code>// Getting image for screen rendering by IconId
+            themediconmanager.Icons[icnoid]</code>
+            	<code>// Getting image for screen rendering by Icon Identifier Class
+            themediconmanager.GetIcon&lt;ServicesAspVBThemedIcons.Trinity&gt;()</code>
+            	<h1>Icons Origin</h1>
+            	<para>This code was generated by a pre-compile build task from a set of input files which are XAML files adhering to a certain convention, as convenient for exporting them from the Illustrator workspace, plus separate PNG files with raster icons. In the projects, these files are designated with <c>ThemedIconsXamlV3</c> and <c>ThemedIconPng</c> build actions and do not themselves get into the output assembly. All of such files are processed, vector images for different themes of the same icon are split and combined into the single list of icons in this assembly. This list is then written into the genearted XAML file (compiled into BAML within assembly), and serves as the source for this generated code.</para>
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.AspVB.ServicesAspVBThemedIcons.ScopeAspvb">
+             <summary>
+            	<para>
+            		<para>ScopeAspvb Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.AspVB.ServicesAspVBThemedIcons.ScopeAspvb"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.AspVB.ServicesAspVBThemedIcons.ScopeAspvb.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                     -/lI7?!_ -{11t/,`       
+                   `Tx=.```~F7CF.`"31,       
+                  `tu_ "T7= .u1- `iIIUL.     
+                `+6oj- ;I3+ `3- `l2_`"36c.   
+              `r9o^-f1^`  `,l- `la4l_``^ob). 
+             rb5~``_}6EVyyyo- `towGGGt_``~5d|
+             l#{,..=y###A[5- `FVVkPXby=..,{#I
+              -}Rx"..=kRPa_``}/-..-;a1_"xRu_ 
+                -FDI"-_XS_`.1"`~FC!`-KkDo_   
+                  -18o5k_`.IX_`*VkL`'XZ:     
+                    :Z6;`.uUaV=.```~aV-      
+                    -!t6ww6" ^l56w9o=`       
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesAspVBThemedIcons+ScopeAspvb}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesAspVBThemedIcons.ScopeAspvb))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesAspVBThemedIcons.ScopeAspvb.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesAspVBThemedIcons.ScopeAspvb&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.AspVB.ServicesAspVBThemedIcons.ScopeAspvb.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.AspVB.ServicesAspVBThemedIcons.ScopeAspvb">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.AspVB.ServicesAspVBThemedIcons.ScopeAspvb.Load_Color">
+            <summary>Loads the image for Themed Icon ScopeAspvb theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.AspVB.ServicesAspVBThemedIcons.ScopeAspvb.Load_Gray">
+            <summary>Loads the image for Themed Icon ScopeAspvb theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.AspVB.ServicesAspVBThemedIcons.ScopeAspvb.Load_GrayDark">
+            <summary>Loads the image for Themed Icon ScopeAspvb theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.AspVB.ServicesAspVBThemedIcons.ScopeAspvb.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon ScopeAspvb.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons">
+             <summary>
+            	<para>
+            		<para>Autogenerated identifier classes and identifier objects to Themed Icons registered with <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see>.</para>
+            		<para>Identifier classes should be used in attributes, XAML, or generic parameters. Where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected, use the identifier object in the <c>Id</c> field of the identifier class.</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>This code was compile-time generated to support Themed Icons in the JetBrains application.</para>
+            	<para>It has two primary goals: load the icons of this assembly to be registered with <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> so that they were WPF-accessible and theme-sensitive; and emit early-bound accessors for referencing icons in codebehind in a compile-time-validated manner.</para>
+            	<h1>XAML</h1>
+            	<para>For performance reasons, the icons are not individually exposed with application resources. There is a custom markup extension to bind an image source in markup.</para>
+            	<para>To use an icon from XAML, set an <see cref="T:System.Windows.Media.ImageSource"></see> property to the <see cref="T:System.CodeDom.CodeTypeReference"></see> markup extension, which takes an icon identifier class (nested in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons"></see> class) as a parameter.</para>
+            	<para>Example:</para>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesAspThemedIcons+Trinity}" /&gt;</code>
+            	<h1>Attributes</h1>
+            	<para>Sometimes you have to reference an icon from a type attriute when you're defining objects in code. Typical examples are Options pages and Tool Windows.</para>
+            	<para>To avoid the use of string IDs which are not validated very well, we've emitted identifier classes to be used with <c>typeof()</c> expression, one per each icon. Use the attribute overload which takes a <see cref="T:System.Type"></see> for an image, and choose your icon class from nested classes in the <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons"></see> class.</para>
+            	<para>Example:</para>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesAspThemedIcons.Trinity))]</code>
+            	<h1>CodeBehind</h1>
+            	<para>In codebehind, we have two distinct tasks: (a) specify some icon in the APIs and (b) render icon images onscreen.</para>
+            	<para>On the APIs stage you should only manipulate icon identifier objects (of type <see cref="T:JetBrains.UI.Icons.IconId"></see>, statically defined in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons"></see> in <c>Id</c> fields). Icon identifier classes (nested in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons"></see>) should be turned into icon identifier objects as early as possible. Rendering is about getting an <see cref="T:System.Windows.Media.ImageSource"></see> to assign to WPF, or <see cref="T:System.Drawing.Bitmap"></see> to use with GDI+ / Windows Forms.</para>
+            	<para>You should turn an identifier object into a rendered image as late as possible. The identifier is static and lightweight and does not depend on the current theme, while the image is themed and has to be loaded or generated/rasterized. You need an <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> instance to get the image out of an icon identifier object. Once you got the image, you should take care to change it with theme changes — either by using a live image property, or by listening to the theme change event. See <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> and its extensions for the related facilities.</para>
+            	<para>Example:</para>
+            	<code>// Getting IconId identifier object to use with APIs
+            IconId iconid = ServicesAspThemedIcons.Trinity.Id;</code>
+            	<code>// Getting IconId out of an Icon Identifier Class type
+            IconId iconid = new JetBrains.Application.Icons.CompiledIconsCs.CompiledIconCsId(typeof(ServicesAspThemedIcons.Trinity));</code>
+            	<code>// Getting image for screen rendering by IconId
+            themediconmanager.Icons[icnoid]</code>
+            	<code>// Getting image for screen rendering by Icon Identifier Class
+            themediconmanager.GetIcon&lt;ServicesAspThemedIcons.Trinity&gt;()</code>
+            	<h1>Icons Origin</h1>
+            	<para>This code was generated by a pre-compile build task from a set of input files which are XAML files adhering to a certain convention, as convenient for exporting them from the Illustrator workspace, plus separate PNG files with raster icons. In the projects, these files are designated with <c>ThemedIconsXamlV3</c> and <c>ThemedIconPng</c> build actions and do not themselves get into the output assembly. All of such files are processed, vector images for different themes of the same icon are split and combined into the single list of icons in this assembly. This list is then written into the genearted XAML file (compiled into BAML within assembly), and serves as the source for this generated code.</para>
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCode">
+             <summary>
+            	<para>
+            		<para>AspCode Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCode"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCode.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                      `rbGGGGGGGGGGGG        
+                    `rbo,  GGo,    GG`       
+                  .?PAAAA  AA  AA  AAP?.     
+                .c63"AAAA  AA  AA  AA"36c.   
+              .)wo^``GGGG  GG    -lGG``^ow). 
+             THa~``_tGGGGGGGGGGGGGGGGt_``~aHT
+             3R],..=VGGGGGGGGGGGGGGGGV=..,]R3
+              _oDI"--GGe^````GGe^``GG--"IDo_ 
+                :58o~HH``HH``HHHH``HH~o85:   
+                  ,VWdd``dd``dddd``ddWV,     
+                    ,bb````_lbbbb``bb,       
+                     bbbbbbbbbbbbbbbb        
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesAspThemedIcons+AspCode}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesAspThemedIcons.AspCode))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesAspThemedIcons.AspCode.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesAspThemedIcons.AspCode&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCode.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCode">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCode.Load_Color">
+            <summary>Loads the image for Themed Icon AspCode theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCode.Load_Gray">
+            <summary>Loads the image for Themed Icon AspCode theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCode.Load_GrayDark">
+            <summary>Loads the image for Themed Icon AspCode theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCode.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon AspCode.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeDataBinding">
+             <summary>
+            	<para>
+            		<para>AspCodeDataBinding Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeDataBinding"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeDataBinding.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                      `rbGGGGGGGGGGGG        
+                    `rbo,  GGo,    GG`       
+                  .?PAAAA  AA  AA  AAP?.     
+                .c63"AAAA  AA  AA  AA"36c.   
+              .)wo^``GGGG  GG    -lGG``^ow). 
+             kkkkkkkkkkkkkkkkkkGGGGGGt_``~aHT
+             hh              hhGGGGGGV=..,]R3
+             66`````,PT`,PT``66e^``GG--"IDo_ 
+             bb``wwwwwwwwww``bbHH``HH~o85:   
+             GG```.Vw-.Vw-```GGdd``ddWV,     
+             RR``DDDDDDDDDD``RRbb``bb,       
+             DD..L8).L8).....DDbbbbbb        
+             88..............88              
+             %%%%%%%%%%%%%%%%%%              
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesAspThemedIcons+AspCodeDataBinding}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesAspThemedIcons.AspCodeDataBinding))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesAspThemedIcons.AspCodeDataBinding.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesAspThemedIcons.AspCodeDataBinding&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeDataBinding.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeDataBinding">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeDataBinding.Load_Color">
+            <summary>Loads the image for Themed Icon AspCodeDataBinding theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeDataBinding.Load_Gray">
+            <summary>Loads the image for Themed Icon AspCodeDataBinding theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeDataBinding.Load_GrayDark">
+            <summary>Loads the image for Themed Icon AspCodeDataBinding theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeDataBinding.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon AspCodeDataBinding.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeExpression">
+             <summary>
+            	<para>
+            		<para>AspCodeExpression Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeExpression"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeExpression.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                      `?bAAAAAAAAAAAA        
+                    `?de"  OOe"    OO`       
+                  .LhOOOO  OO  OO  OOhL.     
+                .c6u^OOOO  OO  OO  OO^u6c.   
+              .)bj~``AAAA``AA````-tAA``~jb). 
+             KKKKKKKKKKKKKKKKKKAAAAAA{,..=yGT
+             XX      PP      XXAAAAAAk=''"1Ru
+             ww  !3666666u+  wwa~``GG--^3Do_ 
+             pp  bb  n,      ppGG``GG~28a:   
+             OO  TOOOOOOOVr  OOHH``HHMV,     
+             RR      -t  RR  RRpp``pp,       
+             DD  J88888888F  DDdddddd        
+             88      %%      88              
+             WWWWWWWWWWWWWWWWWW              
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesAspThemedIcons+AspCodeExpression}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesAspThemedIcons.AspCodeExpression))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesAspThemedIcons.AspCodeExpression.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesAspThemedIcons.AspCodeExpression&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeExpression.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeExpression">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeExpression.Load_Color">
+            <summary>Loads the image for Themed Icon AspCodeExpression theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeExpression.Load_Gray">
+            <summary>Loads the image for Themed Icon AspCodeExpression theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeExpression.Load_GrayDark">
+            <summary>Loads the image for Themed Icon AspCodeExpression theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeExpression.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon AspCodeExpression.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeHtmlEncodedDataBinding">
+             <summary>
+            	<para>
+            		<para>AspCodeHtmlEncodedDataBinding Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeHtmlEncodedDataBinding"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeHtmlEncodedDataBinding.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                      `rbGGGGGGGGGGGG        
+                    `rbo,  GGo,    GG`       
+                  .?PAAAA  AA  AA  AAP?.     
+                .c63"AAAA  AA  AA  AA"36c.   
+              .)wo^``GGGG  GG    -lGG``^ow). 
+             kkkkkkkkkkkkkkkkkkGGGGGGt_``~aHT
+             hh              hhGGGGGGV=..,]R3
+             66`````,PT`,PT``66e^``GG--"IDo_ 
+             bb``wwwwwwwwww``bbHH``HH~o85:   
+             GG```.Vw-.Vw-```GGdd``ddWV,     
+             RR``DDDDDDDDDD``RRbb``bb,       
+             DD..L8).L8).....DDbbbbbb        
+             88..............88              
+             %%%%%%%%%%%%%%%%%%              
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesAspThemedIcons+AspCodeHtmlEncodedDataBinding}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesAspThemedIcons.AspCodeHtmlEncodedDataBinding))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesAspThemedIcons.AspCodeHtmlEncodedDataBinding.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesAspThemedIcons.AspCodeHtmlEncodedDataBinding&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeHtmlEncodedDataBinding.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeHtmlEncodedDataBinding">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeHtmlEncodedDataBinding.Load_Color">
+            <summary>Loads the image for Themed Icon AspCodeHtmlEncodedDataBinding theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeHtmlEncodedDataBinding.Load_Gray">
+            <summary>Loads the image for Themed Icon AspCodeHtmlEncodedDataBinding theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeHtmlEncodedDataBinding.Load_GrayDark">
+            <summary>Loads the image for Themed Icon AspCodeHtmlEncodedDataBinding theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeHtmlEncodedDataBinding.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon AspCodeHtmlEncodedDataBinding.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeHtmlEncoding">
+             <summary>
+            	<para>
+            		<para>AspCodeHtmlEncoding Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeHtmlEncoding"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeHtmlEncoding.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                      `rbGGGGGGGGGGGG        
+                    `rbo,  GGo,    GG`       
+                  .?PAAAA  AA  AA  AAP?.     
+                .c63"AAAA  AA  AA  AA"36c.   
+              .)wo^``GGGG  GG    -lGG``^ow). 
+             kkkkkkkkkkkkkkkkkkGGGGGGt_``~aHT
+             hh              hhGGGGGGV=..,]R3
+             66````PPPP``````66e^``GG--"IDo_ 
+             bb````wwww``````bbHH``HH~o85:   
+             GG``````````````GGdd``ddWV,     
+             RR....DDDD......RRbb``bb,       
+             DD''''8888''''''DDbbbbbb        
+             88--------------88              
+             %%%%%%%%%%%%%%%%%%              
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesAspThemedIcons+AspCodeHtmlEncoding}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesAspThemedIcons.AspCodeHtmlEncoding))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesAspThemedIcons.AspCodeHtmlEncoding.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesAspThemedIcons.AspCodeHtmlEncoding&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeHtmlEncoding.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeHtmlEncoding">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeHtmlEncoding.Load_Color">
+            <summary>Loads the image for Themed Icon AspCodeHtmlEncoding theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeHtmlEncoding.Load_Gray">
+            <summary>Loads the image for Themed Icon AspCodeHtmlEncoding theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeHtmlEncoding.Load_GrayDark">
+            <summary>Loads the image for Themed Icon AspCodeHtmlEncoding theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeHtmlEncoding.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon AspCodeHtmlEncoding.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeRegular">
+             <summary>
+            	<para>
+            		<para>AspCodeRegular Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeRegular"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeRegular.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                      `?dOOOOOOOOOOOO        
+                    `?d5"  OO5"    OO`       
+                  .LUOOOO  OO  OO  OOUL.     
+                .c4u^OOOO``OO``OO``OO^u4c.   
+              .(b2~``OOOO``OO````-tOO``~2b(. 
+             EEEEEEEEEEEEEEEEEEAAAAAAY,..=yGT
+             XX              XXAAAAAAk;--"1Ru
+             ww              wwa~``AA--^uDo_ 
+             dd  XXXXXXXXXX  ddGG``GG~e8a:   
+             OO              OOHH``HHMV,     
+             RR  8888888888  RRHH``HH,       
+             DD              DDpppppp        
+             88              88              
+             WWWWWWWWWWWWWWWWWW              
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesAspThemedIcons+AspCodeRegular}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesAspThemedIcons.AspCodeRegular))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesAspThemedIcons.AspCodeRegular.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesAspThemedIcons.AspCodeRegular&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeRegular.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeRegular">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeRegular.Load_Color">
+            <summary>Loads the image for Themed Icon AspCodeRegular theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeRegular.Load_Gray">
+            <summary>Loads the image for Themed Icon AspCodeRegular theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeRegular.Load_GrayDark">
+            <summary>Loads the image for Themed Icon AspCodeRegular theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.AspCodeRegular.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon AspCodeRegular.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.ScopeAsp">
+             <summary>
+            	<para>
+            		<para>ScopeAsp Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.ScopeAsp"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.ScopeAsp.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                     -/lI7?!_ -{11t/,`       
+                   `Tx=.```~F7CF.`"31,       
+                  `tu_ "T7= .u1- `iIIUL.     
+                `+6oj- ;I3+ `3- `l2_`"36c.   
+              `r9o^-f1^`  `,l- `la4l_``^ob). 
+             rb5~``_}6EVyyyo- `towGGGt_``~5d|
+             l#{,..=y###A[5- `FVVkPXby=..,{#I
+              -}Rx"..=kRPa_``}/-..-;a1_"xRu_ 
+                -FDI"-_XS_`.1"`~FC!`-KkDo_   
+                  -18o5k_`.IX_`*VkL`'XZ:     
+                    :Z6;`.uUaV=.```~aV-      
+                    -!t6ww6" ^l56w9o=`       
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesAspThemedIcons+ScopeAsp}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesAspThemedIcons.ScopeAsp))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesAspThemedIcons.ScopeAsp.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesAspThemedIcons.ScopeAsp&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.ScopeAsp.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.ScopeAsp">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.ScopeAsp.Load_Color">
+            <summary>Loads the image for Themed Icon ScopeAsp theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.ScopeAsp.Load_Gray">
+            <summary>Loads the image for Themed Icon ScopeAsp theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.ScopeAsp.Load_GrayDark">
+            <summary>Loads the image for Themed Icon ScopeAsp theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Asp.ServicesAspThemedIcons.ScopeAsp.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon ScopeAsp.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.RazorCSharp.ServicesRazorCSharpThemedIcons">
+             <summary>
+            	<para>
+            		<para>Autogenerated identifier classes and identifier objects to Themed Icons registered with <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see>.</para>
+            		<para>Identifier classes should be used in attributes, XAML, or generic parameters. Where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected, use the identifier object in the <c>Id</c> field of the identifier class.</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>This code was compile-time generated to support Themed Icons in the JetBrains application.</para>
+            	<para>It has two primary goals: load the icons of this assembly to be registered with <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> so that they were WPF-accessible and theme-sensitive; and emit early-bound accessors for referencing icons in codebehind in a compile-time-validated manner.</para>
+            	<h1>XAML</h1>
+            	<para>For performance reasons, the icons are not individually exposed with application resources. There is a custom markup extension to bind an image source in markup.</para>
+            	<para>To use an icon from XAML, set an <see cref="T:System.Windows.Media.ImageSource"></see> property to the <see cref="T:System.CodeDom.CodeTypeReference"></see> markup extension, which takes an icon identifier class (nested in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.RazorCSharp.ServicesRazorCSharpThemedIcons"></see> class) as a parameter.</para>
+            	<para>Example:</para>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesRazorCSharpThemedIcons+Trinity}" /&gt;</code>
+            	<h1>Attributes</h1>
+            	<para>Sometimes you have to reference an icon from a type attriute when you're defining objects in code. Typical examples are Options pages and Tool Windows.</para>
+            	<para>To avoid the use of string IDs which are not validated very well, we've emitted identifier classes to be used with <c>typeof()</c> expression, one per each icon. Use the attribute overload which takes a <see cref="T:System.Type"></see> for an image, and choose your icon class from nested classes in the <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.RazorCSharp.ServicesRazorCSharpThemedIcons"></see> class.</para>
+            	<para>Example:</para>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesRazorCSharpThemedIcons.Trinity))]</code>
+            	<h1>CodeBehind</h1>
+            	<para>In codebehind, we have two distinct tasks: (a) specify some icon in the APIs and (b) render icon images onscreen.</para>
+            	<para>On the APIs stage you should only manipulate icon identifier objects (of type <see cref="T:JetBrains.UI.Icons.IconId"></see>, statically defined in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.RazorCSharp.ServicesRazorCSharpThemedIcons"></see> in <c>Id</c> fields). Icon identifier classes (nested in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.RazorCSharp.ServicesRazorCSharpThemedIcons"></see>) should be turned into icon identifier objects as early as possible. Rendering is about getting an <see cref="T:System.Windows.Media.ImageSource"></see> to assign to WPF, or <see cref="T:System.Drawing.Bitmap"></see> to use with GDI+ / Windows Forms.</para>
+            	<para>You should turn an identifier object into a rendered image as late as possible. The identifier is static and lightweight and does not depend on the current theme, while the image is themed and has to be loaded or generated/rasterized. You need an <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> instance to get the image out of an icon identifier object. Once you got the image, you should take care to change it with theme changes — either by using a live image property, or by listening to the theme change event. See <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> and its extensions for the related facilities.</para>
+            	<para>Example:</para>
+            	<code>// Getting IconId identifier object to use with APIs
+            IconId iconid = ServicesRazorCSharpThemedIcons.Trinity.Id;</code>
+            	<code>// Getting IconId out of an Icon Identifier Class type
+            IconId iconid = new JetBrains.Application.Icons.CompiledIconsCs.CompiledIconCsId(typeof(ServicesRazorCSharpThemedIcons.Trinity));</code>
+            	<code>// Getting image for screen rendering by IconId
+            themediconmanager.Icons[icnoid]</code>
+            	<code>// Getting image for screen rendering by Icon Identifier Class
+            themediconmanager.GetIcon&lt;ServicesRazorCSharpThemedIcons.Trinity&gt;()</code>
+            	<h1>Icons Origin</h1>
+            	<para>This code was generated by a pre-compile build task from a set of input files which are XAML files adhering to a certain convention, as convenient for exporting them from the Illustrator workspace, plus separate PNG files with raster icons. In the projects, these files are designated with <c>ThemedIconsXamlV3</c> and <c>ThemedIconPng</c> build actions and do not themselves get into the output assembly. All of such files are processed, vector images for different themes of the same icon are split and combined into the single list of icons in this assembly. This list is then written into the genearted XAML file (compiled into BAML within assembly), and serves as the source for this generated code.</para>
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.RazorCSharp.ServicesRazorCSharpThemedIcons.ScopeRazorCS">
+             <summary>
+            	<para>
+            		<para>ScopeRazorCS Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.RazorCSharp.ServicesRazorCSharpThemedIcons.ScopeRazorCS"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.RazorCSharp.ServicesRazorCSharpThemedIcons.ScopeRazorCS.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                      `!|1V688D6a1)"         
+                   `!S$AT!~:...:^;t80u!      
+                  c$OL. -rFSbDXS1r. -L%8+    
+                `GM+  +H$$$$$$$$$$$#~ `u$u   
+               `ON, `k$$$Gr^__=b. T$$l  u$c  
+               TBT``VBBN;`-LVRV-``yBBB-`-BD  
+               6M_`.%MML``mMMMMs``DMMMr``M8  
+               H%-`:%%%_`_%%%%%=`'%%%%"`"%a  
+               u8=``G88r``1D8k/```G8Dr`-Z8"  
+               _84'`^#8Dt-`.'`~u.``-`'+dR:   
+                /DE_._VDDDGkwHDDR6khHp1!`    
+                 ^wRT".-+5kbODDbwj7DD        
+                   ~{#bl*="_''''_~*DD        
+                      ~T1jUHRRRRHVt?~        
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesRazorCSharpThemedIcons+ScopeRazorCS}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesRazorCSharpThemedIcons.ScopeRazorCS))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesRazorCSharpThemedIcons.ScopeRazorCS.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesRazorCSharpThemedIcons.ScopeRazorCS&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.RazorCSharp.ServicesRazorCSharpThemedIcons.ScopeRazorCS.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.RazorCSharp.ServicesRazorCSharpThemedIcons.ScopeRazorCS">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.RazorCSharp.ServicesRazorCSharpThemedIcons.ScopeRazorCS.Load_Color">
+            <summary>Loads the image for Themed Icon ScopeRazorCS theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.RazorCSharp.ServicesRazorCSharpThemedIcons.ScopeRazorCS.Load_Gray">
+            <summary>Loads the image for Themed Icon ScopeRazorCS theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.RazorCSharp.ServicesRazorCSharpThemedIcons.ScopeRazorCS.Load_GrayDark">
+            <summary>Loads the image for Themed Icon ScopeRazorCS theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.RazorCSharp.ServicesRazorCSharpThemedIcons.ScopeRazorCS.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon ScopeRazorCS.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons">
+             <summary>
+            	<para>
+            		<para>Autogenerated identifier classes and identifier objects to Themed Icons registered with <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see>.</para>
+            		<para>Identifier classes should be used in attributes, XAML, or generic parameters. Where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected, use the identifier object in the <c>Id</c> field of the identifier class.</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>This code was compile-time generated to support Themed Icons in the JetBrains application.</para>
+            	<para>It has two primary goals: load the icons of this assembly to be registered with <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> so that they were WPF-accessible and theme-sensitive; and emit early-bound accessors for referencing icons in codebehind in a compile-time-validated manner.</para>
+            	<h1>XAML</h1>
+            	<para>For performance reasons, the icons are not individually exposed with application resources. There is a custom markup extension to bind an image source in markup.</para>
+            	<para>To use an icon from XAML, set an <see cref="T:System.Windows.Media.ImageSource"></see> property to the <see cref="T:System.CodeDom.CodeTypeReference"></see> markup extension, which takes an icon identifier class (nested in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons"></see> class) as a parameter.</para>
+            	<para>Example:</para>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesRazorThemedIcons+Trinity}" /&gt;</code>
+            	<h1>Attributes</h1>
+            	<para>Sometimes you have to reference an icon from a type attriute when you're defining objects in code. Typical examples are Options pages and Tool Windows.</para>
+            	<para>To avoid the use of string IDs which are not validated very well, we've emitted identifier classes to be used with <c>typeof()</c> expression, one per each icon. Use the attribute overload which takes a <see cref="T:System.Type"></see> for an image, and choose your icon class from nested classes in the <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons"></see> class.</para>
+            	<para>Example:</para>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesRazorThemedIcons.Trinity))]</code>
+            	<h1>CodeBehind</h1>
+            	<para>In codebehind, we have two distinct tasks: (a) specify some icon in the APIs and (b) render icon images onscreen.</para>
+            	<para>On the APIs stage you should only manipulate icon identifier objects (of type <see cref="T:JetBrains.UI.Icons.IconId"></see>, statically defined in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons"></see> in <c>Id</c> fields). Icon identifier classes (nested in <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons"></see>) should be turned into icon identifier objects as early as possible. Rendering is about getting an <see cref="T:System.Windows.Media.ImageSource"></see> to assign to WPF, or <see cref="T:System.Drawing.Bitmap"></see> to use with GDI+ / Windows Forms.</para>
+            	<para>You should turn an identifier object into a rendered image as late as possible. The identifier is static and lightweight and does not depend on the current theme, while the image is themed and has to be loaded or generated/rasterized. You need an <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> instance to get the image out of an icon identifier object. Once you got the image, you should take care to change it with theme changes — either by using a live image property, or by listening to the theme change event. See <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> and its extensions for the related facilities.</para>
+            	<para>Example:</para>
+            	<code>// Getting IconId identifier object to use with APIs
+            IconId iconid = ServicesRazorThemedIcons.Trinity.Id;</code>
+            	<code>// Getting IconId out of an Icon Identifier Class type
+            IconId iconid = new JetBrains.Application.Icons.CompiledIconsCs.CompiledIconCsId(typeof(ServicesRazorThemedIcons.Trinity));</code>
+            	<code>// Getting image for screen rendering by IconId
+            themediconmanager.Icons[icnoid]</code>
+            	<code>// Getting image for screen rendering by Icon Identifier Class
+            themediconmanager.GetIcon&lt;ServicesRazorThemedIcons.Trinity&gt;()</code>
+            	<h1>Icons Origin</h1>
+            	<para>This code was generated by a pre-compile build task from a set of input files which are XAML files adhering to a certain convention, as convenient for exporting them from the Illustrator workspace, plus separate PNG files with raster icons. In the projects, these files are designated with <c>ThemedIconsXamlV3</c> and <c>ThemedIconPng</c> build actions and do not themselves get into the output assembly. All of such files are processed, vector images for different themes of the same icon are split and combined into the single list of icons in this assembly. This list is then written into the genearted XAML file (compiled into BAML within assembly), and serves as the source for this generated code.</para>
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorBaseType">
+             <summary>
+            	<para>
+            		<para>RazorBaseType Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorBaseType"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorBaseType.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                         LLLLLLLLLLLLLLLLLLLL
+                         77----------------77
+                         CC^^^^^^^^^^^^^^^^CC
+                         eeeeeeeeeeeeeeeeeeee
+                               33____33      
+                         uuT!_ uu,,,,uu _!Tuu
+                         oo;L]ooo""""ooo]L;oo
+                ')Vb8gg8bMD+~~!(1~~~~1(!~~~ee
+              'w$Z!_.  ._=a$%L===========/laa
+             ,WR_1M$$$$$$ME-H$1;;;;;;;;*tyyl_
+             aB~`BBb/_``^BB`_BMF+!!!!+FVVl_  
+             MM``MM_`MM``Dt`-M%kk1rr1kk}_    
+             U8,`88V~-````./#R~:}EEEE}:      
+             /8[.k88888888888`   ,FF,        
+              cDV=-''''''''DD                
+               -|VGRRRRRRRRRR                
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesRazorThemedIcons+RazorBaseType}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesRazorThemedIcons.RazorBaseType))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesRazorThemedIcons.RazorBaseType.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesRazorThemedIcons.RazorBaseType&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorBaseType.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorBaseType">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorBaseType.Load_Color">
+            <summary>Loads the image for Themed Icon RazorBaseType theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorBaseType.Load_Gray">
+            <summary>Loads the image for Themed Icon RazorBaseType theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorBaseType.Load_GrayDark">
+            <summary>Loads the image for Themed Icon RazorBaseType theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorBaseType.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon RazorBaseType.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorCodeBlock">
+             <summary>
+            	<para>
+            		<para>RazorCodeBlock Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorCodeBlock"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorCodeBlock.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                     XXXXXXXXXXXXXXXXXXXXXXXX
+                     66`..''----___:,,""^~~66
+                     ww`..''----___:,,""^~~ww
+                     bbbbbbbbbbbbbbbbbbbbbbbb
+                             dd-___:,,""^~~dd
+                             HH-___:,,""^~~HH
+                         AAAAAAAAAAAAAAAAAAAA
+                ')Vb8gg8bQ$~----___:,,""^~~RR
+              'w$Z!_.  ._=a$D=--___:,,""^~~RR
+             ,WR_1M$$$$$$ME-H$WDDDDDDDDDDDDDD
+             aB~`BBb/_``^BB`_BbDD__:,,""^~~DD
+             MM``MM_`MM``Dt`-M#DD__:,,""^~~DD
+             U8,`88V~-````./#R~88888888888888
+             /8[.k88888888888`               
+              cDV=-''''''''DD                
+               -|VGRRRRRRRRRR                
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesRazorThemedIcons+RazorCodeBlock}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesRazorThemedIcons.RazorCodeBlock))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesRazorThemedIcons.RazorCodeBlock.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesRazorThemedIcons.RazorCodeBlock&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorCodeBlock.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorCodeBlock">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorCodeBlock.Load_Color">
+            <summary>Loads the image for Themed Icon RazorCodeBlock theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorCodeBlock.Load_Gray">
+            <summary>Loads the image for Themed Icon RazorCodeBlock theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorCodeBlock.Load_GrayDark">
+            <summary>Loads the image for Themed Icon RazorCodeBlock theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorCodeBlock.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon RazorCodeBlock.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorImplicitExpression">
+             <summary>
+            	<para>
+            		<para>RazorImplicitExpression Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorImplicitExpression"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorImplicitExpression.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                            `?dOOOOOOOOOOOO  
+                           ?qa"  OOa"    OO  
+                           ####  ##  ##  ##  
+                           ####``##``##``##  
+                           OOOO``OO````_}OO  
+                           OOOOOOOOOOOOOOOO  
+                           OOOOOOOOOOOOOOOO  
+                ')Vb8gg8bVTDAa~````AAa~``AA  
+              'w$Z!_.  ._=a$Q"`GG``GGGG``GG  
+             ,WR_1M$$$$$$ME-H$!GG``GGGG``GG  
+             aB~`BBb/_``^BB`_B#``,}HHHH``HH  
+             MM``MM_`MM``Dt`-M$HHHHHHHHHHHH  
+             U8,`88V~-````./#R~              
+             /8[.k88888888888`               
+              cDV=-''''''''DD                
+               -|VGRRRRRRRRRR                
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesRazorThemedIcons+RazorImplicitExpression}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesRazorThemedIcons.RazorImplicitExpression))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesRazorThemedIcons.RazorImplicitExpression.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesRazorThemedIcons.RazorImplicitExpression&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorImplicitExpression.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorImplicitExpression">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorImplicitExpression.Load_Color">
+            <summary>Loads the image for Themed Icon RazorImplicitExpression theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorImplicitExpression.Load_Gray">
+            <summary>Loads the image for Themed Icon RazorImplicitExpression theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorImplicitExpression.Load_GrayDark">
+            <summary>Loads the image for Themed Icon RazorImplicitExpression theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorImplicitExpression.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon RazorImplicitExpression.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorLineMarkup">
+             <summary>
+            	<para>
+            		<para>RazorLineMarkup Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorLineMarkup"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorLineMarkup.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                                             
+             $$BN%88DRAdwUky2oeaSkEhX6wbbHGOm
+             $$========;eUI:-----_}ho"_____Om
+             $$=======;awo:-----_tEo"______Om
+             $$======;Vda:-----_lku"_______Om
+             $$=+jdDMggQDbI=--_lS3"________Om
+             $$Q$Z!_.  ._=a$$XeaSkEhX6wbbHGOm
+             ,WR_1M$$$$$$ME-H$=              
+             aB~`BBb/_``^BB`_Bb              
+             MM``MM_`MM``Dt`-M#              
+             U8,`88V~-````./#R~              
+             /8[.k88888888888`               
+              cDV=-''''''''DD                
+               -|VGRRRRRRRRRR                
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesRazorThemedIcons+RazorLineMarkup}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesRazorThemedIcons.RazorLineMarkup))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesRazorThemedIcons.RazorLineMarkup.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesRazorThemedIcons.RazorLineMarkup&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorLineMarkup.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorLineMarkup">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorLineMarkup.Load_Color">
+            <summary>Loads the image for Themed Icon RazorLineMarkup theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorLineMarkup.Load_Gray">
+            <summary>Loads the image for Themed Icon RazorLineMarkup theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorLineMarkup.Load_GrayDark">
+            <summary>Loads the image for Themed Icon RazorLineMarkup theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorLineMarkup.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon RazorLineMarkup.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorNamespaceImport">
+             <summary>
+            	<para>
+            		<para>RazorNamespaceImport Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorNamespaceImport"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorNamespaceImport.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                  ````       
+                               `_|u``oT,`    
+                              `~ht-``-TX;`   
+                             ``lX_````-Xo``  
+                           ``_TXX``````XXT_``
+                           ..XX..........XX..
+                           `.~IXX......XXI~.`
+                ')Vb8gg8bVT_ .'[X,''''-X5'.  
+              'w$Z!_.  ._=a$R"-/Xi----)Xr-`  
+             ,WR_1M$$$$$$ME-H$*-=IU--X3/-.   
+             aB~`BBb/_``^BB`_Bb`.------.`    
+             MM``MM_`MM``Dt`-M#              
+             U8,`88V~-````./#R~              
+             /8[.k88888888888`               
+              cDV=-''''''''DD                
+               -|VGRRRRRRRRRR                
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesRazorThemedIcons+RazorNamespaceImport}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesRazorThemedIcons.RazorNamespaceImport))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesRazorThemedIcons.RazorNamespaceImport.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesRazorThemedIcons.RazorNamespaceImport&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorNamespaceImport.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorNamespaceImport">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorNamespaceImport.Load_Color">
+            <summary>Loads the image for Themed Icon RazorNamespaceImport theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorNamespaceImport.Load_Gray">
+            <summary>Loads the image for Themed Icon RazorNamespaceImport theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorNamespaceImport.Load_GrayDark">
+            <summary>Loads the image for Themed Icon RazorNamespaceImport theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.RazorNamespaceImport.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon RazorNamespaceImport.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.ScopeRazor">
+             <summary>
+            	<para>
+            		<para>ScopeRazor Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.ScopeRazor"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.ScopeRazor.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                      `!|1V688D6a1)"         
+                   `!S$AT!~:...:^;t80u!      
+                  c$OL. -rFSbDXS1r. -L%8+    
+                `GM+  +H$$$$$$$$$$$#~ `u$u   
+               `ON, `k$$$Gr^__=b. T$$l  u$c  
+               TBT``VBBN;`-LVRV-``yBBB-`-BD  
+               6M_`.%MML``mMMMMs``DMMMr``M8  
+               H%-`:%%%_`_%%%%%=`'%%%%"`"%a  
+               u8=``G88r``1D8k/```G8Dr`-Z8"  
+               _84'`^#8Dt-`.'`~u.``-`'+dR:   
+                /DE_._VDDDGkwHDDR6khHp1!`    
+                 ^wRT".-+5kbODDbwj7DD        
+                   ~{#bl*="_''''_~*DD        
+                      ~T1jUHRRRRHVt?~        
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:ServicesRazorThemedIcons+ScopeRazor}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(ServicesRazorThemedIcons.ScopeRazor))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = ServicesRazorThemedIcons.ScopeRazor.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;ServicesRazorThemedIcons.ScopeRazor&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.ScopeRazor.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.ScopeRazor">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.ScopeRazor.Load_Color">
+            <summary>Loads the image for Themed Icon ScopeRazor theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.ScopeRazor.Load_Gray">
+            <summary>Loads the image for Themed Icon ScopeRazor theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.ScopeRazor.Load_GrayDark">
+            <summary>Loads the image for Themed Icon ScopeRazor theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resources.Razor.ServicesRazorThemedIcons.ScopeRazor.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon ScopeRazor.</summary>
+        </member>
+    </members>
+</doc>

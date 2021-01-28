@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.UnitTestRunner.JavaScript</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ReSharper.UnitTestRunner.JavaScript.Harness.Macros">
+            <summary>
+              Declares placeholders for custom harness templates.
+              Implementation is based on Chutzpah:
+              https://chutzpah.codeplex.com/wikipage?title=customizabletestharness
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestRunner.JavaScript.Harness.Macros.ReferencedCssFiles">
+            <summary>
+              Specifies CSS-files.
+              Replaces with collection of 'link' HTML-tags.
+            </summary>
+            <remarks>Compatible to Chutzpah.</remarks>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestRunner.JavaScript.Harness.Macros.TestFrameworkDependencies">
+            <summary>
+              Specifies test framework JS-files (Jasmine, QUnit etc).
+            </summary>
+            <remarks>Compatible to Chutzpah.</remarks>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestRunner.JavaScript.Harness.Macros.ReferencedJsFiles">
+            <summary>
+              Specifies test file's dependencies.
+              Replaces with 'script' HTML-tags.
+            </summary>
+            <remarks>Compatible to Chutzpah.</remarks>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestRunner.JavaScript.Harness.Macros.ReSharperIntegration">
+            <summary>
+              Specifies JS-scripts to integrate test framework with ReSharper's Test Runner.
+            </summary>
+            <remarks>Compatible to Chutzpah.</remarks>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestRunner.JavaScript.Harness.Macros.TestNames">
+            <summary>
+              Specifies test names.
+              Replaces with "test1", "test2", "test3" etc.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestRunner.JavaScript.Harness.Macros.SolutionDir">
+            <summary>
+              Specifies solution directory as local path without trailing backslash.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestRunner.JavaScript.Harness.Macros.ProjectDir">
+            <summary>
+              Specifies test file's project directory as local path without trailing backslash.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestRunner.JavaScript.Harness.Macros.TestFileDir">
+            <summary>
+              Specifies test file's directory as local path without trailing backslash.
+            </summary>
+            <example>
+              Test file path: c:\Solution\Project1\tests\ComponentTests.js
+              @@TestFileDir@@: c:\Solution\Project1\tests
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestRunner.JavaScript.Harness.Macros.TestFileProjectDir">
+            <summary>
+              Specifies test file's relative path starting with project directory without trailing backslash.
+              Path starts with '/' which represents project-based path.
+            </summary>
+            <example>
+              Test file path: c:\Solution\Project1\tests\ComponentTests.js
+              @@TestFileProjectDir@@: /tests
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestRunner.JavaScript.Harness.Macros.TestFileSolutionDir">
+            <summary>
+              Specifies test file's relative path starting with solution directory without trailing backslash.
+              Path starts with '~/' which represents solution-based path.
+            </summary>
+            <example>
+              Test file path: c:\Solution\Project1\tests\ComponentTests.js
+              @@TestFileSolutionDir@@: ~/Project1/tests
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestRunner.JavaScript.Harness.Macros.TestFileFullName">
+            <summary>
+              Specifies test file's full path.
+            </summary>
+            <example>
+              Test file path: c:\Solution\Project1\tests\ComponentTests.js
+              @@TestFileFullName@@: c:\Solution\Project1\tests\ComponentTests.js
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestRunner.JavaScript.Harness.Macros.TestFileName">
+            <summary>
+              Specifies test file's name.
+            </summary>
+            <example>
+              Test file path: c:\Solution\Project1\tests\ComponentTests.js
+              @@TestFileName@@: ComponentTests.js
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestRunner.JavaScript.Harness.Macros.TestFileNameWithoutExtension">
+            <summary>
+              Specifies test file's name.
+            </summary>
+            <example>
+              Test file path: c:\Solution\Project1\tests\ComponentTests.js
+              @@TestFileNameWithoutExtension@@: ComponentTests
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestRunner.JavaScript.Harness.Macros.ReSharperMessage">
+            <summary>
+              Message to show user ReSharper's error info etc.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestRunner.JavaScript.Html.IHtmlDocument">
+            <summary>
+              Represents parsed HTML-document
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestRunner.JavaScript.Html.IHtmlDocument.Text">
+            <summary>
+              Source text
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestRunner.JavaScript.Html.IHtmlDocument.AllScriptTags">
+            <summary>
+              Returns all 'script' tags found in document
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestRunner.JavaScript.Html.IHtmlDocument.AllLinkTags">
+            <summary>
+              Returns all 'link' tags found in document
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestRunner.JavaScript.Html.ISimpleHtmlParser">
+            <summary>
+              Represent simple HTML-parser.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestRunner.JavaScript.Html.ISimpleHtmlParser.Parse(System.String)">
+            <summary>
+              Parses input HTML-code.
+            </summary>
+            <param name="text">Input HTML-code</param>
+            <returns>HTML-document</returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestRunner.JavaScript.Html.LinkTag">
+            <summary>
+              Represents 'link' HTML-tag
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestRunner.JavaScript.Html.LinkTag.Relationship">
+            <summary>
+              Returns 'rel' attribute value
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestRunner.JavaScript.Html.LinkTag.LinkType">
+            <summary>
+              Returns 'type' attribute value
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestRunner.JavaScript.Html.LinkTag.LinkRef">
+            <summary>
+              Returns 'href' attribute value
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestRunner.JavaScript.Html.ScriptTag">
+            <summary>
+              Represents 'script' HTML-tag
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestRunner.JavaScript.Html.ScriptTag.LanguageType">
+            <summary>
+              Returns 'type' attribute value
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestRunner.JavaScript.Html.ScriptTag.SourceRef">
+            <summary>
+              Returns 'src' attribute value
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestRunner.JavaScript.Html.SimpleHtmlParser">
+            <inheritdoc />
+            <summary>
+              Implements HTML-parser for parsing 'script' and 'link' tags with attributes.
+              This implementation is for JavaScript test-harness support only.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestRunner.JavaScript.Html.SimpleHtmlParser.#ctor(JetBrains.ReSharper.UnitTestRunner.JavaScript.Logger.ILogger)">
+            <summary>
+              Constructs SimpleHtmlParser
+            </summary>
+            <param name="logger">Logger</param>
+            <exception cref="T:System.ArgumentNullException">if the logger is null</exception>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestRunner.JavaScript.Html.SimpleHtmlParser.Parse(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestRunner.JavaScript.Html.TagParser`1">
+            <summary>
+              Parses opening and closed start tags only. It's enough to get attribute values.
+              <example>
+                // Opening start tag
+                &lt;link rel='stylesheet' type='text/css' href='jasmine_2._0.jasmine.css'&gt;
+                // Closed start tag
+                &lt;link rel='stylesheet' type='text/css' href='jasmine_2._0.jasmine.css' /&gt;
+              </example>
+              Parser ignores attributes without values:
+              <example>
+                // Ignores attribute 'defer'
+                &lt;script defer src="file:///D:\tests\tests.js"&gt;&lt;/script&gt;
+              </example>
+            </summary>
+            <typeparam name="T">Tag implementation type</typeparam>
+        </member>
+    </members>
+</doc>

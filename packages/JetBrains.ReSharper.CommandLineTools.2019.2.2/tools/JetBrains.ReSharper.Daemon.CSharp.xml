@@ -1,0 +1,327 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Daemon.CSharp</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ReSharper.Daemon.CSharp.CallGraph.CallGraphAnalyzerBase">
+            <summary>
+            Analyzer is responsible for creating root marks in call graph. After that, SWA will take
+            `Propagator` and propagate this marks in call graph.
+            The base solution to implement your own analyzer is inherit it from CallGraphAnalyzerBase
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Daemon.CSharp.CallGraph.CallGraphAnalyzerBase.Enabled">
+            <summary>
+            Is current analyzer enabled for current solution
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Daemon.CSharp.CallGraph.CallGraphAnalyzerBase.Propagator">
+            <summary>
+            Get propagator which will be responsible for propagation mark in call graph
+            </summary>
+            <returns>Propagator for mark</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.CallGraph.CallGraphAnalyzerBase.GetMarkedFunctionsFrom(JetBrains.ReSharper.Psi.Tree.ITreeNode,JetBrains.ReSharper.Psi.IDeclaredElement)">
+            <summary>
+            This function is called for each node inside function.
+            </summary>
+            <param name="currentNode">Node inside <paramref name="containingFunction"/></param>
+            <param name="containingFunction">Function which contains <paramref name="currentNode"/></param>
+            <returns>Return list of marked functions from current node</returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Daemon.CSharp.CallGraph.CallGraphInfoIndex">
+            <summary>
+            Represents call graph for entire solution
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Daemon.CSharp.CallGraph.ICallGraphImplicitEdgeProvider">
+            <summary>
+            Creates implicit edge in call graph, e.g :
+            UnityEngine has Invoke(string) method, which Invokes method by name. Implementation of this class could be used
+            to create implicit edge from caller to implicitly invoked function
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.CallGraph.ICallGraphImplicitEdgeProvider.ResolveImplicitlyInvokedDeclaredElements(JetBrains.ReSharper.Psi.Tree.ITreeNode)">
+            <summary>
+            This method is used to create implicit edge in call graph.
+            </summary>
+            <param name="treeNode"></param>
+            <returns>Returns possible callee functions from <paramref name="treeNode"/></returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Daemon.CSharp.CallGraph.ICallGraphPropagator">
+            <summary>
+            ICallGraphPropagator is responsible for propagation root marks in call graph. Root marks in call graph are created by ICallGraphAnalyzer
+            For each call graph modification corresponding method will be called. Note : it is possible that edge could be added before any vertex from edge was added
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.CallGraph.ICallGraphPropagator.AddVertex(JetBrains.Util.Collections.CountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.OneToCompactCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId,JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.OneToCompactCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId,JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.IReadonlyCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.ReSharper.Daemon.UsageChecking.ElementId)">
+            <summary>
+            This method is called when new vertex is added to graph. Implementation should be O(max(size(old), size(new)),
+            where old/new - count of elements in call graph for current file.
+            </summary>
+            <param name="vertices">Vertices after graph modification</param>
+            <param name="edgesAfterModification">Edges after graph modification</param>
+            <param name="invertedEdgesAfterModification">Inverted edges after graph modification</param>
+            <param name="marksAfterModification">Vertices' marks after graph modification</param>
+            <param name="vertex">Vertex which was added to graph</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.CallGraph.ICallGraphPropagator.AddEdge(JetBrains.Util.Collections.CountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.OneToCompactCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId,JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.OneToCompactCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId,JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.IReadonlyCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.ReSharper.Daemon.UsageChecking.ElementId,JetBrains.ReSharper.Daemon.UsageChecking.ElementId)">
+            <summary>
+            This method is called when new edge is added to graph. Implementation should be O(max(size(old), size(new))
+            </summary>
+            <param name="vertices">Vertices after graph modification</param>
+            <param name="edgesAfterModification">Edges after graph modification</param>
+            <param name="invertedEdgesAfterModification">Inverted edges after graph modification</param>
+            <param name="marksAfterModification">Vertices' marks after graph modification</param>
+            <param name="startVertex">Start vertex of new edge</param>
+            <param name="endVertex">End vertex of new edge</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.CallGraph.ICallGraphPropagator.RemoveEdge(JetBrains.Util.Collections.CountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.OneToCompactCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId,JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.OneToCompactCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId,JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.IReadonlyCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.ReSharper.Daemon.UsageChecking.ElementId,JetBrains.ReSharper.Daemon.UsageChecking.ElementId)">
+            <summary>
+            This method is called before edge will be removed from graph. Implementation should be O(max(size(old), size(new))
+            </summary>
+            <param name="vertices">Vertices before graph modification</param>
+            <param name="edgesBeforeModification">Edges before graph modification</param>
+            <param name="invertedEdgesBeforeModification">Inverted edges after graph modification</param>
+            <param name="marksBeforeModification">Vertices' marks after graph modification</param>
+            <param name="startVertex">Start vertex of edge</param>
+            <param name="endVertex">End vertex of edge</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.CallGraph.ICallGraphPropagator.RemoveVertex(JetBrains.Util.Collections.CountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.OneToCompactCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId,JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.OneToCompactCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId,JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.IReadonlyCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.ReSharper.Daemon.UsageChecking.ElementId)">
+            <summary>
+            This method is called before vertex will be removed from graph. Implementation should be O(max(size(old), size(new))
+            </summary>
+            <param name="vertices">Vertices before graph modification</param>
+            <param name="edgesBeforeModification">Edges before graph modification</param>
+            <param name="beforeRemoveInvertedEdges">Inverted edges before graph modification</param>
+            <param name="marksBeforeModification">Vertices' marks before graph modification</param>
+            <param name="vertex">Vertex which will be removed</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.CallGraph.ICallGraphPropagator.MarkVertex(JetBrains.Util.Collections.CountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.OneToCompactCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId,JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.OneToCompactCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId,JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.IReadonlyCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.ReSharper.Daemon.UsageChecking.ElementId)">
+            <summary>
+            This method is called when vertex is marked in graph. Implementation should be O(max(size(old), size(new))
+            </summary>
+            <param name="vertices">Vertices after graph modification</param>
+            <param name="edgesAfterModification">Edges after graph modification</param>
+            <param name="invertedEdgesAfterModification">Inverted edges after graph modification</param>
+            <param name="marksAfterModification">Vertices' marks after graph modification</param>
+            <param name="vertex">Vertex which was marked</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.CallGraph.ICallGraphPropagator.UnmarkVertex(JetBrains.Util.Collections.CountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.OneToCompactCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId,JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.OneToCompactCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId,JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.IReadonlyCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.ReSharper.Daemon.UsageChecking.ElementId)">
+            <summary>
+            This method is called before vertex will be unmarked in graph. Implementation should be O(max(size(old), size(new))
+            </summary>
+            <param name="vertices">Vertices before graph modification</param>
+            <param name="edgesBeforeModification">Edges before graph modification</param>
+            <param name="beforeRemoveInvertedEdges">Inverted edges before graph modification</param>
+            <param name="marksBeforeModification">Vertices' marks before graph modification</param>
+            <param name="vertex">Vertex which will be unmarked</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.CallGraph.ICallGraphPropagator.PropagateIfUnmarked(JetBrains.Util.Collections.CountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.OneToCompactCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId,JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.OneToCompactCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId,JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.Util.Collections.IReadonlyCountingSet{JetBrains.ReSharper.Daemon.UsageChecking.ElementId},JetBrains.ReSharper.Daemon.UsageChecking.ElementId,System.Boolean)">
+            <summary>
+            Return mark of queried vertex. Implementation should be O(1) for local stage and interruptible for global stage
+            </summary>
+            <param name="vertices">Graph's vertices</param>
+            <param name="currentEdges">Call graph edges</param>
+            <param name="currentInvertedEdges">Call graph inverted edges</param>
+            <param name="currentMarks">Call graph marks</param>
+            <param name="vertex">Goal of query</param>
+            <param name="isGlobalStage">Is query from global stage</param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.CallGraph.ICallGraphPropagator.Clear">
+            <summary>
+            Clear internal state
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.myMembers">
+            <summary>
+            Collection of all type members of the class being inspected.
+            Only members of the class part being expected has declarations in the value of the dictionary
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.GetPolymorphicMembers">
+            <summary>
+            Enumerate members which could be overridden in this class.
+            NOTE: call this method only before inspection
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.GetInterfaceMembers">
+            <summary>
+            Enumerate all members from the interfaces of the given class.
+            NOTE: call this method only before inspection
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.IsQuasiImplemented(JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.MemberItem)">
+            <summary>
+            Check if the given member of direct interface is quasi implemented
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.CheckInterfaceMemberNotImplemented(JetBrains.ReSharper.Psi.CSharp.Tree.IMemberOwnerDeclaration)">
+            <summary>
+            Analyze which interface members are implemented by this class.
+            The implementation check should be weak, because accessibility and type mismatch problems
+            will be highlighted elsewhere
+            </summary>
+            <param name="typeDeclarationParam"></param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.ProblemsImplementingInterfaceMember(JetBrains.ReSharper.Psi.IOverridableMember,JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.MemberItem,System.Collections.Generic.List{JetBrains.ReSharper.Feature.Services.Daemon.IHighlighting}@)">
+            <summary>
+            Checks if the given <paramref name="superMember"/> in some interface is implemented by <paramref name="typeMember"/>.
+            </summary>
+            <returns>
+            <c>false</c> if <paramref name="superMember"/> is implemented without fatal problems (from CSC point of view).
+            Returns <c>true</c> if there are any of them. If the given <paramref name="typeMember"/> has declaration,
+            then return list of problems
+            </returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.GetExplicitlyImplementedMembers(JetBrains.ReSharper.Psi.IOverridableMember,JetBrains.ReSharper.Psi.IDeclaredType,System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.MemberItem})">
+            <summary>
+            Get all interface members which could be implemented by the given class member
+            The candidates are categorized into two groups - with match of return type, and candidates when return type didn't match
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.ProblemsInExplicitInterfaceImplementation(JetBrains.ReSharper.Psi.IOverridableMember,JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.MemberItem,System.Collections.Generic.List{JetBrains.ReSharper.Feature.Services.Daemon.IHighlighting}@)">
+            <summary>
+            </summary>
+            <returns><c>true</c> if there are problems</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.ShouldCheckAbstractImplementation">
+            <summary>
+            find out if the implementation of the abstract members should be checked
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.CanHide(JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.MemberItem,JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.MemberItem)">
+            <summary>
+            predicate: inheritor and parent must have same name
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.CanHide(JetBrains.ReSharper.Psi.ITypeMember,JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.MemberItem)">
+            <summary>
+            predicate: inheritor and parent must have same name
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.CanQuasiImplement(JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.MemberItem,JetBrains.ReSharper.Daemon.CSharp.Cipa.ClassInheritanceProblemsAnalyzer.MemberItem)">
+            <summary>
+            predicate: inheritor and parent must have same name
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Stages.Analysis.ObjectCreationExpressionProblemAnalyzer.IsObjectCreationRedundant(JetBrains.ReSharper.Psi.CSharp.Tree.IObjectCreationExpression,JetBrains.ReSharper.Psi.CSharp.Conversions.ICSharpTypeConversionRule)">
+            <summary>
+            In some cases, object creation could be redundant. (For example, delegate creation and nullable type conversion)
+            Check that!
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Stages.Analysis.ArrayCreationProblemAnalyzer.CheckArrayInitializer(JetBrains.ReSharper.Feature.Services.Daemon.ElementProblemAnalyzerData,JetBrains.ReSharper.Feature.Services.Daemon.IHighlightingConsumer,JetBrains.ReSharper.Psi.CSharp.Tree.IArrayInitializer,System.Nullable{System.UInt64}[],JetBrains.ReSharper.Psi.IType)">
+            <summary>
+            Check for arrays in array initializer.
+            </summary>
+            <param name="data"></param>
+            <param name="consumer"></param>
+            <param name="initializer"></param>
+            <param name="size">Sizes of the array. Element == -1 for open array. Array size is the rank ot the array</param>
+            <param name="elementType"></param>
+            <returns>Number of initializer elements in the array (for each dimension)</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Stages.Analysis.SpecifyStringComparisonAnalyzer.Matchers.EnsureCreatedIfAvailable">
+            <summary>
+            Creates matchers on demand if C# language is availble
+            </summary>
+            <returns>True if there is C# language, false otherwise</returns>
+        </member>
+        <member name="F:JetBrains.ReSharper.Daemon.CSharp.Stages.Analysis.StringProblemAnalyzer.UnrecognizedEscapeSequence">
+            <summary>
+            error CS1009: Unrecognized escape sequence
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Daemon.CSharp.Stages.Analysis.StringProblemAnalyzer.UnescapedCurly">
+            <summary>
+            error CS8086: A '}' character must be escaped (by doubling) in an interpolated string
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Daemon.CSharp.Stages.Analysis.StringProblemAnalyzer.EscapedCurly">
+            <summary>
+            error CS8087: A '}' character may only be escaped by doubling '}}' in an interpolated string
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Daemon.CSharp.Stages.Analysis.XmlDocProblemAnalyzer">
+            <summary>
+            This will analyze semantic problems in XML documentation
+            Resolve errors are highlighted in <see cref="T:JetBrains.ReSharper.Daemon.CSharp.Stages.Resolve.ResolveProblemHighlighter"/>
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Stages.AnonymousFunctionExpressionProblemAnalyzer.ShouldHighlightAnonymousMethodConversionProblem(JetBrains.ReSharper.Psi.CSharp.Types.IAnonymousFunctionType,JetBrains.ReSharper.Psi.IType,JetBrains.ReSharper.Psi.CSharp.Conversions.ICSharpTypeConversionRule)">
+            <summary>
+            Highlight errors when anonymous method couldn't be assigned to target type,
+            except for return type mismatch - it will be highlighted
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Daemon.CSharp.Stages.CSharpIncrementalDaemonStageProcessBase">
+            <summary>
+            Base class for daemon stages which can incrementally re-highlight changed function only
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Stages.TypeElementProblemAnalyzer.CheckStaticClassProblems(JetBrains.ReSharper.Psi.CSharp.Tree.IClassDeclaration,JetBrains.ReSharper.Psi.IClass,JetBrains.ReSharper.Feature.Services.Daemon.IHighlightingConsumer)">
+            <summary>
+            According to paragraph 25.2.1 of C# specs
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Stages.VariableDeclarationProblemAnalyzer.CheckFixedPointerInitializer(JetBrains.ReSharper.Psi.CSharp.Tree.IUnsafeCodeFixedPointerDeclaration,JetBrains.ReSharper.Psi.IPointerType,JetBrains.ReSharper.Psi.CSharp.Tree.ICSharpExpression,System.Func{JetBrains.ReSharper.Daemon.CSharp.Stages.VariableDeclarationRanges},JetBrains.ReSharper.Feature.Services.Daemon.ElementProblemAnalyzerData,JetBrains.ReSharper.Feature.Services.Daemon.IHighlightingConsumer)">
+            <summary>
+            C# specs 18.6 - special rules for fixed pointer initializer
+            + improvisation for C# 7.3 (see https://github.com/dotnet/csharplang/blob/master/proposals/csharp-7.3/pattern-based-fixed.md)
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Stages.AttributeAnalyzer.IsValidTargetUsage(System.AttributeTargets,System.AttributeTargets,JetBrains.ReSharper.Psi.Tree.IDeclaration,JetBrains.ReSharper.Psi.CSharp.Tree.IAttribute)">
+            <summary>According to C# specs 17.2</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Stages.ControlFlowProblemAnalyzerBase.IsUsageOfRecursiveLambdaDeclaration(JetBrains.ReSharper.Psi.CSharp.Tree.ICSharpExpression,JetBrains.ReSharper.Daemon.UsageChecking.CollectUsagesStageProcess)">
+            <summary>
+            Detects the case of recursive lambda declaration:
+            <code>Action lambda = null; lambda = () => { lambda(); };</code>
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Stages.LocalVariableScopeAnalyzer.Run(JetBrains.ReSharper.Psi.CSharp.Tree.ILocalVariableDeclaration,JetBrains.ReSharper.Daemon.UsageChecking.CollectUsagesStageProcess,System.Boolean,JetBrains.ReSharper.Feature.Services.Daemon.IHighlightingConsumer)">
+            <summary></summary>
+            <param name="declaration"></param>
+            <param name="ignoreInitializerPresence">
+            This parameter is set to <c>true</c> when control flow analysis checks that
+            constant initializer isn't used at any execution path
+            </param>
+        </member>
+        <member name="T:JetBrains.ReSharper.Daemon.CSharp.Stages.TypeArgumentProblemAnalyzer">
+            <summary>
+            According to C# specs 25.7.1
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Stages.TypeParameterProblemAnalyzer.IsValid(System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Psi.CSharp.Tree.ITypeParameterConstraintsClause})">
+            <summary>
+            Check that constraints clasuses are subject for further analysis, i.e. all parsed properly
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Stages.InconsistentAccessibilityAnalyzer.CheckAccessibilityConsistent(JetBrains.ReSharper.Psi.ITypeElement,JetBrains.ReSharper.Psi.ITypeMember,JetBrains.ReSharper.Daemon.UsageChecking.CollectUsagesStageProcess)">
+            <summary>
+            Compare the accessibility rights and returns <c>false</c>
+            if <paramref name="testType"/> is less accessible then <paramref name="contextMember"/>, 
+            which means that the error should be highlighted according to C# specs 10.5.2
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Daemon.CSharp.Stages.SmartResolverProcess.ScopeResolver.myCheckRedundantQualifiers">
+            <summary>
+            Indicates wether resolve for redundant qualifier check should be done
+            If daemon incrementally rehighlights method body, then only this body should be checked
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Daemon.CSharp.Stages.UnsafeContextCheckingStageProcess.myUnsafeContextCounter">
+            <summary>
+            Current number of 'unsafe' keywords upper in the tree.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CSharp.Stages.UnsafeContextCheckingStageProcess.GetTypeToCheckForUnsafe(JetBrains.ReSharper.Psi.Tree.IExpression,JetBrains.ReSharper.Psi.IDeclaredElement@,JetBrains.ReSharper.Psi.Resolve.ISubstitution@)">
+            <summary>
+            just optimizations, since asking type of every expression is too expensive
+            </summary>
+        </member>
+    </members>
+</doc>

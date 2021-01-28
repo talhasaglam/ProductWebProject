@@ -1,0 +1,3058 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.UnitTestFramework</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Analysis.MethodFieldPropertyFilter">
+            <summary>
+            Filters out all type members that are neither method, field nor property
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.SessionStart">
+            <summary>
+            The session start.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.SessionEnd">
+            <summary>
+            The session end.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.SessionAbort">
+            <summary>
+            The is aborted.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.SessionConnected">
+            <summary>
+            The session connected.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.TestMessage">
+            <summary>
+            Test Message
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.VersionCheck">
+            <summary>
+            Protocol Version
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.DiscoveryInitialize">
+            <summary>
+            The session start.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.StartDiscovery">
+            <summary>
+            The discovery started.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.TestCasesFound">
+            <summary>
+            The test cases found.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.DiscoveryComplete">
+            <summary>
+            The discovery complete.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.ExecutionInitialize">
+            <summary>
+            The session start.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.CancelTestRun">
+            <summary>
+            Cancel the current test run
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.AbortTestRun">
+            <summary>
+            Cancel the current test run
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.StartTestExecutionWithSources">
+            <summary>
+            Start test execution.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.StartTestExecutionWithTests">
+            <summary>
+            Start test execution.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.TestRunStatsChange">
+            <summary>
+            The test run stats change.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.ExecutionComplete">
+            <summary>
+            The execution complete.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.GetTestRunnerProcessStartInfoForRunAll">
+            <summary>
+            The message to get runner process startInfo for run all tests in given sources
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.GetTestRunnerProcessStartInfoForRunSelected">
+            <summary>
+            The message to get runner process startInfo for run selected tests
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.CustomTestHostLaunch">
+            <summary>
+            CustomTestHostLaunch 
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.CustomTestHostLaunchCallback">
+            <summary>
+            Custom Test Host launch callback 
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.ExtensionsInitialize">
+            <summary>
+            Extensions Initialization
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.TestRunAllSourcesWithDefaultHost">
+            <summary>
+            Start Test Run All Sources 
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.TestRunSelectedTestCasesDefaultHost">
+            <summary>
+             Start Test Run - Testcases
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.LaunchAdapterProcessWithDebuggerAttached">
+            <summary>
+            Launch Adapter Process With DebuggerAttached
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.Common.MessageType.LaunchAdapterProcessWithDebuggerAttachedCallback">
+            <summary>
+            Launch Adapter Process With DebuggerAttached
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Exploration.UnitTestArtifactExplorationRunner.RemoveStaleElements(JetBrains.ProjectModel.IProject,JetBrains.Util.Dotnet.TargetFrameworkIds.TargetFrameworkId,JetBrains.ReSharper.UnitTestFramework.Exploration.IUnitTestExplorerFromArtifacts[])">
+            <summary>
+            ES: When a project's configuration changes in a way that one or more IUnitTestExplorerFromArtifacts
+            implementations are no longer suited to run exploration on the project (obvious example would be removal
+            of unit-test framework references from the project), we must remove all elements that might have been
+            discovered by these implementations earlier.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Exploration.UnitTestNuGetInvalidator">
+             <summary>
+             This component is trying to resolve the following problem in VS+R#:
+            
+             1. User opens a .NET Core project with unit tests in VS+R#.
+             2. User suspends R#.
+             3. User resumes R#.
+             4. JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.DotNetVsTestArtifactExplorer.IsSupported checks
+                that unit tests are supported in this project. It calls NuGetInstalledPackageChecker.IsPackageInstalled which
+                calls NuGetSolutionManager.GetNuGetProject. Next, VsNuGetNetCorePackageReferenceProjectProvider should return
+                the corresponding NuGetProject. However, if NugetModelOwner.NugetModel.IsAvailable is false, the null will be
+                returned. R# will think that it's not an integrated project and that it has zero NuGet dependencies. Next,
+                user will see a BrokenUnitTestElementGutterMark which says that tests can not be executed because we don't have
+                dependencies on the test SDK and adapter.
+             5. After that NugetModelOwner.NugetModel.IsAvailable becomes true which fire
+                VsNuGetNetCorePackageReferenceProjectProvider.Invalidated which fire
+                NuGetSolutionManager.Invalidated.
+             6. Finally UnitTestNuGetInvalidator goes on stage. When NuGetSolutionManager.Invalidated, we are invalidating data
+                for all projects in NuGetLockFileTracker and wait until all of the project are processed.
+             7. Next, UnitTestNuGetInvalidator calls Invalidate methods for
+                IUnitTestArtifactExplorationProcess and IDaemon.
+             8. BrokenUnitTestElementGutterMarks are replaced by usual unit test gutter marks.
+             9. User is happy.
+            
+             See also: https://youtrack.jetbrains.com/issue/RSRP-475379
+             </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Launch.PlatformMonoPreference">
+            <summary>
+            It makes sense only on Windows in situations when Mono is available.
+            In this case, we can run .NET Framework tests on CLR or Mono 
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Launch.IUnitTestRun.GetElementByRemoteTaskId(System.String)">
+            <summary>
+            Returns IUnitTestElement corresponding to given RemoteTask id.
+            Returns null if RemoteTask is unknown or doesn't have associated task id.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Launch.IUnitTestRun.GetTaskIdsToElements">
+            <summary>
+            Returns map from RemoteTask id to IUnitTestElement for all tasks/elements in run
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.QueryProvider.EvaluatableTreeFindingExpressionVisitor.IsCurrentExpressionEvaluatable(System.Linq.Expressions.Expression)">
+            <summary>
+            Determines whether the given <see cref="T:System.Linq.Expressions.Expression"/> is one of the expressions defined by <see cref="T:System.Linq.Expressions.ExpressionType"/> for which
+            <see cref="T:System.Linq.Expressions.ExpressionVisitor"/> has a dedicated Visit method. <see cref="M:System.Linq.Expressions.ExpressionVisitor.Visit(System.Linq.Expressions.Expression)"/> handles those by calling the respective Visit method.
+            </summary>
+            <param name="expression">The expression to check. Must not be <see langword="null" />.</param>
+            <returns>
+            <see langword="true"/> if <paramref name="expression"/> is one of the expressions defined by <see cref="T:System.Linq.Expressions.ExpressionType"/> and 
+            <see cref="T:System.Linq.Expressions.ExpressionVisitor"/> has a dedicated Visit method for it; otherwise, <see langword="false"/>. 
+            Note that <see cref="F:System.Linq.Expressions.ExpressionType.Extension"/>-type expressions are considered 'not supported' and will also return <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.IUnitTestSessionSettings.ExplorationTimeout">
+            <summary>
+            When running tests, R# will invoke build and subsequent exploration, if necessary.
+            This timeout specified how long test runner will wait for exploration to finish,
+            before giving up and proceeded with tests it has.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.UnitTestLaunchHistory.LaunchData.HostProviderId">
+            <remarks>Must not save reference to provider as it might get disabled.</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.UnitTestXplatHelper.IsClassicViaCore(JetBrains.ProjectModel.IProject,JetBrains.Util.Dotnet.TargetFrameworkIds.TargetFrameworkId)">
+            <summary>
+            .NET Core SDK doesn't support .NETFramework-TFM tests in modern csproj-projects on Linux/macOS via dotnet CLI
+            However, we can discover and run such tests via classic strategy.
+            It works only fox xUnit and doesn't work for NUnit and MSTest because
+              NUnit3TestAdapter 3.9.0 targets only .NETCoreApp 1.0 (and doesn't target .NETFramework),
+              MSTest.TestAdapter 1.2.0 targets only .NETCoreApp 1.0 (and doesn't target .NETFramework).
+            This method returns true for described situations
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.IFakeUnitTestElement">
+            <summary>
+            Fake unit test element that can not be run, but can appear in UI, like in gutter menus, for example
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.IFakeUnitTestElement.GetRealUnitTestElements">
+            <summary>
+            Provides list of real elements associated with given fake element. When run action is invoked on fake element, these elements will run instead.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.IHostProviderDescriptor.Format">
+            <summary>
+            Provides format string to be used in action text.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.IHostProviderDescriptor.ShortText">
+            <summary>
+            Like <see cref="P:JetBrains.ReSharper.UnitTestFramework.IHostProviderDescriptor.Format"/>, but doesn't has "Unit Tests" suffix or smth else.
+            Leave null or empty to force use of <see cref="P:JetBrains.ReSharper.UnitTestFramework.IHostProviderDescriptor.Format"/>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.IUnitTestElementGutterMarkItemProvider">
+            <summary>
+            Extension point to add additional items to Unit Test Gutter Mark menu.
+            Implement provider as a solution component.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.HostProviderAvailability">
+            <summary>
+            <see cref="T:JetBrains.ReSharper.UnitTestFramework.IHostProvider"/> availability.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.HostProviderAvailability.Nonexistent">
+            <summary>
+            Completely unavailable, as if it was not present at all.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.HostProviderAvailability.Busy">
+            <summary>
+            Temporarily unavailable, but may become available sometime.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.HostProviderAvailability.Available">
+            <summary>
+            Ready.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.ITaskRunnerHostController">
+            <remarks>Created per <see cref="T:JetBrains.ReSharper.UnitTestFramework.Launch.IUnitTestLaunch"/></remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.ITaskRunnerHostController.StartProcess(System.Diagnostics.ProcessStartInfo,JetBrains.ReSharper.UnitTestFramework.Launch.IUnitTestRun,JetBrains.Util.ILogger)">
+            <remarks>Used to start a process under profiler/dotmemory/debugger</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.ITaskRunnerHostController.SubstituteRemoteTaskPath(JetBrains.ReSharper.UnitTestFramework.Launch.IUnitTestRun,System.String,System.Boolean)">
+            <remarks>Used with <see cref="T:JetBrains.ReSharper.UnitTestFramework.Strategy.TaskRunnerOutOfProcessUnitTestRunStrategy"/></remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.ITaskRunnerHostController.CustomizeConfiguration(JetBrains.ReSharper.UnitTestFramework.Launch.IUnitTestRun,JetBrains.ReSharper.TaskRunnerFramework.TaskExecutorConfiguration)">
+            <remarks>Used with <see cref="T:JetBrains.ReSharper.UnitTestFramework.Strategy.TaskRunnerOutOfProcessUnitTestRunStrategy"/></remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.IUnitTestProvider">
+            <summary>
+            Could have constructor with parameter ISolution or default constructor.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.IUnitTestProvider.ID">
+            <summary>
+            ID of provider
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.IUnitTestProvider.Name">
+            <summary>
+            Provider's name
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.IUnitTestProvider.IsElementOfKind(JetBrains.ReSharper.Psi.IDeclaredElement,JetBrains.ReSharper.UnitTestFramework.UnitTestElementKind)">
+            <summary>
+            Replaces IsUnitTestElement, IsUnitTest, IsUnitTestContainer and IsUnitTestStuff methods with single one
+            </summary>
+            <param name="declaredElement"></param>
+            <param name="elementKind"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.IUnitTestProvider.IsElementOfKind(JetBrains.ReSharper.UnitTestFramework.IUnitTestElement,JetBrains.ReSharper.UnitTestFramework.UnitTestElementKind)">
+            <summary>
+            Replaces IsUnitTestElement, IsUnitTest, IsUnitTestContainer and IsUnitTestStuff methods with single one
+            </summary>
+            <param name="element"></param>
+            <param name="elementKind"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.IUnitTestProvider.IsSupported(JetBrains.ReSharper.UnitTestFramework.IHostProvider,JetBrains.ProjectModel.IProject,JetBrains.Util.Dotnet.TargetFrameworkIds.TargetFrameworkId)">
+            <summary>
+            Returns true, if given host provider could run tests in the given project
+            </summary>
+            <para>
+            E.g. Nunit supports profiling in C#, but not DNX projects
+            </para>
+            <param name="hostProvider"></param>
+            <param name="project"></param>
+            <returns></returns>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.IUnitTestElement.Id">
+            <summary>
+            Unique id.
+            It should be possible to find Unit Test Element by string from third-party services.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.IUnitTestElement.GetPresentation(JetBrains.ReSharper.UnitTestFramework.IUnitTestElement,System.Boolean)">
+            <summary>
+            Gets presentation string for element depending on parent element in this particular context.
+            If <paramref name="parent" /> is <value>null</value> return context-independent presentation.
+            </summary>
+            <param name="parent">Element parent in given context</param>
+            <param name="full">Should presentation be full (e. g. including namespace) or not</param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.IUnitTestElement.GetNamespace">
+            <summary>
+            Gets namespaces for element. If element doesn't have namespace, return empty namespace.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.IUnitTestElement.GetDisposition">
+            <summary>
+            Gets disposition of test element.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.IUnitTestElement.GetDeclaredElement">
+            <summary>
+            Gets IDeclaredElement for element. If there is no, returns <value>null</value>.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.IUnitTestElement.GetProjectFiles">
+            <summary>
+            Gets IProjectFile for element. If there is no, returns <value>null</value>.
+            Should be as fast as possible, used from Unit Test Explorer in UI thread.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.IUnitTestElement.Kind">
+            <summary>
+            Short string describing element kind (test, container, etc.)
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.IUnitTestElement.OwnCategories">
+            <summary>
+            Gets list of categories defined on this element.
+            Should not include any inherited categories.
+            </summary>
+            <remarks>
+            Use <see cref="!:IUnitTestCategoryFactory.Create"/> to get categories from strings.
+            </remarks>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.IUnitTestElement.Parent">
+            <summary>
+            Element's parent element.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.IUnitTestElement.Children">
+            <summary>
+            Element's children elements.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.IUnitTestElement.ShortName">
+            <summary>
+            Element short name, shouldn't be used for presentation.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.IUnitTestElement.GetTaskSequence(System.Collections.Generic.ICollection{JetBrains.ReSharper.UnitTestFramework.IUnitTestElement},JetBrains.ReSharper.UnitTestFramework.Launch.IUnitTestRun)">
+            <summary>
+            Gets task information for <see cref="T:JetBrains.ReSharper.TaskRunnerFramework.RecursiveRemoteTaskRunner"/> from element
+            </summary>
+            <param name="explicitElements">Elements that are explicitly selected to be run</param>
+            <param name="run">Current run</param>
+            <returns>Sequence of tasks to be executed to run this element</returns>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.UI.Internal.IntegrationTestTargetsDiscovery.EnvInTestVsVersionMajor">
+            <summary>
+            Obsolete. Replaced by <see cref="F:JetBrains.ReSharper.UnitTestFramework.UI.Internal.IntegrationTestTargetsDiscovery.EnvInTestVsHive"/>.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.UI.Internal.IntegrationTestTargetsDiscovery.ourFakeStandaloneHive">
+            <summary>
+            VsHive = "0.0" means a standalone app (not a VS).
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.UnitTestElementComparer">
+            <summary>
+            Compares UnitTestElement in given type order, then by ShortName.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.UnitTestResultPropagationData">
+            <summary>
+            Optimization: 
+            Used to quickly calculate aggregating Status of the element when one of its children changes its status.
+            Contains count of immediate children of an element by UnitTestStatus.
+            Must be reset everytime the element it is calculated for changes.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons">
+             <summary>
+            	<para>
+            		<para>Autogenerated identifier classes and identifier objects to Themed Icons registered with <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see>.</para>
+            		<para>Identifier classes should be used in attributes, XAML, or generic parameters. Where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected, use the identifier object in the <c>Id</c> field of the identifier class.</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>This code was compile-time generated to support Themed Icons in the JetBrains application.</para>
+            	<para>It has two primary goals: load the icons of this assembly to be registered with <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> so that they were WPF-accessible and theme-sensitive; and emit early-bound accessors for referencing icons in codebehind in a compile-time-validated manner.</para>
+            	<h1>XAML</h1>
+            	<para>For performance reasons, the icons are not individually exposed with application resources. There is a custom markup extension to bind an image source in markup.</para>
+            	<para>To use an icon from XAML, set an <see cref="T:System.Windows.Media.ImageSource"></see> property to the <see cref="T:System.CodeDom.CodeTypeReference"></see> markup extension, which takes an icon identifier class (nested in <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons"></see> class) as a parameter.</para>
+            	<para>Example:</para>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+Trinity}" /&gt;</code>
+            	<h1>Attributes</h1>
+            	<para>Sometimes you have to reference an icon from a type attriute when you're defining objects in code. Typical examples are Options pages and Tool Windows.</para>
+            	<para>To avoid the use of string IDs which are not validated very well, we've emitted identifier classes to be used with <c>typeof()</c> expression, one per each icon. Use the attribute overload which takes a <see cref="T:System.Type"></see> for an image, and choose your icon class from nested classes in the <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons"></see> class.</para>
+            	<para>Example:</para>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.Trinity))]</code>
+            	<h1>CodeBehind</h1>
+            	<para>In codebehind, we have two distinct tasks: (a) specify some icon in the APIs and (b) render icon images onscreen.</para>
+            	<para>On the APIs stage you should only manipulate icon identifier objects (of type <see cref="T:JetBrains.UI.Icons.IconId"></see>, statically defined in <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons"></see> in <c>Id</c> fields). Icon identifier classes (nested in <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons"></see>) should be turned into icon identifier objects as early as possible. Rendering is about getting an <see cref="T:System.Windows.Media.ImageSource"></see> to assign to WPF, or <see cref="T:System.Drawing.Bitmap"></see> to use with GDI+ / Windows Forms.</para>
+            	<para>You should turn an identifier object into a rendered image as late as possible. The identifier is static and lightweight and does not depend on the current theme, while the image is themed and has to be loaded or generated/rasterized. You need an <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> instance to get the image out of an icon identifier object. Once you got the image, you should take care to change it with theme changes — either by using a live image property, or by listening to the theme change event. See <see cref="T:JetBrains.Application.Icons.IThemedIconManager"></see> and its extensions for the related facilities.</para>
+            	<para>Example:</para>
+            	<code>// Getting IconId identifier object to use with APIs
+            IconId iconid = UnitTestingThemedIcons.Trinity.Id;</code>
+            	<code>// Getting IconId out of an Icon Identifier Class type
+            IconId iconid = new JetBrains.Application.Icons.CompiledIconsCs.CompiledIconCsId(typeof(UnitTestingThemedIcons.Trinity));</code>
+            	<code>// Getting image for screen rendering by IconId
+            themediconmanager.Icons[icnoid]</code>
+            	<code>// Getting image for screen rendering by Icon Identifier Class
+            themediconmanager.GetIcon&lt;UnitTestingThemedIcons.Trinity&gt;()</code>
+            	<h1>Icons Origin</h1>
+            	<para>This code was generated by a pre-compile build task from a set of input files which are XAML files adhering to a certain convention, as convenient for exporting them from the Illustrator workspace, plus separate PNG files with raster icons. In the projects, these files are designated with <c>ThemedIconsXamlV3</c> and <c>ThemedIconPng</c> build actions and do not themselves get into the output assembly. All of such files are processed, vector images for different themes of the same icon are split and combined into the single list of icons in this assembly. This list is then written into the genearted XAML file (compiled into BAML within assembly), and serves as the source for this generated code.</para>
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.AppendSession">
+             <summary>
+            	<para>
+            		<para>AppendSession Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.AppendSession"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.AppendSession.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                         tttttttttt          
+                         {{      {{          
+                         CC      CC          
+                         II``````II          
+                 uuuuuuuuuu``````uuuuuuuuuu  
+                 oo``````````````````````oo  
+                 55......................55  
+                 yy''''''''''''''''''''''yy  
+                 VVVVVVVVVV------VVVVVVVVVV  
+                         EE------EE          
+                         hh______hh          
+                         66______66          
+                         9999999999          
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+AppendSession}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.AppendSession))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.AppendSession.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.AppendSession&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.AppendSession.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.AppendSession">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.AppendSession.Load_Color">
+            <summary>Loads the image for Themed Icon AppendSession theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.AppendSession.Load_Gray">
+            <summary>Loads the image for Themed Icon AppendSession theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.AppendSession.Load_GrayDark">
+            <summary>Loads the image for Themed Icon AppendSession theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.AppendSession.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon AppendSession.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.BuildPolicy">
+             <summary>
+            	<para>
+            		<para>BuildPolicy Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.BuildPolicy"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.BuildPolicy.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                               }}}}}}        
+                           ".  CC__CC  ."    
+                           II{+II--II+{II    
+                           uu,;cx--xc;,uu    
+               `=TyEEEEEVaojj"'......'"jjuuuu
+              ~5u~'kkkk.~uSwwk2)~-'~LoV6m  55
+             ^kT   kkkk   rkwRAwZVVKwGRRR``VV
+             {V'   VVVV   `Vk``dd``dd``dd``ZZ
+             |S_          .SVXXXXXXXXXXXX..44
+             .o1-````````-tyVkk``kk``kkkk--bb
+              `L5(=````~c5i2ooooooooooooo__mm
+                `22````22~,,,,,,,,,,,,,,,,,DD
+                 oo````oo88888888888888888888
+                 uu....uu                    
+                 cu;--~ul                    
+                 `!tIIF/`                    
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+BuildPolicy}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.BuildPolicy))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.BuildPolicy.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.BuildPolicy&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.BuildPolicy.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.BuildPolicy">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.BuildPolicy.Load_Color">
+            <summary>Loads the image for Themed Icon BuildPolicy theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.BuildPolicy.Load_Gray">
+            <summary>Loads the image for Themed Icon BuildPolicy theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.BuildPolicy.Load_GrayDark">
+            <summary>Loads the image for Themed Icon BuildPolicy theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.BuildPolicy.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon BuildPolicy.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Category">
+             <summary>
+            	<para>
+            		<para>Category Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Category"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Category.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+              `;133333333I/`                 
+             ;Iv~--------~vu\`               
+             oo--"Too7~----~Jo*`             
+             22--1kkkka------~lo+`           
+             55--~TI37=--'``'--~le+`         
+             yy--------'`    `'--~ta+`       
+             cST"----'`        `'--~}yr`     
+              'ckT"--.`          `'--=FSr`   
+                ')E7"--.`          `'--=]kr` 
+                  '(Pi"--.`          `'--=1Er
+                    '|UJ"--.          .--"JUJ
+                      'TXl"--.      .--"lXl_ 
+                        -T6l^--.  .--^l6t_   
+                          -7wt^----^twt_     
+                            -7wt^^tw}_       
+                              -sbbF_         
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+Category}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.Category))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.Category.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.Category&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Category.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Category">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Category.Load_Color">
+            <summary>Loads the image for Themed Icon Category theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Category.Load_Gray">
+            <summary>Loads the image for Themed Icon Category theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Category.Load_GrayDark">
+            <summary>Loads the image for Themed Icon Category theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Category.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon Category.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.DeleteTest">
+             <summary>
+            	<para>
+            		<para>DeleteTest Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.DeleteTest"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.DeleteTest.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                  `!)JJc~`          .+Shhhh  
+                 :VF,--~55_       "JET_ /kl  
+                 lk.    `7k*   `!u5\. _3e~   
+                 ;SL``````!yt"cSl~``.cSL`    
+                  "Io\.````,15r:```=oC_      
+                    ~[I/-'''--''':Jj!        
+                      =o1!------+ul'         
+                    `=CC+"______~J3;         
+                  `![l/"""""/r~"""+1T-       
+                '+x7/^^^^^!iFTCc=^^=7x;      
+              -?F|!~~~~~=)F\` -*FT/~~+}T-    
+             ^}7!======rtL-     `=lz+=!T}!   
+             |t/=====+JT:          "TJ?!+l7_ 
+             ~l)+!/+T7~              _rJc+)l!
+              '~+cc*"`                 '!iiii
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+DeleteTest}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.DeleteTest))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.DeleteTest.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.DeleteTest&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.DeleteTest.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.DeleteTest">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.DeleteTest.Load_Color">
+            <summary>Loads the image for Themed Icon DeleteTest theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.DeleteTest.Load_Gray">
+            <summary>Loads the image for Themed Icon DeleteTest theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.DeleteTest.Load_GrayDark">
+            <summary>Loads the image for Themed Icon DeleteTest theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.DeleteTest.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon DeleteTest.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Kill">
+             <summary>
+            	<para>
+            		<para>Kill Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Kill"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Kill.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                       .+}[L?uyTTEXF:        
+                       tS-.6w_'RD:-M8        
+                   `!Tl5S  6w  RD  MB        
+                   |]_-5S``6w``RD``MB."!/    
+                   }]``5S``6w``RD``MB0Xgg    
+                   }]''5S''6w''RD''MB*'gg    
+                   }]--lI--c7--LT_|MR,-gg    
+                   }]::::::::::"lDdT,:^gQ    
+                   r]="""""""""xD{^"""7gE    
+                   ,]|~~~~~~~~~~~~~~~!8$-    
+                    +IL=============!AQ=     
+                     coT!!!!!!!!!!!+A$+      
+                      ^uu|+//////r[DR_       
+                       `;Ty6wdORD8Xr`        
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+Kill}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.Kill))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.Kill.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.Kill&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Kill.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Kill">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Kill.Load_Color">
+            <summary>Loads the image for Themed Icon Kill theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Kill.Load_Gray">
+            <summary>Loads the image for Themed Icon Kill theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Kill.Load_GrayDark">
+            <summary>Loads the image for Themed Icon Kill theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Kill.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon Kill.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.LockSession">
+             <summary>
+            	<para>
+            		<para>LockSession Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.LockSession"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.LockSession.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                        _!rT}Cl|r"           
+                     `;lT=,_--,~+IX)-        
+                    _7)' ````..'--"ow;       
+                   _i+   `=7{]F+---_}G\      
+                   ri-   +u/..;Ex--_~Gb      
+                   7i    Iu    EZ--__Gm      
+                 kkkkkkkkkkkkkkkkkkkkkkkk    
+                 PP",__--'-__"^~=!/+?)TPP    
+                 66",__--'-__"^~=!/+?)T66    
+                 ww",__--'-@@@@~=!/+?)Tww    
+                 HH",__--'-@@@@~=!/+?)THH    
+                 ##",__--'-@@@@~=!/+?)T##    
+                 DD",__--'-__"^~=!/+?)TDD    
+                 DD",__--'-__"^~=!/+?)TDD    
+                 %%%%%%%%%%%%%%%%%%%%%%%%    
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+LockSession}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.LockSession))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.LockSession.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.LockSession&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.LockSession.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.LockSession">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.LockSession.Load_Color">
+            <summary>Loads the image for Themed Icon LockSession theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.LockSession.Load_Gray">
+            <summary>Loads the image for Themed Icon LockSession theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.LockSession.Load_GrayDark">
+            <summary>Loads the image for Themed Icon LockSession theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.LockSession.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon LockSession.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Mstest">
+             <summary>
+            	<para>
+            		<para>Mstest Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Mstest"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Mstest.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                  `=tFFt!.      `;tFFF!`     
+                `=C|-  -+xc_  _r1T!~!=s1/`   
+              `;x7,      .;{tJ1c==!+L-_!lI/` 
+             !3l~.`      .!IFr=;\r)7t-_"={oo\
+             55-'.`-r|::|5l/=!+LTJFak|=cji_55
+             yy-'_cyyyyeT!;\rc7l1Vkyyyyt"  yy
+             VV"TV}+Cu?;!+LTJ{oPkn!^tC~.`  VV
+             )EEo=,^~;/rcTlCSXEi"    -'.`-cE7
+              '|UC;^~?|i}3P6Eky;`    -'_TUJ- 
+                'T63+lC564a;``=oPr-  ^J6l_   
+                  -7wwwwF"      :Jwwwwt_     
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+Mstest}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.Mstest))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.Mstest.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.Mstest&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Mstest.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Mstest">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Mstest.Load_Color">
+            <summary>Loads the image for Themed Icon Mstest theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Mstest.Load_Gray">
+            <summary>Loads the image for Themed Icon Mstest theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Mstest.Load_GrayDark">
+            <summary>Loads the image for Themed Icon Mstest theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Mstest.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon Mstest.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.NewSession">
+             <summary>
+            	<para>
+            		<para>NewSession Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.NewSession"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.NewSession.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                 111111                      
+             111111  111111uuuu3/`           
+             11  11  11  11----~Jo\`         
+             1111      1111------~lo+`       
+             11    11    11````----~t5+`     
+             1111``````1111    ------=}a+    
+             11``11``11``11        ----VV    
+             111111``111111        ----kk    
+                 111111            ----EE    
+                 hh----            ----hh    
+                 XX----            ----XX    
+                 66----            ----66    
+                 ww--------------------ww    
+                 bb____________________bb    
+                 dddddddddddddddddddddddd    
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+NewSession}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.NewSession))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.NewSession.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.NewSession&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.NewSession.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.NewSession">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.NewSession.Load_Color">
+            <summary>Loads the image for Themed Icon NewSession theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.NewSession.Load_Gray">
+            <summary>Loads the image for Themed Icon NewSession theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.NewSession.Load_GrayDark">
+            <summary>Loads the image for Themed Icon NewSession theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.NewSession.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon NewSession.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Outdated">
+             <summary>
+            	<para>
+            		<para>Outdated Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Outdated"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Outdated.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                               .^=/rr/=~'    
+                             "c)~'````'^L)~  
+                           `+t~  ^TIuT=  ,lL`
+                           ~F~   66  66   :F/
+                           7I.     ~]E?   `IF
+                           !o~     !!     :o?
+                           `l2~````66````,ux.
+                             +V}!-.``.-=JVc` 
+                               "|}5XXaFT~`   
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+Outdated}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.Outdated))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.Outdated.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.Outdated&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Outdated.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Outdated">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Outdated.Load_Color">
+            <summary>Loads the image for Themed Icon Outdated theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Outdated.Load_Gray">
+            <summary>Loads the image for Themed Icon Outdated theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Outdated.Load_GrayDark">
+            <summary>Loads the image for Themed Icon Outdated theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Outdated.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon Outdated.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Rerun">
+             <summary>
+            	<para>
+            		<para>Rerun Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Rerun"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Rerun.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                      ``     aaF7r/=.        
+                    `*oo*`   oo`.-,*Il=.     
+                  `/I|__|I/` 33      _|3!    
+                `!F)_    _)F!]]7L/_    ;]?   
+               !tc_        _ct!``^l).   ~}=  
+               ll````````````ll   .l?````l7  
+               zzzzzz.```+zzzzz   `zL````zT  
+                   :T~```'?c"`   -rL-```"T=  
+                    =)~```.,!r))r/".```"c+`  
+                     ,r!-````````````-=L=`   
+                      `~+/^_-'..'-_^/+^'     
+                         .,=!/++/=~"'        
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+Rerun}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.Rerun))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.Rerun.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.Rerun&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Rerun.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Rerun">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Rerun.Load_Color">
+            <summary>Loads the image for Themed Icon Rerun theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Rerun.Load_Gray">
+            <summary>Loads the image for Themed Icon Rerun theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Rerun.Load_GrayDark">
+            <summary>Loads the image for Themed Icon Rerun theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Rerun.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon Rerun.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunAll">
+             <summary>
+            	<para>
+            		<para>RunAll Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunAll"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunAll.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+               ;;=,`     ;;=,`               
+               !!`_;=_`  !!`_;=_`            
+               //   '^/^'//   '^/~-          
+               ++     `_;++`    `_;\".       
+               rr````````.^+!_`````.^+/,`    
+               rr````)~.````_;r=-`````_;r;-  
+               cc````uuu|='```."+r^'````."+L~
+               ))....uuut/:....,/c;_.....,/)/
+               TT....t\,...._!|r~-...._!|L^` 
+               ii--------_=cT!_----_=c7;-    
+               ll------~rll~-----~rlr:       
+               }}___^+l|^{}___^+lT~`         
+               xx"/JF!-  xx"/JF/-            
+               333)"     333)"               
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+RunAll}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.RunAll))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.RunAll.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.RunAll&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunAll.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunAll">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunAll.Load_Color">
+            <summary>Loads the image for Themed Icon RunAll theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunAll.Load_Gray">
+            <summary>Loads the image for Themed Icon RunAll theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunAll.Load_GrayDark">
+            <summary>Loads the image for Themed Icon RunAll theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunAll.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon RunAll.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunningError">
+             <summary>
+            	<para>
+            		<para>RunningError Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunningError"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunningError.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                       ./cl266at)*-          
+                    .+EDZ{JTLL|J{kD6r-       
+                   c8R1Lczlt}}tli)?CH8i`     
+                  1%6|)ltttttT^'."c|ck%V`    
+                 rNw|Tlllllll.     lT|kNJ    
+                 w$fTziiiiiii+-` -/ivTz$8    
+                 O$Cv7TTTTTTTTTTTTTTTvJ$M    
+                 7Qblv))))))))))))))7lhQo    
+                 `wgbtJc??????????Lit6QD`    
+                  `ag8jtl|Lr++rL|JtjDg9`     
+                    "u$$AV53{{I2VA$Qa~       
+                       ^IXR$gg$D6u=          
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+RunningError}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.RunningError))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.RunningError.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.RunningError&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunningError.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunningError">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunningError.Load_Color">
+            <summary>Loads the image for Themed Icon RunningError theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunningError.Load_Gray">
+            <summary>Loads the image for Themed Icon RunningError theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunningError.Load_GrayDark">
+            <summary>Loads the image for Themed Icon RunningError theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunningError.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon RunningError.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunningTest">
+             <summary>
+            	<para>
+            		<para>RunningTest Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunningTest"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunningTest.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                       `"=/?TTL*=^.          
+                    `~ct/_-.``.-_!l|~`       
+                   ~t|_  ````````  _Lt;      
+                  !l!` ``````:7Skl"``=lr     
+                 "J! ````````EDDDDG`` ~J=    
+                 rz.`````````"IdGu=````zT    
+                 r7.```````````````````7T    
+                 ^T=``              ``"T=    
+                  /|~``            ``"|+`    
+                   =)/-``        ``-!)!`     
+                    .~r+~_--..'-_~+?~-       
+                       ."=!+LL+!=^-          
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+RunningTest}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.RunningTest))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.RunningTest.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.RunningTest&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunningTest.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunningTest">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunningTest.Load_Color">
+            <summary>Loads the image for Themed Icon RunningTest theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunningTest.Load_Gray">
+            <summary>Loads the image for Themed Icon RunningTest theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunningTest.Load_GrayDark">
+            <summary>Loads the image for Themed Icon RunningTest theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunningTest.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon RunningTest.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunTest">
+             <summary>
+            	<para>
+            		<para>RunTest Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunTest"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunTest.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                   ;;=,`                     
+                   !!`_;=_`                  
+                   //   '^/^'                
+                   ++     `_;/,`             
+                   rr````````.^+!_           
+                   rr````)~.````_;r~'        
+                   cc````uuu|='```."+r"`     
+                   ))....uuut/:....,/c='     
+                   TT....t\,...._!|+:        
+                   ii--------_=c|~`          
+                   ll------~rl*-             
+                   }}___^+l|^`               
+                   xx"/JF!-                  
+                   333)"                     
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+RunTest}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.RunTest))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.RunTest.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.RunTest&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunTest.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunTest">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunTest.Load_Color">
+            <summary>Loads the image for Themed Icon RunTest theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunTest.Load_Gray">
+            <summary>Loads the image for Themed Icon RunTest theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunTest.Load_GrayDark">
+            <summary>Loads the image for Themed Icon RunTest theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.RunTest.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon RunTest.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.ScrollToBottom">
+             <summary>
+            	<para>
+            		<para>ScrollToBottom Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.ScrollToBottom"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.ScrollToBottom.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                         ))))))))            
+                         ||    ||            
+                         TT    TT            
+                         TT````TT            
+                   777=` 77````77 `~T77      
+                   JJ,LJ=JJ````JJ~7L,JJ      
+                   ll.."cll....llc"..ll      
+                   /tr,--^)----)^--,rt+      
+                    .*{?"--------"?{r-       
+                      .+[c^____^c[r-         
+                        .+1(~~(1?-           
+                 333333333333333333333333    
+                 VV````````````````````VV    
+                 ww````````````````````ww    
+                 DDDDDDDDDDDDDDDDDDDDDDDD    
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+ScrollToBottom}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.ScrollToBottom))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.ScrollToBottom.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.ScrollToBottom&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.ScrollToBottom.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.ScrollToBottom">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.ScrollToBottom.Load_Color">
+            <summary>Loads the image for Themed Icon ScrollToBottom theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.ScrollToBottom.Load_Gray">
+            <summary>Loads the image for Themed Icon ScrollToBottom theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.ScrollToBottom.Load_GrayDark">
+            <summary>Loads the image for Themed Icon ScrollToBottom theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.ScrollToBottom.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon ScrollToBottom.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Session">
+             <summary>
+            	<para>
+            		<para>Session Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Session"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Session.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+               6666666666666666666666666666  
+               99~~~~~~~~~~~~~~~~~~~~~~~~99  
+               ww========================ww  
+               dd====                ====dd  
+               GG;;;;  --__,""^~==!  ;;;;GG  
+               OO!!!!                !!!!OO  
+               RR////  --__,""^~==!  ////RR  
+               RR\\\\                \\\\RR  
+               DD++++++++++++++++++++++++DD  
+               DDrrrrrrrrrrrrrrrrrrrrrrrrDD  
+               8888888888888888888888888888  
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+Session}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.Session))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.Session.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.Session&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Session.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Session">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Session.Load_Color">
+            <summary>Loads the image for Themed Icon Session theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Session.Load_Gray">
+            <summary>Loads the image for Themed Icon Session theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Session.Load_GrayDark">
+            <summary>Loads the image for Themed Icon Session theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Session.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon Session.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusAborted">
+             <summary>
+            	<para>
+            		<para>StatusAborted Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusAborted"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusAborted.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                       .+}[L?uyTTEXF:        
+                       tS-.6w_'RD:-M8        
+                   `!Tl5S  6w  RD  MB        
+                   |]_-5S``6w``RD``MB."!/    
+                   }]``5S``6w``RD``MB0Xgg    
+                   }]''5S''6w''RD''MB*'gg    
+                   }]--lI--c7--LT_|MR,-gg    
+                   }]::::::::::"lDdT,:^gQ    
+                   r]="""""""""xD{^"""7gE    
+                   ,]|~~~~~~~~~~~~~~~!8$-    
+                    +IL=============!AQ=     
+                     coT!!!!!!!!!!!+A$+      
+                      ^uu|+//////r[DR_       
+                       `;Ty6wdORD8Xr`        
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+StatusAborted}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.StatusAborted))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.StatusAborted.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.StatusAborted&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusAborted.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusAborted">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusAborted.Load_Color">
+            <summary>Loads the image for Themed Icon StatusAborted theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusAborted.Load_Gray">
+            <summary>Loads the image for Themed Icon StatusAborted theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusAborted.Load_GrayDark">
+            <summary>Loads the image for Themed Icon StatusAborted theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusAborted.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon StatusAborted.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusAll">
+             <summary>
+            	<para>
+            		<para>StatusAll Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusAll"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusAll.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                            '"~=/TL+!_       
+                         `^r\_``  `'"c{/.    
+                        -?+`  ```_--` `)x^   
+                       _T*``....."""",.`?o=  
+                    '"~rrJ)Lr=---=====~-"5u  
+                 `^r\_``  `'"cCc~/////!"~y5  
+                -?+`  ```_--` `)I7rrrr!=Jk*  
+               _T*``.....""""".`?ot)?++IP*   
+               ?J:`------=====~-"5j7t5Xx"    
+               |{"-______/////!"~ySul!.      
+               ^1c__,""""rrrrr!=Jk*          
+                ~ui^,"^^~TT)?++IP*           
+                 -J5l+;=^)T7t5Xx"            
+                   `;Ttukwkul!.              
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+StatusAll}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.StatusAll))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.StatusAll.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.StatusAll&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusAll.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusAll">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusAll.Load_Color">
+            <summary>Loads the image for Themed Icon StatusAll theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusAll.Load_Gray">
+            <summary>Loads the image for Themed Icon StatusAll theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusAll.Load_GrayDark">
+            <summary>Loads the image for Themed Icon StatusAll theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusAll.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon StatusAll.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusFailed">
+             <summary>
+            	<para>
+            		<para>StatusFailed Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusFailed"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusFailed.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                       "*)t266aF)+^          
+                    ^lRHjxlTLLTlCobR[=       
+                  rRm2Trrrrrrrrrrrr(oGD7`    
+                `982L?????????????????I8O-   
+               `d%1cccccccccccccccccccc}8R`  
+               c0E||||||||||||||||||||||a0C  
+               b$CTTT                TTTJ$8  
+               O$Czzz                zzzl$M  
+               tQXJJJJJJJJJJJJJJJJJJJJJJVQV  
+               `MQellllllllllllllllllll3$$-  
+                -MQEtttttttttttttttttty$Q,   
+                 `ug%61}}}}}}}}}}}}Ch8g6-    
+                   .LAgWwKau{{3aE98gDT-      
+                      .?u6D$gg$D6j)-         
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+StatusFailed}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.StatusFailed))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.StatusFailed.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.StatusFailed&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusFailed.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusFailed">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusFailed.Load_Color">
+            <summary>Loads the image for Themed Icon StatusFailed theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusFailed.Load_Gray">
+            <summary>Loads the image for Themed Icon StatusFailed theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusFailed.Load_GrayDark">
+            <summary>Loads the image for Themed Icon StatusFailed theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusFailed.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon StatusFailed.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusFailedPassive">
+             <summary>
+            	<para>
+            		<para>StatusFailedPassive Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusFailedPassive"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusFailedPassive.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                       "*)t266aF)+^          
+                    ^lRHjxlTLLTlCobR[=       
+                  rRm2Trrrrrrrrrrrr(oGD7`    
+                `982L?????????????????I8O-   
+               `d%1cccccccccccccccccccc}8R`  
+               c0E||||||||||||||||||||||a0C  
+               b$CTTT                TTTJ$8  
+               O$Czzz                zzzl$M  
+               tQXJJJJJJJJJJJJJJJJJJJJJJVQV  
+               `MQellllllllllllllllllll3$$-  
+                -MQEtttttttttttttttttty$Q,   
+                 `ug%61}}}}}}}}}}}}Ch8g6-    
+                   .LAgWwKau{{3aE98gDT-      
+                      .?u6D$gg$D6j)-         
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+StatusFailedPassive}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.StatusFailedPassive))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.StatusFailedPassive.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.StatusFailedPassive&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusFailedPassive.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusFailedPassive">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusFailedPassive.Load_Color">
+            <summary>Loads the image for Themed Icon StatusFailedPassive theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusFailedPassive.Load_Gray">
+            <summary>Loads the image for Themed Icon StatusFailedPassive theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusFailedPassive.Load_GrayDark">
+            <summary>Loads the image for Themed Icon StatusFailedPassive theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusFailedPassive.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon StatusFailedPassive.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusIgnored">
+             <summary>
+            	<para>
+            		<para>StatusIgnored Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusIgnored"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusIgnored.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                    `|Ar`    
+                                  `|DRZDRr`  
+                       `"/?7[aa[lVDRattuD8I  
+                    -/1ZJ!~_'``'_\Cttup8y:   
+                 `!oj+:   .!l33o3tt7"_\3a+`  
+               `+aJ,     ~kEEbXttaT     _TyL.
+               o5=       1EbXttaAEy       ^52
+               'Lur-`````cXttaAEEEL`````-+3T-
+                 .\FT=__Ttt39EE5T~```-=cxr-  
+                  `7OXjtt}+_-``-_"~/7l+,`    
+                 cDD5tt36hITTllT?*;^-        
+                 `|DRSb8a:                   
+                   `|Da:                     
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+StatusIgnored}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.StatusIgnored))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.StatusIgnored.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.StatusIgnored&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusIgnored.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusIgnored">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusIgnored.Load_Color">
+            <summary>Loads the image for Themed Icon StatusIgnored theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusIgnored.Load_Gray">
+            <summary>Loads the image for Themed Icon StatusIgnored theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusIgnored.Load_GrayDark">
+            <summary>Loads the image for Themed Icon StatusIgnored theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusIgnored.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon StatusIgnored.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusInconclusive">
+             <summary>
+            	<para>
+            		<para>StatusInconclusive Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusInconclusive"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusInconclusive.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                       -,~;\??+!~"-          
+                    -=T?^_-.```-_"+T!_       
+                  "TL^`            `"r7=     
+                `cl"                  _7T`   
+                |t_  kkkkkk    kkkkkk  -J7`  
+               ~C=   kkkkc-    -ckkkk   "C!  
+               |1-```kk,tkkc--ckkt,kk````1t  
+               7n'```````,tkkkkt,````````nx  
+               !o=`````````kkkk`````````"o?  
+               `1u_````````kkkk````````-]u`  
+                .1o^```````kkkk```````,Io-   
+                 `+S7=-````````````.~TV|`    
+                   `~Jks;~,-..-:^=TS};`      
+                      `~+T}oZZefTr=`         
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+StatusInconclusive}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.StatusInconclusive))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.StatusInconclusive.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.StatusInconclusive&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusInconclusive.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusInconclusive">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusInconclusive.Load_Color">
+            <summary>Loads the image for Themed Icon StatusInconclusive theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusInconclusive.Load_Gray">
+            <summary>Loads the image for Themed Icon StatusInconclusive theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusInconclusive.Load_GrayDark">
+            <summary>Loads the image for Themed Icon StatusInconclusive theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusInconclusive.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon StatusInconclusive.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusSuccess">
+             <summary>
+            	<para>
+            		<para>StatusSuccess Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusSuccess"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusSuccess.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                 ?SSSSSSSSS  
+                                ra!     ~aT  
+                               r5!     ~5T   
+                              r2!     ~2T    
+                             ro!     ~o(     
+                            +u!`````~u)      
+               uuuuuuuuu+  +u!`````~uc       
+               c3~`````!3++3!`````~3c        
+                cI~`````!II!`````~Ic         
+                 L1~`````!!`````~1L          
+                  ?C~``````````~C?           
+                   rF~........~Fr            
+                    r}=......=}r             
+                     rttttttttr              
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+StatusSuccess}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.StatusSuccess))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.StatusSuccess.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.StatusSuccess&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusSuccess.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusSuccess">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusSuccess.Load_Color">
+            <summary>Loads the image for Themed Icon StatusSuccess theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusSuccess.Load_Gray">
+            <summary>Loads the image for Themed Icon StatusSuccess theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusSuccess.Load_GrayDark">
+            <summary>Loads the image for Themed Icon StatusSuccess theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusSuccess.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon StatusSuccess.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusSuccessPassive">
+             <summary>
+            	<para>
+            		<para>StatusSuccessPassive Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusSuccessPassive"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusSuccessPassive.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                 ?SSSSSSSSS  
+                                ra!     ~aT  
+                               r5!     ~5T   
+                              r2!     ~2T    
+                             ro!     ~o(     
+                            +u!`````~u)      
+               uuuuuuuuu+  +u!`````~uc       
+               c3~`````!3++3!`````~3c        
+                cI~`````!II!`````~Ic         
+                 L1~`````!!`````~1L          
+                  ?C~``````````~C?           
+                   rF~........~Fr            
+                    r}=......=}r             
+                     rttttttttr              
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+StatusSuccessPassive}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.StatusSuccessPassive))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.StatusSuccessPassive.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.StatusSuccessPassive&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusSuccessPassive.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusSuccessPassive">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusSuccessPassive.Load_Color">
+            <summary>Loads the image for Themed Icon StatusSuccessPassive theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusSuccessPassive.Load_Gray">
+            <summary>Loads the image for Themed Icon StatusSuccessPassive theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusSuccessPassive.Load_GrayDark">
+            <summary>Loads the image for Themed Icon StatusSuccessPassive theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusSuccessPassive.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon StatusSuccessPassive.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusUnknown">
+             <summary>
+            	<para>
+            		<para>StatusUnknown Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusUnknown"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusUnknown.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                       -"=!+))r/=^_          
+                    -!l)~:-`  `-_~Lt\_       
+                  ~tT~.            `^|{!     
+                `7I~    `~JS666oc-    "Ct`   
+                lo"````.aDD5!!)DDDr````_3F`  
+               ;a/`````~22u```.bDDy`````=ar  
+               tV:..........-LwDDE".....-V2  
+               1E,---------,bDD}^--------Ey  
+               +Xr______________________!XT  
+               `kU=________lVVl________~kh.  
+                .E9+"""""""kDDk"""""""!U6-   
+                 `)H5c=^^^^^^^^^^^^~?oA}.    
+                   `!umyT?+!~~;*rTjOy*.      
+                      `!T[y9DDwV[T/.         
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+StatusUnknown}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.StatusUnknown))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.StatusUnknown.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.StatusUnknown&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusUnknown.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusUnknown">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusUnknown.Load_Color">
+            <summary>Loads the image for Themed Icon StatusUnknown theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusUnknown.Load_Gray">
+            <summary>Loads the image for Themed Icon StatusUnknown theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusUnknown.Load_GrayDark">
+            <summary>Loads the image for Themed Icon StatusUnknown theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StatusUnknown.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon StatusUnknown.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StopTest">
+             <summary>
+            	<para>
+            		<para>StopTest Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StopTest"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StopTest.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                                             
+                   jjjjjjjjjjjjjjjjjjjj      
+                   VV                VV      
+                   ZZ````````````````ZZ      
+                   44````````````````44      
+                   pp----------------pp      
+                   ##----------------##      
+                   DD________________DD      
+                   88::::::::::::::::88      
+                   BB,,,,,,,,,,,,,,,,BB      
+                   $$$$$$$$$$$$$$$$$$$$      
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+StopTest}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.StopTest))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.StopTest.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.StopTest&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StopTest.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StopTest">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StopTest.Load_Color">
+            <summary>Loads the image for Themed Icon StopTest theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StopTest.Load_Gray">
+            <summary>Loads the image for Themed Icon StopTest theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StopTest.Load_GrayDark">
+            <summary>Loads the image for Themed Icon StopTest theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.StopTest.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon StopTest.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixture">
+             <summary>
+            	<para>
+            		<para>TestFixture Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixture"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixture.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                            '"~=/TL+!_       
+                         `^r\_``  `'"c{/.    
+                        -?+`  ```_--` `)x^   
+                       _T*``....."""",.`?o=  
+                    '"~rrJ)Lr=---=====~-"5u  
+                 `^r\_``  `'"cCc~/////!"~y5  
+                -?+`  ```_--` `)I7rrrr!=Jk*  
+               _T*``....."""",.`?ot)?++IP*   
+               ?J:`------=====~-"5j7t5Xx"    
+               |{"-______/////!"~ySul!.      
+               ^1c__,""""rrrrr!=Jk*          
+                ~ui^,"^^~TT)?++IP*           
+                 -J5l+;=^)T7t5Xx"            
+                   `;Ttukwkul!.              
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+TestFixture}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.TestFixture))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.TestFixture.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.TestFixture&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixture.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixture">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixture.Load_Color">
+            <summary>Loads the image for Themed Icon TestFixture theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixture.Load_Gray">
+            <summary>Loads the image for Themed Icon TestFixture theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixture.Load_GrayDark">
+            <summary>Loads the image for Themed Icon TestFixture theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixture.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon TestFixture.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureAborted">
+             <summary>
+            	<para>
+            		<para>TestFixtureAborted Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureAborted"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureAborted.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                          `_~=!L+!^`         
+                        `;r=-`  `-!ic.       
+                       .Lr. ```-'``.|}_      
+                  `_~=!7l?=_...""":-:1T      
+                `;r=-`  `-!l}tt|)JJLcxF/'    
+               .Lr. ```-'``tu:-uu:-uu:-u1    
+               !7_`....""":aa..aa..aa..aaTCaa
+               rl"--___====KK--KK--KK--KK5TKK
+               _C7":,""++\!44::44::44::44!:44
+                -lx)!=^?cTFHH^^s{^^|s^^Hb~^HH
+                  -*J1ah5FLRR==========tc=\RV
+                           EDc!!!!!!!!!!!!jD,
+                           ;W#r+++++++++rE8" 
+                            /%8Ic????Lik%E_  
+                             `}OQQQQQQH1_    
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+TestFixtureAborted}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.TestFixtureAborted))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.TestFixtureAborted.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.TestFixtureAborted&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureAborted.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureAborted">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureAborted.Load_Color">
+            <summary>Loads the image for Themed Icon TestFixtureAborted theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureAborted.Load_Gray">
+            <summary>Loads the image for Themed Icon TestFixtureAborted theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureAborted.Load_GrayDark">
+            <summary>Loads the image for Themed Icon TestFixtureAborted theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureAborted.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon TestFixtureAborted.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureFail">
+             <summary>
+            	<para>
+            		<para>TestFixtureFail Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureFail"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureFail.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                          `,;/r7c+~.         
+                        `+7+"_'-_^?Iz.       
+                       -J7:'--_"":-,}o_      
+                  `,;/r[ui+=,,,;;;="=yt      
+                `+7+"_'-_^?I1/~rrr+;/kI      
+               -J7:'--_"":-,}5nkZXwbdHI~     
+               r]=_,,,,;;;==oRbuJTLLTJI4Az-  
+               (u!"~~~~rrr}RHv??????????TwR! 
+               _51!=;!!TTu8b|)))))))))))))68+
+                -IatL+/ilD%IT            Tt%D
+                  _r[aUbE8NI7            7}N%
+                         r$mllllllllllllllb$l
+                          cQD1ttttttttttFRQl 
+                           "#g8XjI}}IjZDQ#;  
+                             -T9R$gg$D9T-    
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+TestFixtureFail}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.TestFixtureFail))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.TestFixtureFail.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.TestFixtureFail&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureFail.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureFail">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureFail.Load_Color">
+            <summary>Loads the image for Themed Icon TestFixtureFail theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureFail.Load_Gray">
+            <summary>Loads the image for Themed Icon TestFixtureFail theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureFail.Load_GrayDark">
+            <summary>Loads the image for Themed Icon TestFixtureFail theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureFail.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon TestFixtureFail.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureIgnored">
+             <summary>
+            	<para>
+            		<para>TestFixtureIgnored Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureIgnored"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureIgnored.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                          `,;/r7c+~.         
+                        `+7+"_'-_^?Iz.       
+                       -J7:'--_"":-,}o_      
+                  `,;/r[ui+=,,,;;;="=yt      
+                `+7+"_'-_^?I1/~rrr+;/kI      
+               -JT_'--_"":-,lj)TT)?LjE]a}"   
+               r]=_,,,,;;;=;)S5ooo2SkE7!7k1  
+               (u!"~~~~rTI5C+"-```-tt!;TEX!  
+               _51!=;!rVVr-   *kHRS+/l7:rkx- 
+                -IatL1Ut.    ]88ULr5A-   -JXr
+                  _r[XwT`   `q4TLV88b    `rwl
+                      :EHr-|ZzTE88Dl`  `=E9~ 
+                       =D8wl7ZP:   `_!}Oa!`  
+                       8Qwt6$NDD88DbkT=.     
+                        r0g$T`               
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+TestFixtureIgnored}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.TestFixtureIgnored))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.TestFixtureIgnored.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.TestFixtureIgnored&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureIgnored.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureIgnored">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureIgnored.Load_Color">
+            <summary>Loads the image for Themed Icon TestFixtureIgnored theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureIgnored.Load_Gray">
+            <summary>Loads the image for Themed Icon TestFixtureIgnored theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureIgnored.Load_GrayDark">
+            <summary>Loads the image for Themed Icon TestFixtureIgnored theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureIgnored.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon TestFixtureIgnored.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureSuccess">
+             <summary>
+            	<para>
+            		<para>TestFixtureSuccess Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureSuccess"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureSuccess.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                          `_~;/)r/~`         
+                        `!L!_.``._\t|.       
+                       '|c-``..__-`-7x_      
+                  `_~;/lF)!"---~~~"_^o7      
+                `!L!_.``._\tl=,!!!!~=a{      
+               '|c-``..__-`-71rLLr\+IV^      
+               \l"'----~~~"_^o1luoaaatr!-    
+               ?F~_,,,,!!!!~=Vef!-.``.-;tF;  
+               _Il~"^~~LLr\rou=        ,iLIT`
+                -{u7+;=)TJISI=       ,s{=`"I*
+                  _+tuV6S1cl1..*^``"Tl=````1{
+                           =C~`=J7|J=`````,C+
+                           `cl^`.==.`````,JT.
+                             =Jc=-'``'-~?l!` 
+                               _!r)llTr/_`   
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+TestFixtureSuccess}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.TestFixtureSuccess))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.TestFixtureSuccess.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.TestFixtureSuccess&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureSuccess.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureSuccess">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureSuccess.Load_Color">
+            <summary>Loads the image for Themed Icon TestFixtureSuccess theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureSuccess.Load_Gray">
+            <summary>Loads the image for Themed Icon TestFixtureSuccess theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureSuccess.Load_GrayDark">
+            <summary>Loads the image for Themed Icon TestFixtureSuccess theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureSuccess.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon TestFixtureSuccess.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethod">
+             <summary>
+            	<para>
+            		<para>TestMethod Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethod"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethod.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                       `_,^=!|r/=^.          
+                    `:!r~'``  `'_;lT~`       
+                   "L+-    ``-'.`` _)x!      
+                  =|=````````______``!3c     
+                 ,T!``......."""""""_'/o/    
+                 rJ_.--------~~~~~~~~__eI    
+                 ct_--_______!!!!!!!;"^ao    
+                 =C+__:::::::*******!=cV?    
+                  cIr""""""""?????r+/7kC`    
+                   +oi;^^~~~~T||)cLTuh7`     
+                    -+II)*!;=7JtFoEEc:       
+                       _\cJIkwV1z?,          
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+TestMethod}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.TestMethod))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.TestMethod.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.TestMethod&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethod.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethod">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethod.Load_Color">
+            <summary>Loads the image for Themed Icon TestMethod theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethod.Load_Gray">
+            <summary>Loads the image for Themed Icon TestMethod theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethod.Load_GrayDark">
+            <summary>Loads the image for Themed Icon TestMethod theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethod.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon TestMethod.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodBroken">
+             <summary>
+            	<para>
+            		<para>TestMethodBroken Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodBroken"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodBroken.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                       `_"^;+z?\;^'          
+                    `:*c^'-`  `'_;tv=-'![R0Y 
+                   "T*'    ``''.` .TG88kYrE0Y
+                  ;z=````````_"?jO8G5?;;Tow04
+                 "v;``....'*jH0boT;=?5G8mF=` 
+                 r1_.'_+oR0qS(;=cYk8#a7P2    
+                 TI*Yq0RPs+=\tU#8kY?;"~aS    
+               '*HBmPl*=*FPm0bE|\\\\+=TP?    
+             5D#U{\=+saR0Rjc~??????\*sVj`    
+             50{;(Eq0B6T=^^^^|z(7T?|jki`     
+              Y006?":LEj|\+;=vlfYE6h|,       
+                       _\sIePwVE{?~          
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:WycypejThemedIconsThemedIcons+TestMethodBroken}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(WycypejThemedIconsThemedIcons.TestMethodBroken))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = WycypejThemedIconsThemedIcons.TestMethodBroken.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;WycypejThemedIconsThemedIcons.TestMethodBroken&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodBroken.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodBroken">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodBroken.Load_Color">
+            <summary>Loads the image for Themed Icon TestMethodBroken theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodBroken.Load_Gray">
+            <summary>Loads the image for Themed Icon TestMethodBroken theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodBroken.Load_GrayDark">
+            <summary>Loads the image for Themed Icon TestMethodBroken theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodBroken.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon TestMethodBroken.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodAborted">
+             <summary>
+            	<para>
+            		<para>TestMethodAborted Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodAborted"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodAborted.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                    '"~=!L+!=_               
+                 `^r/_``  `.,ri!.            
+                -r+`  ```-'.` `Lt"           
+               _T\```...._____.`rx~          
+               ri,.------^^=ciJrL11!!||/-    
+               )t,-______==xo,_oo,_oo,_oI    
+               ^CL__,,,,,//SS..SS..SS..SST]SS
+                ~I7~""^^~?rhh__hh__hh__hhaThh
+                 -zolr!=~cTww,,ww,,ww,,ww/,ww
+                   `=Tl3SXSGG~~JC~~TJ~~Gb=~GG
+                           RR;;;;;;;;;;{);+Rk
+                           K8)////////////5D,
+                           ;MRrrrrrrrrrrrZ8" 
+                            /W83)LLLLclk%E_  
+                             `{#QggggQG1_    
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+TestMethodAborted}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.TestMethodAborted))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.TestMethodAborted.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.TestMethodAborted&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodAborted.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodAborted">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodAborted.Load_Color">
+            <summary>Loads the image for Themed Icon TestMethodAborted theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodAborted.Load_Gray">
+            <summary>Loads the image for Themed Icon TestMethodAborted theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodAborted.Load_GrayDark">
+            <summary>Loads the image for Themed Icon TestMethodAborted theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodAborted.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon TestMethodAborted.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodFail">
+             <summary>
+            	<para>
+            		<para>TestMethodFail Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodFail"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodFail.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                    -~;/r7c+!_               
+                 `=|L~_-..-,=Tx\.            
+                _T(_.----",_-'_i3^           
+               _}c--_____~~~~~__T5=          
+               |x=_""""""!!!!!;^=Sj          
+               iu="~~~~~~++++rsuSHGEot|~     
+               ~2J~~=====ccTV#buJTLLTJI4Az-  
+                =a[/;!!!!7oRHv??????????TwR! 
+                 _}k3Tr+/a8b|)))))))))))))68+
+                   `!ixaX8%IT            Tt%D
+                         GNI7            7}N%
+                         r$mllllllllllllllb$l
+                          cQD1ttttttttttFRQl 
+                           "#g8XjI}}IjZDQ#;  
+                             -T9R$gg$D9T-    
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+TestMethodFail}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.TestMethodFail))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.TestMethodFail.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.TestMethodFail&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodFail.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodFail">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodFail.Load_Color">
+            <summary>Loads the image for Themed Icon TestMethodFail theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodFail.Load_Gray">
+            <summary>Loads the image for Themed Icon TestMethodFail theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodFail.Load_GrayDark">
+            <summary>Loads the image for Themed Icon TestMethodFail theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodFail.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon TestMethodFail.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodIgnored">
+             <summary>
+            	<para>
+            		<para>TestMethodIgnored Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodIgnored"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodIgnored.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                    -~;/r7c+!_               
+                 `=|L~_-..-,=Tx\.            
+                _T(_.----",_-'_i3^           
+               _}c--_____~~~~~__T5=          
+               |x=_""""""!!!!!;^=Sj          
+               iu="~~~~~~++++++=/kS  _ia}"   
+               ~2J~~=====cc7FI11oe1i2E7!7k1  
+                =a[/;!!!r5aC+"-```-tt!;TEX!  
+                 _}k3TToVr-   *kHRS+/l7:rkx- 
+                   `!5Xt.    ]88ULr5A-   -JXr
+                     )wT`   `q4TLV88b    `rwl
+                      :EHr-|ZzTE88Dl`  `=E9~ 
+                       =D8wl7ZP:   `_!}Oa!`  
+                       8Qwt6$NDD88DbkT=.     
+                        r0g$T`               
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+TestMethodIgnored}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.TestMethodIgnored))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.TestMethodIgnored.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.TestMethodIgnored&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodIgnored.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodIgnored">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodIgnored.Load_Color">
+            <summary>Loads the image for Themed Icon TestMethodIgnored theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodIgnored.Load_Gray">
+            <summary>Loads the image for Themed Icon TestMethodIgnored theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodIgnored.Load_GrayDark">
+            <summary>Loads the image for Themed Icon TestMethodIgnored theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodIgnored.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon TestMethodIgnored.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodSuccess">
+             <summary>
+            	<para>
+            		<para>TestMethodSuccess Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodSuccess"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodSuccess.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                    -^~;/cr/=_               
+                 `~r+,'```.-"Ll!.            
+                -Lr' ````---``'){"           
+               _7+``''''',,,,,-'?I~          
+               Ll"'------~~~~~^_^oI          
+               |{"_::::::!!!!!;^=5o          
+               ^1),,"""""+++++!ruV1ttTr!-    
+                ~ul=~~~~~cLL?tuf!-.``.-;tF;  
+                 -Ja}r/!=T7tou=        ,iLIT`
+                   `=Ttuk4koI=       ,s{=`"I*
+                           T1..*^``"Tl=````1{
+                           =C~`=J7|J=`````,C+
+                           `cl^`.==.`````,JT.
+                             =Jc=-'``'-~?l!` 
+                               _!r)llTr/_`   
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+TestMethodSuccess}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.TestMethodSuccess))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.TestMethodSuccess.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.TestMethodSuccess&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodSuccess.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodSuccess">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodSuccess.Load_Color">
+            <summary>Loads the image for Themed Icon TestMethodSuccess theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodSuccess.Load_Gray">
+            <summary>Loads the image for Themed Icon TestMethodSuccess theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodSuccess.Load_GrayDark">
+            <summary>Loads the image for Themed Icon TestMethodSuccess theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodSuccess.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon TestMethodSuccess.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestPending">
+             <summary>
+            	<para>
+            		<para>TestPending Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestPending"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestPending.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                      ',~!+cll(r!=,-         
+                   _+xI)*;~"__"~;/cI1r,      
+                 ~Fu)=--------------~L31;    
+               -lo*_----.````````.-----;uF_  
+              -oI,----``   @@     ``'---_Fa: 
+             `o2,---.`     @@        .---_3a.
+             +V+---.       @@         `---;V|
+             }k"---`       @@          ---_ka
+             IE"---`       @@@@@@@@    ---_EV
+             LP/---.                  `---=Pl
+             .ES_---`                `---_uU-
+              "Xo:---'              .---_x6= 
+               ,kk/_----``      ``-----=5Z~  
+                `?XV|~--------------~La4|`   
+                  `;1bkT+;~"__,~;*)Sbo/`     
+                     `^/cl3kbbEul)/~`        
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+TestPending}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.TestPending))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.TestPending.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.TestPending&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestPending.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestPending">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestPending.Load_Color">
+            <summary>Loads the image for Themed Icon TestPending theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestPending.Load_Gray">
+            <summary>Loads the image for Themed Icon TestPending theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestPending.Load_GrayDark">
+            <summary>Loads the image for Themed Icon TestPending theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestPending.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon TestPending.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Time">
+             <summary>
+            	<para>
+            		<para>Time Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Time"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Time.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                       _;+|too}T+!,          
+                    ,cZj+;^_''_^=+IXT^       
+                  /Xy+_````````````-*2wL`    
+                `SH+.....-______-'....!bX.   
+                E#;-----___@@______----~H4`  
+               rDT---------@@-----------rDJ  
+               E8=___-'''''@@'''''''-___,8R  
+               w%=,,,.`````@@@@@@@@`.,,,"%D  
+               zNl"""_``````````````-"""cN2  
+               `8Mr~~~,`          `_~~~/8%-  
+                -8B7====,.     `.,====)%N,   
+                 `1QRC\;;;;;;;;;;;;!tHQK'    
+                   .rbgRotTr//r|luOQR|-      
+                      .rIURNgg$DUuc-         
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+Time}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.Time))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.Time.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.Time&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Time.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Time">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Time.Load_Color">
+            <summary>Loads the image for Themed Icon Time theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Time.Load_Gray">
+            <summary>Loads the image for Themed Icon Time theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Time.Load_GrayDark">
+            <summary>Loads the image for Themed Icon Time theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.Time.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon Time.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TrackRun">
+             <summary>
+            	<para>
+            		<para>TrackRun Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TrackRun"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TrackRun.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                         ;vF=  ~lJ/`         
+                        Ta+Lar!aT/5t`        
+                   ;lx=;yc__Jyyf__+yr=}t/`   
+                  7VrcVVV---_VV"--.VVVT/S{`  
+                 ;kc__lkk_  `kk`  .kkx__+kr  
+                 {E---_EEEEEEEEEEEEEE"--'Ea  
+                 lP_  `PPPo?!~~!ruPPP`  .Pu  
+                 `ryXXXXy!:_______;2XXXXkL`  
+                     ^6u,___________{6!      
+                     24-------------.4X      
+                     ?w, `.------.` -wl      
+                      ?b)_`      `-+bT       
+                       `~Tjwddddb5i=.        
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+TrackRun}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.TrackRun))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.TrackRun.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.TrackRun&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TrackRun.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TrackRun">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TrackRun.Load_Color">
+            <summary>Loads the image for Themed Icon TrackRun theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TrackRun.Load_Gray">
+            <summary>Loads the image for Themed Icon TrackRun theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TrackRun.Load_GrayDark">
+            <summary>Loads the image for Themed Icon TrackRun theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TrackRun.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon TrackRun.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.UnitTestingOptionsPage">
+             <summary>
+            	<para>
+            		<para>UnitTestingOptionsPage Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.UnitTestingOptionsPage"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.UnitTestingOptionsPage.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                       `_,^=!|r/=^.          
+                    `:!r~'``  `'_;lT~`       
+                   "L+-    ``-'.`` _)x!      
+                  =|=````````______``!3c     
+                 ,T!``......."""""""_'/o/    
+                 rJ_.--------~~~~~~~~__eI    
+                 ct_--_______!!!!!!!;"^ao    
+                 =C+__:::::::*******!=cV?    
+                  cIr""""""""?????r+/7kC`    
+                   +oi;^^~~~~T||)cLTuh7`     
+                    -+II)*!;=7JtFoEEc:       
+                       _\cJIkwV1z?,          
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingThemedIcons+UnitTestingOptionsPage}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingThemedIcons.UnitTestingOptionsPage))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingThemedIcons.UnitTestingOptionsPage.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingThemedIcons.UnitTestingOptionsPage&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.UnitTestingOptionsPage.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.UnitTestingOptionsPage">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.UnitTestingOptionsPage.Load_Color">
+            <summary>Loads the image for Themed Icon UnitTestingOptionsPage theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.UnitTestingOptionsPage.Load_Gray">
+            <summary>Loads the image for Themed Icon UnitTestingOptionsPage theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.UnitTestingOptionsPage.Load_GrayDark">
+            <summary>Loads the image for Themed Icon UnitTestingOptionsPage theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.UnitTestingOptionsPage.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon UnitTestingOptionsPage.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureToolWindow">
+             <summary>
+            	<para>
+            		<para>TestFixtureToolWindow Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureToolWindow"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureToolWindow.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:HawahevThemedIconsThemedIcons+TestFixtureToolWindow}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(HawahevThemedIconsThemedIcons.TestFixtureToolWindow))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = HawahevThemedIconsThemedIcons.TestFixtureToolWindow.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;HawahevThemedIconsThemedIcons.TestFixtureToolWindow&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureToolWindow.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureToolWindow">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureToolWindow.Load_Gray">
+            <summary>Loads the image for Themed Icon TestFixtureToolWindow theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureToolWindow.Load_GrayDark">
+            <summary>Loads the image for Themed Icon TestFixtureToolWindow theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestFixtureToolWindow.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon TestFixtureToolWindow.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodToolWindow">
+             <summary>
+            	<para>
+            		<para>TestMethodToolWindow Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodToolWindow"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodToolWindow.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:HawahevThemedIconsThemedIcons+TestMethodToolWindow}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(HawahevThemedIconsThemedIcons.TestMethodToolWindow))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = HawahevThemedIconsThemedIcons.TestMethodToolWindow.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;HawahevThemedIconsThemedIcons.TestMethodToolWindow&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodToolWindow.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodToolWindow">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodToolWindow.Load_Gray">
+            <summary>Loads the image for Themed Icon TestMethodToolWindow theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodToolWindow.Load_GrayDark">
+            <summary>Loads the image for Themed Icon TestMethodToolWindow theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.TestMethodToolWindow.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon TestMethodToolWindow.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.UnitTestRunner">
+             <summary>
+            	<para>
+            		<para>UnitTestRunner Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.UnitTestRunner"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.UnitTestRunner.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                             
+                       !!!,.                 
+                       //`,!=_`              
+                       ++   -~+=-            
+                  `_~=!ll+=-```:!+^.         
+                `;r='`  `-/tT-```-~+\,`      
+               .c+` ```--.`.T1"`````_!L!_    
+               !7_`....^^^"-,ol.......-^rc=  
+               rt"--___!!!!"=a1.......'"*T\  
+               _]7",,""LLr/*xV!-----,!Tc^`   
+                -t1|!=~|TJIkk;---_;(7!-      
+                  -+lIy6Xol!___=Ltr,         
+                       FF___~rt7~`           
+                       11"*lC\-              
+                       uuu)"`                
+                                             
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:UnitTestingFeatureThemedIcons+UnitTestRunner}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(UnitTestingFeatureThemedIcons.UnitTestRunner))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = UnitTestingFeatureThemedIcons.UnitTestRunner.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;UnitTestingFeatureThemedIcons.UnitTestRunner&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.UnitTestRunner.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.UnitTestRunner">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.UnitTestRunner.Load_Color">
+            <summary>Loads the image for Themed Icon UnitTestRunner theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.UnitTestRunner.Load_Gray">
+            <summary>Loads the image for Themed Icon UnitTestRunner theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.UnitTestRunner.Load_GrayDark">
+            <summary>Loads the image for Themed Icon UnitTestRunner theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Resources.UnitTestingThemedIcons.UnitTestRunner.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon UnitTestRunner.</summary>
+        </member>
+    </members>
+</doc>

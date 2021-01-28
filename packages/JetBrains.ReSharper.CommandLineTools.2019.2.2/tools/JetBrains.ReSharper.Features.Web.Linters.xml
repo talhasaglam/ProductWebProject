@@ -1,0 +1,300 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Features.Web.Linters</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterCaller">
+            <summary>
+              <para>Represents a caller for a linter.</para>
+              <para>Each enabled linter shoud have one caller.</para>
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterCaller.Linters">
+            <summary>
+              The linter which is used to make calls.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterCaller.Lint(JetBrains.ReSharper.Psi.JavaScript.Tree.IJavaScriptFile,System.Func{JetBrains.ReSharper.Features.Web.Linters.Linters.ILinter,System.Boolean})">
+            <summary>
+              Call linter synchronously.
+            </summary>
+            <param name="file"></param>
+            <param name="lintPredicate"></param>
+            <returns>Code problems, founded by the linter.</returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterManager">
+            <summary>
+              <para>Represents a manager of linters.</para>
+              <para>
+                It's responsible for creating <see cref="T:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterCaller" /> instances and has methods for synchronization with
+                settings.
+              </para>
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterManager.HasEnabledLinters">
+            <summary>
+              Can be used to understand whether any linter is enabled.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterManager.Lint(JetBrains.ReSharper.Psi.JavaScript.Tree.IJavaScriptFile)">
+            <summary>
+              Analyzes the file by all valid linter callers.
+            </summary>
+            <param name="file">File to lint</param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterManager.ConfigureRule(JetBrains.ReSharper.Psi.IPsiSourceFile,JetBrains.ReSharper.Features.Web.Linters.CodeProblems.CodeProblem,JetBrains.ReSharper.Feature.Services.Daemon.Severity)">
+            <summary>
+              Configures severity of the rule.
+            </summary>
+            <param name="sourceFile">File where highlighting to configure is located</param>
+            <param name="codeProblem">Code problem with info for configuration</param>
+            <param name="newSeverity">Desired severity</param>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterPathsCache">
+            <summary>
+              <para>The cache for linters package paths.</para>
+              <para>Each project can contain his own locally installed linter package.</para>
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterPathsCache.Item(System.Guid,System.String)">
+            <summary>
+              Gets the linter path for the project by project <see cref="T:System.Guid"/> and linter ID.
+            </summary>
+            <param name="projectGuid"></param>
+            <param name="linterId"></param>
+            <returns>null if there is no cached path, <see cref="F:JetBrains.Util.FileSystemPath.Empty"/> if cached path is invalid, path value otherwise.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterPathsCache.ClearPathsForProject(System.Guid)">
+            <summary>
+              Clear cached paths for the project.
+            </summary>
+            <param name="projectGuid"></param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterPathsCache.ClearPath(System.Guid,System.String)">
+            <summary>
+              Clear cached path for the linter.
+            </summary>
+            <param name="projectGuid"></param>
+            <param name="linterId"></param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterPathsCache.Clear">
+            <summary>
+              Clear all cache.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterProcessOwner">
+            <summary>
+              <para>An owner of the linter runner process.</para>
+              <para>Responsible for process lifetime and process interaction.</para>
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterProcessOwner.IsValid">
+            <summary>
+              Check if the process in the valid state.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterProcessOwner.Start">
+            <summary>
+              Start the process.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterProcessOwner.Initialize(System.Guid,System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Features.Web.Linters.Linters.LinterInfo})">
+            <summary>
+              Send initialization request to the process and wait for response.
+            </summary>
+            <param name="projectGuid"></param>
+            <param name="linters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterProcessOwner.Lint(JetBrains.ReSharper.Psi.JavaScript.Tree.IJavaScriptFile,System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Features.Web.Linters.Linters.ILinter})">
+            <summary>
+              Send analysis request to the process and wait for response.
+            </summary>
+            <param name="file"></param>
+            <param name="linters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILintersGeneralSettingsAccessor">
+            <summary>
+              Represents access to settings general to all linters.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILintersGeneralSettingsAccessor.LinterRunnerPath">
+            <summary>
+              Gets a path to the linter runner script.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILintersGeneralSettingsAccessor.LinterSettingsChanged">
+            <summary>
+              Listens to linter-specific changes.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.INodePathProvider">
+            <summary>
+            Represent interface of ShellComponent to provide access to Node.js path specified in settings.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.INodePathProvider.TrySearchForNodePath">
+            <summary>
+            Looks automatically for installed Node.js and returns its executable path (node.exe).  
+            </summary>
+            <returns>Returns Node.js executable path if Node.js is found, or <see cref="F:JetBrains.Util.FileSystemPath.Empty"/> otherwise.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.INodePathProvider.IsValidNodePath(JetBrains.Util.FileSystemPath)">
+            <summary>
+            Returns whether path is valid Node.js executable path.
+            </summary>
+            <param name="path">Path to check</param>
+            <returns>Returns <c>True</c> if path exists and it's Node.js executable (node.exe), or <c>False</c> otherwise.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.INodePathProvider.GetNodePath(JetBrains.Application.Settings.IContextBoundSettingsStore)">
+            <summary>
+            Returns Node.js executable path specified by settings.
+            </summary>
+            <param name="settingsStore">Settings context. By default (null value), the global context is used.</param>
+            <returns>Node.js executable path.</returns>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.INodePathProvider.NodePathChanged">
+            <summary>
+              Listens to changes of the entries corresponding to a Node.js executable path settings.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Web.Linters.LinterManagement.ILinterNotificationManager">
+            <summary>
+              Use to show user notifications in case of lint, initialization issues or unexpected issues. 
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinter">
+            <summary>
+              <para>Represents JS/TS linter object structure.</para>
+              <para>Gives acess to linter metadata and settings</para>
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinter.Id">
+            <summary>
+              Gets the linter ID.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinter.Name">
+            <summary>
+              Gets the linter user-friendly name.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinter.MessagePrefix">
+            <summary>
+              Gets the prefix for tooltip messages.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinter.RunType">
+            <summary>
+              Gets the linter run type.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinter.IsEnabled">
+            <summary>
+              Can be used to understand if the linter enabled from settings.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinter.PackagePath">
+            <summary>
+              Gets the linter package path from settings.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinter.ConfigFilePath">
+            <summary>
+              Gets the linter configuration file path from settings.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinter.AdditionalOptions">
+            <summary>
+              Gets the additional linter options.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinter.RelativeLinterPath">
+            <summary>
+              Gets the path to the linter source file relative to the linter package.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinter.IsLanguageSupported(JetBrains.ReSharper.Psi.PsiLanguageType)">
+            <summary>
+              Can be used to understand if the linter supports the language.
+            </summary>
+            <param name="language"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinter.GetSupportedSeverityOptions(System.String)">
+            <summary>
+              Gets a collection of severity options supported by the code problem.
+            </summary>
+            <param name="codeProblemId">Code problem unique id</param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinter.ParseOutput(JetBrains.ReSharper.Features.Web.Linters.LinterManagement.TransferMessages.LintResponse,JetBrains.ReSharper.Psi.JavaScript.Tree.IJavaScriptFileSection,JetBrains.ReSharper.Psi.JavaScript.Tree.IJavaScriptFile,System.Boolean)">
+            <summary>
+              Parses the lint response data. 
+            </summary>
+            <param name="response">Transfer response object to parse</param>
+            <param name="section"></param>
+            <param name="file"></param>
+            <param name="isFileSolid">Has to be true if a file is solid, false if there are script sections inside</param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinter.ConfigureRule(JetBrains.ReSharper.Psi.IPsiSourceFile,JetBrains.ReSharper.Features.Web.Linters.CodeProblems.CodeProblem,JetBrains.ReSharper.Feature.Services.Daemon.Severity,JetBrains.Util.FileSystemPath)">
+            <summary>
+              Finds a configuration file according to the linter-specific rules
+              and configures severity of the rule inside the found configuration file.
+            </summary>
+            <param name="sourceFile">File where highlighting to configure is located</param>
+            <param name="codeProblem">Code problem with info for configuration</param>
+            <param name="newSeverity">Desired severity</param>
+            <param name="linterInstanceLocation"></param>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinterSettingsAccessor">
+            <summary>
+              Represents access to linter settings.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinterSettingsAccessor.RunType">
+            <summary>
+              The way of linter launch.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinterSettingsAccessor.IsEnabled">
+            <summary>
+              Indicates whether the linter is enabled from settings.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinterSettingsAccessor.PackagePath">
+            <summary>
+              The linter package path from settings.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinterSettingsAccessor.ConfigFilePath">
+            <summary>
+             The linter configuration file path from settings.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.Linters.ILinterSettingsAccessor.AdditionalOptions">
+            <summary>
+              The linter additional options from settings.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Web.Linters.Linters.LinterCliParser">
+            <summary>
+              Parser for additional linter options represented by cli-format string.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Web.Linters.Linters.TsLint.ITslintSettingsAccessor.ValidateJsFiles">
+            <summary>
+              TSLint specific option which indicates the need of JavaScript files validation.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Web.Linters.Linters.LinterOptionsPage">
+            <summary>
+              Base class for linter option pages.
+            </summary>
+        </member>
+    </members>
+</doc>

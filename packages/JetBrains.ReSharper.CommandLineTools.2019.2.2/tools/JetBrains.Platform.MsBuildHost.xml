@@ -1,0 +1,512 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Platform.MsBuildHost</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.Platform.MsBuildHost.MsBuildConnectionFactory.GetEnvironmentVariablesMutator(JetBrains.ProjectModel.BuildTools.IBuildTool)">
+            <summary>
+            Do not set env variables declared in toolset app.config.
+            Otherwise MsBuild threats these env vars as Globalproperties and faild to override them from other settings
+              e.g. toolset configuration files
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.MsBuildHost.Models.Extensions.GetPropertyPathValue(JetBrains.Platform.MsBuildHost.Models.RdProject,System.String)">
+            <summary>
+            Use this method to get values with normalized path separators (for current OS)
+            MsBuild can return different separators for the same project on the same machine so it is good to normalize
+              them before transferring to project model and R# caches
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.MsBuildModel">
+            <summary>
+            Generated from: MsBuildModel.kt:10
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.BuildEventBase">
+            <summary>
+            Generated from: MsBuildModel.kt:491
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.BuildEventForProjectBase">
+            <summary>
+            Generated from: MsBuildModel.kt:511
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.BuildMessageKind">
+            <summary>
+            Generated from: MsBuildModel.kt:499
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.ConsoleBuildEvent">
+            <summary>
+            Generated from: MsBuildModel.kt:496
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.ErrorBuildEvent">
+            <summary>
+            Generated from: MsBuildModel.kt:528
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.ImportantBuildEvent">
+            <summary>
+            Generated from: MsBuildModel.kt:515
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.MessageBuildEvent">
+            <summary>
+            Generated from: MsBuildModel.kt:506
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdAddConfigurationItem">
+            <summary>
+            Generated from: MsBuildModel.kt:303
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdAddImportContext">
+            <summary>
+            Generated from: MsBuildModel.kt:289
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdAddImportLocation">
+            <summary>
+            Generated from: MsBuildModel.kt:293
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdAddItemContext">
+            <summary>
+            Generated from: MsBuildModel.kt:256
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdAddTargetContext">
+            <summary>
+            Generated from: MsBuildModel.kt:379
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdAddTaskContext">
+            <summary>
+            Generated from: MsBuildModel.kt:397
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdAdditionalLogger">
+            <summary>
+            Generated from: MsBuildModel.kt:28
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdBuildProjectItem">
+            <summary>
+            Generated from: MsBuildModel.kt:550
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdBuildRequest">
+            <summary>
+            Generated from: MsBuildModel.kt:564
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdBuildResult">
+            <summary>
+            Generated from: MsBuildModel.kt:554
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdBuildSession">
+            <summary>
+            Generated from: MsBuildModel.kt:615
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdBuildSessionContext">
+            <summary>
+            Generated from: MsBuildModel.kt:578
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdCalculatePropertiesConfiguration">
+            <summary>
+            Generated from: MsBuildModel.kt:327
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdCalculatePropertiesContext">
+            <summary>
+            Generated from: MsBuildModel.kt:316
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdCalculatePropertiesResult">
+            <summary>
+            Generated from: MsBuildModel.kt:332
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdCalculateProperty">
+            <summary>
+            Generated from: MsBuildModel.kt:321
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdCopyTaskContext">
+            <summary>
+            Generated from: MsBuildModel.kt:599
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdCopyTaskGlobalProperties">
+            <summary>
+            Generated from: MsBuildModel.kt:542
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdCopyTaskResult">
+            <summary>
+            Generated from: MsBuildModel.kt:531
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdCustomCommand">
+            <summary>
+            Generated from: MsBuildModel.kt:420
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdCustomTargetContext">
+            <summary>
+            Generated from: MsBuildModel.kt:604
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdCustomTargetResult">
+            <summary>
+            Generated from: MsBuildModel.kt:609
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdDeployCondition">
+            <summary>
+            Generated from: MsBuildModel.kt:637
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdEditTargetSession">
+            <summary>
+            Generated from: MsBuildModel.kt:408
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdEvaluateProjectPropertiesRequest">
+            <summary>
+            Generated from: MsBuildModel.kt:355
+            </summary>
+        </member>
+        <member name="P:JetBrains.Platform.MsBuildHost.Models.RdEvaluateProjectPropertiesRequest.TargetFramework">
+            <summary>
+            Specific target framework, for projects with multiple target frameworks
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdEvaluateProjectPropertiesSession">
+            <summary>
+            Generated from: MsBuildModel.kt:359
+            </summary>
+        </member>
+        <member name="P:JetBrains.Platform.MsBuildHost.Models.RdEvaluateProjectPropertiesSession.MultipleTargetFrameworks">
+            <summary>
+            Target frameworks list in case of project with multiple target frameworks
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdEvaluatedProjectItemOrigin">
+            <summary>
+            Generated from: MsBuildModel.kt:105
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdFolderContext">
+            <summary>
+            Generated from: MsBuildModel.kt:279
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdGetItemContext">
+            <summary>
+            Generated from: MsBuildModel.kt:251
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdImportedProjectItemOrigin">
+            <summary>
+            Generated from: MsBuildModel.kt:100
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdInputProperty">
+            <summary>
+            Generated from: MsBuildModel.kt:168
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdInputTarget">
+            <summary>
+            Generated from: MsBuildModel.kt:173
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdItemMetadata">
+            <summary>
+            Generated from: MsBuildModel.kt:238
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdItemWithMetadata">
+            <summary>
+            Generated from: MsBuildModel.kt:84
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdLoadError">
+            <summary>
+            Generated from: MsBuildModel.kt:64
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdLoggingLevel">
+            <summary>
+            Generated from: MsBuildModel.kt:18
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdMessageImportance">
+            <summary>
+            Generated from: MsBuildModel.kt:583
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdModificationSettings">
+            <summary>
+            Generated from: MsBuildModel.kt:467
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdModifyConfigurationsContext">
+            <summary>
+            Generated from: MsBuildModel.kt:308
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdPauseEvaluationCommand">
+            <summary>
+            Generated from: MsBuildModel.kt:422
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProject">
+            <summary>
+            Generated from: MsBuildModel.kt:154
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectCollectionDump">
+            <summary>
+            Generated from: MsBuildModel.kt:429
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectConfiguration">
+            <summary>
+            Generated from: MsBuildModel.kt:140
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectDescription">
+            <summary>
+            Generated from: MsBuildModel.kt:145
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectDump">
+            <summary>
+            Generated from: MsBuildModel.kt:430
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectFileContent">
+            <summary>
+            Generated from: MsBuildModel.kt:284
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectId">
+            <summary>
+            Generated from: MsBuildModel.kt:177
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectImport">
+            <summary>
+            Generated from: MsBuildModel.kt:129
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectImportIdentity">
+            <summary>
+            Generated from: MsBuildModel.kt:234
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectItem">
+            <summary>
+            Generated from: MsBuildModel.kt:108
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectItemDefinition">
+            <summary>
+            Generated from: MsBuildModel.kt:88
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectItemDefinitionIdentity">
+            <summary>
+            Generated from: MsBuildModel.kt:230
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectItemIdentity">
+            <summary>
+            Generated from: MsBuildModel.kt:224
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectItemOrigin">
+            <summary>
+            Generated from: MsBuildModel.kt:92
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectItemWithInfo">
+            <summary>
+            Generated from: MsBuildModel.kt:116
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectLoadResult">
+            <summary>
+            Generated from: MsBuildModel.kt:181
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectMetadata">
+            <summary>
+            Generated from: MsBuildModel.kt:78
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectModelSession">
+            <summary>
+            Generated from: MsBuildModel.kt:472
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectOperations">
+            <summary>
+            Generated from: MsBuildModel.kt:437
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectParameters">
+            <summary>
+            Generated from: MsBuildModel.kt:629
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectPropertiesSet">
+            <summary>
+            Generated from: MsBuildModel.kt:351
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectProperty">
+            <summary>
+            Generated from: MsBuildModel.kt:73
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectTarget">
+            <summary>
+            Generated from: MsBuildModel.kt:135
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectTargetProperty">
+            <summary>
+            Generated from: MsBuildModel.kt:368
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectTargetTask">
+            <summary>
+            Generated from: MsBuildModel.kt:373
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectTemplatesSession">
+            <summary>
+            Generated from: MsBuildModel.kt:642
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectUnloadResult">
+            <summary>
+            Generated from: MsBuildModel.kt:189
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdProjectWildcardItem">
+            <summary>
+            Generated from: MsBuildModel.kt:122
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdRelativeToAfter">
+            <summary>
+            Generated from: MsBuildModel.kt:248
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdRelativeToBefore">
+            <summary>
+            Generated from: MsBuildModel.kt:249
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdRelativeToContext">
+            <summary>
+            Generated from: MsBuildModel.kt:244
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdReloadProjectRequest">
+            <summary>
+            Generated from: MsBuildModel.kt:194
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdReloadProjectsSession">
+            <summary>
+            Generated from: MsBuildModel.kt:207
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdReloadProjectsSessionWrapper">
+            <summary>
+            Generated from: MsBuildModel.kt:216
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdRemoveImportContext">
+            <summary>
+            Generated from: MsBuildModel.kt:299
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdRemoveItemContext">
+            <summary>
+            Generated from: MsBuildModel.kt:274
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdRemoveTargetContext">
+            <summary>
+            Generated from: MsBuildModel.kt:388
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdRemoveTaskContext">
+            <summary>
+            Generated from: MsBuildModel.kt:403
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdSavePropertiesContext">
+            <summary>
+            Generated from: MsBuildModel.kt:344
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdSaveProperty">
+            <summary>
+            Generated from: MsBuildModel.kt:338
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdSession">
+            <summary>
+            Generated from: MsBuildModel.kt:49
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdSetTargetPropertyContext">
+            <summary>
+            Generated from: MsBuildModel.kt:392
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdSmartTargetsResolver">
+            <summary>
+            Generated from: MsBuildModel.kt:201
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdThisProjectItemOrigin">
+            <summary>
+            Generated from: MsBuildModel.kt:96
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdToolsetContext">
+            <summary>
+            Generated from: MsBuildModel.kt:33
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdUpdateItemContext">
+            <summary>
+            Generated from: MsBuildModel.kt:266
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.RdVerbosityLevel">
+            <summary>
+            Generated from: MsBuildModel.kt:570
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildHost.Models.WarningBuildEvent">
+            <summary>
+            Generated from: MsBuildModel.kt:525
+            </summary>
+        </member>
+    </members>
+</doc>

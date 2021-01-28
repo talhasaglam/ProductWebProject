@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Platform.MsBuildEventLoggerModel</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.Platform.MsBuildEventLoggerModel.Models.MsBuildExeLoggerModel">
+            <summary>
+            Generated from: MsBuildExeLoggerModel.kt:10
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildEventLoggerModel.Models.MsBuildExeBuildEvent">
+            <summary>
+            Generated from: MsBuildExeLoggerModel.kt:21
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildEventLoggerModel.Models.MsBuildExeBuildModelInitialized">
+            <summary>
+            Generated from: MsBuildExeLoggerModel.kt:73
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildEventLoggerModel.Models.MsBuildExeBuildModelWithParameters">
+            <summary>
+            Generated from: MsBuildExeLoggerModel.kt:42
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildEventLoggerModel.Models.MsBuildExeBuildOutputMessage">
+            <summary>
+            Generated from: MsBuildExeLoggerModel.kt:31
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildEventLoggerModel.Models.MsBuildExeBuildResult">
+            <summary>
+            Generated from: MsBuildExeLoggerModel.kt:37
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildEventLoggerModel.Models.MsBuildExeEventKind">
+            <summary>
+            Generated from: MsBuildExeLoggerModel.kt:15
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildEventLoggerModel.Models.MsBuildExeLogEntry">
+            <summary>
+            Generated from: MsBuildExeLoggerModel.kt:68
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.MsBuildEventLoggerModel.Models.MsBuildExeLogEntryType">
+            <summary>
+            Generated from: MsBuildExeLoggerModel.kt:60
+            </summary>
+        </member>
+    </members>
+</doc>

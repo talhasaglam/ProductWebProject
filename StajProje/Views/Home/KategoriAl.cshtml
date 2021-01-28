@@ -1,0 +1,38 @@
+﻿@model IEnumerable<StajProje.Entity.Kategori>
+@{
+    var kategoriSec = Url.RequestContext.RouteData.Values["id"];
+}
+@*kategori idleri çekiyor yukardaki*@
+<div class="row justify-content-center">
+    <div class="col-md-10 mb-5 text-center">
+        <ul class="product-category">
+            <li><a href="/Home/Urunler" class="active">All</a></li>
+            @foreach (var item in Model)
+            { 
+                @* hangisine tıklanırsa onun rengini aktif ediyor all içinde yapıcaz *@
+                if (kategoriSec != null)
+                {
+                    if (item.Id == int.Parse(kategoriSec.ToString()))
+                    {
+                        <li><a href="/Home/Urunler/@item.Id" class="active">@item.Ad</a></li>
+                       
+                    }
+
+                    else
+                    {
+
+                        <li><a href="/Home/Urunler/@item.Id" >@item.Ad</a></li>
+                       
+
+                    }
+                }
+                else
+                {
+                    <li><a href="/Home/Urunler/@item.Id">@item.Ad</a></li>
+                   
+                }
+
+            }
+        </ul>
+    </div>
+</div>

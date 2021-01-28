@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Platform.MsBuildTask.v15</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.Platform.MsBuildTask.SmartTargetsResolver">
+            <summary>
+            Adds additional targets to project loading which can provide items
+              important for project model and code analysis
+            Use component only for msbuild 15.0 because it is important only for modern projects
+            </summary>
+        </member>
+    </members>
+</doc>

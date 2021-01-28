@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Platform.IisExpressTask</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.Platform.IisExpressTask.Models.IisExpressWorkerModel">
+            <summary>
+            Generated from: IisExpressWorkerModel.kt:10
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.IisExpressTask.Models.RdIisExpressWorkerProcessOutput">
+            <summary>
+            Generated from: IisExpressWorkerModel.kt:18
+            </summary>
+        </member>
+    </members>
+</doc>

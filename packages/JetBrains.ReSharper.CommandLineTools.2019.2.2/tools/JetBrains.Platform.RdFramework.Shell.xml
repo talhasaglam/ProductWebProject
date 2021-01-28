@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Platform.RdFramework.Shell</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.Platform.RdFramework.ExternalProcess.ProtocolConnection`1.Queue(System.Action)">
+            <summary>
+            Queues an action on the external process protocol thread
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.RdFramework.ExternalProcess.ProtocolConnection`1.Execute(System.Action)">
+            <summary>
+            Executes an action on the external process protocol thread and waits
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.RdFramework.ExternalProcess.ProtocolConnection`1.Execute``1(System.Func{``0})">
+            <summary>
+            Executes an action on the external process protocol thread and waits for result
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.RdFramework.ExternalProcess.ProtocolEndPoint`2">
+            <summary>
+            Represents an endpoint that allows to communicate by Rd Protocol from the side of external process.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.RdFramework.Impl.ProtocolComponent.#ctor(JetBrains.Application.Threading.IShellLocks,JetBrains.Rd.Reflection.IPolymorphicTypesCatalog,JetBrains.Lifetimes.Lifetime)">
+            <summary>
+            Stub ctor for local use by Shell container.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.RdFramework.Impl.RdDispatcher.RunWhile(System.Func{System.Boolean},System.Boolean)">
+            <summary>
+            Pumps protocol messages while given condition is satisfied.
+            </summary>
+            <param name="condition"> A delegate to be executed over and over while it returns true. </param>
+            <param name="pumpJetDispatcher">
+            Allows to pump unguarded actions on UI thread if flag is true.
+            But it might causes messages reordering.
+            </param>
+        </member>
+        <member name="T:JetBrains.Platform.RdFramework.Impl.SimpleInpaceExecutingScheduler">
+            <summary>
+            Executes the given action just in the current thread in Queue method
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.RdFramework.RdVerification.RdModelsVerifier">
+            <summary>
+            RdModel verification for each <see cref="T:JetBrains.Platform.RdFramework.RdPolymorphicModelAttribute"/>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.RdFramework.RdVerification.RdTypesCatalogWrapper">
+            <summary>
+            This discovery point for models marked with <see cref="T:JetBrains.Platform.RdFramework.RdPolymorphicModelAttribute"/>
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.RdFramework.RdVerification.RdTypesCatalogWrapper.Hash(JetBrains.Util.dataStructures.Sources.StringSource,System.Int64)">
+            <summary>
+            Reimplementation of <see cref="!:RdId.Hash"/>, which can't use <see cref="T:JetBrains.Util.dataStructures.Sources.StringSource"/> type directly
+            </summary>
+            <param name="s"></param>
+            <param name="initValue"></param>
+            <returns></returns>
+        </member>
+        <member name="P:JetBrains.Platform.RdFramework.Util.UProperty`1.Change">
+            <inheritdoc />
+        </member>
+        <member name="P:JetBrains.Platform.RdFramework.Util.UProperty`1.Id">
+            <inheritdoc />
+        </member>
+        <member name="P:JetBrains.Platform.RdFramework.Util.UProperty`1.IsNullValueAllowed">
+            <inheritdoc />
+        </member>
+        <member name="P:JetBrains.Platform.RdFramework.Util.UProperty`1.Maybe">
+            <inheritdoc />
+        </member>
+        <member name="P:JetBrains.Platform.RdFramework.Util.UProperty`1.Value">
+            <inheritdoc cref="P:JetBrains.Platform.RdFramework.Util.UProperty`1.Value" />
+        </member>
+        <member name="M:JetBrains.Platform.RdFramework.Util.UProperty`1.JetBrains#Collections#Viewable#ISource{TValue}#Advise(JetBrains.Lifetimes.Lifetime,System.Action{`0})">
+            <inheritdoc />
+        </member>
+        <member name="P:JetBrains.Platform.RdFramework.Util.UProperty`1.JetBrains#DataFlow#IHaveUntypedProperty#AsUntyped">
+            <inheritdoc />
+        </member>
+        <member name="P:JetBrains.Platform.RdFramework.Util.UProperty`1.JetBrains#DataFlow#IProperty{TValue}#BeforeChange">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.Platform.RdFramework.Util.UProperty`1.JetBrains#Rd#Base#IRdBindable#Bind(JetBrains.Lifetimes.Lifetime,JetBrains.Rd.Base.IRdDynamic,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="P:JetBrains.Platform.RdFramework.Util.UProperty`1.JetBrains#Collections#Viewable#IReadonlyProperty{TValue}#Change">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.Platform.RdFramework.Util.UProperty`1.System#IDisposable#Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.Platform.RdFramework.Util.UProperty`1.JetBrains#DataFlow#IProperty{TValue}#GetValue">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.Platform.RdFramework.Util.UProperty`1.JetBrains#DataFlow#IProperty{TValue}#GetValue(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.Platform.RdFramework.Util.UProperty`1.JetBrains#Rd#Base#IRdBindable#Identify(JetBrains.Rd.IIdentities,JetBrains.Rd.RdId)">
+            <inheritdoc />
+        </member>
+        <member name="P:JetBrains.Platform.RdFramework.Util.UProperty`1.JetBrains#Rd#Base#IRdDynamic#Location">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.Platform.RdFramework.Util.UProperty`1.JetBrains#Rd#Base#IPrintable#Print(JetBrains.Rd.Util.PrettyPrinter)">
+            <inheritdoc />
+        </member>
+        <member name="P:JetBrains.Platform.RdFramework.Util.UProperty`1.JetBrains#Rd#Base#IRdDynamic#Proto">
+            <inheritdoc />
+        </member>
+        <member name="P:JetBrains.Platform.RdFramework.Util.UProperty`1.JetBrains#Rd#Base#IRdBindable#RdId">
+            <inheritdoc />
+        </member>
+        <member name="P:JetBrains.Platform.RdFramework.Util.UProperty`1.JetBrains#Rd#Base#IRdDynamic#SerializationContext">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.Platform.RdFramework.Util.UProperty`1.JetBrains#DataFlow#IProperty{TValue}#SetValue(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.Platform.RdFramework.Util.UProperty`1.SetValue(`0,System.Object)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

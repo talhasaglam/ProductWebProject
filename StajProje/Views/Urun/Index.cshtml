@@ -1,0 +1,66 @@
+﻿@model IEnumerable<StajProje.Entity.Urun>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>ÜRÜNLER</h2>
+
+<table class="table">
+    <thead class="thead-primary">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Kategori.Ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fotograf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stok)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Onayli)
+        </th>
+        <th>
+            @Html.ActionLink("Yeni Ürün Ekle", "Create", new{},new { @class = "btn btn-danger btn-sm" })
+        </th>
+    </tr>
+    </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kategori.Ad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fiyat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fotograf)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stok)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Onayli)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-primary btn-sm" })
+                </td>
+            </tr>
+        }
+
+</table>

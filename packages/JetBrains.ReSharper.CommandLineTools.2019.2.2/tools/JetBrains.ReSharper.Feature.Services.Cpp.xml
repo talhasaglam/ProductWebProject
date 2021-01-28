@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Feature.Services.Cpp</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.Refactorings.CppUE4RpcRefactoringHelper.GetFunctionType(System.String)">
+            <remarks><c>FindGeneratedFunctions</c> should be called prior calling this function</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.Refactorings.CppUE4RpcRefactoringHelper.FindGeneratedFunctions(JetBrains.ReSharper.Psi.IDeclaredElement)">
+            <summary>Searches for RPC generated functions and memorizes their names/types for further checking</summary>
+            <remarks>
+            Expects <c>CppLinkageEntityDeclaredElement</c> as input.
+            SLOW! Queries LinkageCache - so don't use in performance critical code or in often-called methods like IsAvailable.
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Cpp.ContextHighlighter.CppMatchingFormatContextHighlighter">
+            <summary>
+            This class matches corresponding "... %_ ..." and arguments of printf()
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.ContextHighlighter.CppMatchingFormatContextHighlighter.CollectHighlightings(JetBrains.ReSharper.Psi.DataContext.IPsiDocumentRangeView,JetBrains.ReSharper.Daemon.CaretDependentFeatures.HighlightingsConsumer)">
+            <summary>
+            Entry point of the class: collects highlighting of corresponding format codes and arguments of printf()
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.ContextHighlighter.CppMatchingFormatContextHighlighter.FindPrintfExpression(JetBrains.ReSharper.Psi.Cpp.Tree.ICppExpressionNode,JetBrains.ReSharper.Psi.Cpp.Services.CppFormatOverviewBase@,System.Int32@)">
+            <summary>
+            finds the enveloping printf (if any) and tells the index of selected argument (that may be a buffer, a format, or a data to print - we don't check it yet)
+            </summary>
+            <returns>true if a highlightable printf() is found, false otherwise</returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppOptionsPage">
+            <summary>
+            Root options page for the C++ language options.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.ClangTidy">
+             <summary>
+            	<para>
+            		<para>ClangTidy Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.ClangTidy"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.ClangTidy.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                           pXqD##80BM        
+                           pX--.'''BM        
+                           pX--.'''BM        
+                           pX--.'''BM        
+                           pX--.'''BM        
+                          ^pX--.'''BM/       
+                         ?wT_--.'''^iWV      
+                         4w``--.''''_W$      
+                         4wpXqD##80BMW$      
+                       ,Sp+  `````` .BX      
+                    '*apT`  ```````  BB      
+               "=LlP4|^`  ``.'````` -Bq      
+               ek=_.    ```+{`````` *Bv      
+               \4_      -=aP'````` _#8`      
+                fh*` `^fOR{`     `+Dq'       
+                 ~5wbpXOqRRRD###88qc`        
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:PopetilThemedIconsThemedIcons+ClangTidy}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(PopetilThemedIconsThemedIcons.ClangTidy))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = PopetilThemedIconsThemedIcons.ClangTidy.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;PopetilThemedIconsThemedIcons.ClangTidy&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.ClangTidy.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.ClangTidy">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.ClangTidy.Load_Color">
+            <summary>Loads the image for Themed Icon ClangTidy theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.ClangTidy.Load_Gray">
+            <summary>Loads the image for Themed Icon ClangTidy theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.ClangTidy.Load_GrayDark">
+            <summary>Loads the image for Themed Icon ClangTidy theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.ClangTidy.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon ClangTidy.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.Performance">
+             <summary>
+            	<para>
+            		<para>Performance Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.Performance"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.Performance.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                                  `_~*?T1Cf{)
+                              -"\{C7L+=^^=;aa
+                           ';slc;,__:,"~^=;P5
+                   ``-'''^Jl+,''__:,"~^==;(PL
+               `=c|?*\LLcL"'''__:~;^^==;;LPP`
+              `zT'``':^===''__:+ePPPY!;+*Sh" 
+               Tz``=llllv^__:,"}PPPPP?*LE4=  
+               _vT'.+lFc,_:,"~^;zIj{J\?P4=   
+                '{C_'___:,"~^==;;+*\L|6V~    
+                cYL'__:,"~^==;;+*\LTSGv`     
+               '=T5|=,"~^==;;+*\L?YhGv       
+              `^,`:7E1+==;;+*\L725r*b7       
+              =='-` 'zaYc+*\T}Y1Ya:\O+       
+             '+^_'````:vVEj64j!::'_A4-       
+             =\~::__:,""~c='_LEHe2pP.        
+             *r+;^^:_-`         -_-          
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:PopetilThemedIconsThemedIcons+Performance}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(PopetilThemedIconsThemedIcons.Performance))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = PopetilThemedIconsThemedIcons.Performance.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;PopetilThemedIconsThemedIcons.Performance&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.Performance.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.Performance">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.Performance.Load_Color">
+            <summary>Loads the image for Themed Icon Performance theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.Performance.Load_Gray">
+            <summary>Loads the image for Themed Icon Performance theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.Performance.Load_GrayDark">
+            <summary>Loads the image for Themed Icon Performance theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.Performance.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon Performance.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.Unreal">
+             <summary>
+            	<para>
+            		<para>Unreal Themed Icon generated identifiers:</para>
+            		<para>— <see cref="T:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.Unreal"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref="F:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.Unreal.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref="T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+                      ~TZh#Nggg8GjT=         
+                   \D@@RY?;,..:=?}A@@0T      
+                 Y@@X+`             =h@@a`   
+               ~g@}`    .++`        '" c@g;  
+              =@g'   `1g@@       +8@R-  `g@\ 
+             '@@'  `1@@@@@h`  +8@@@|     `g@_
+             G@v  c@@m4@@@@.   @@@@:      +@M
+             g@_ 5@Y`  @@@@.   @@@@.      `@@
+             g@''g"    @@@@.   @@@@.      `@@
+             q@?'`     @@@@.   @@@@_  ``  =@N
+             _@@`      @@@@=`"1@@@@ETn;  `g@^
+              c@g`   `Y@@@@@@@@@@@@@A'  `B@1 
+               *@gL    ^Y8@@@gc +85.   ^g@J  
+                `G@gn,     `.       _}g@D'   
+                  -{g@gEc=_-  `_=L5g@gj'     
+                     `cjA0gg@@@gMXjT.        
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:PopetilThemedIconsThemedIcons+Unreal}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(PopetilThemedIconsThemedIcons.Unreal))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = PopetilThemedIconsThemedIcons.Unreal.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;PopetilThemedIconsThemedIcons.Unreal&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="F:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.Unreal.Id">
+            <inheritdoc cref="T:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.Unreal">identifier class</inheritdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.Unreal.Load_Color">
+            <summary>Loads the image for Themed Icon Unreal theme aspect Color.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.Unreal.Load_Gray">
+            <summary>Loads the image for Themed Icon Unreal theme aspect Gray.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.Unreal.Load_GrayDark">
+            <summary>Loads the image for Themed Icon Unreal theme aspect GrayDark.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.Options.CppThemedIcons.Unreal.GetThemeImages">
+            <summary>Returns the set of theme images for Themed Icon Unreal.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.SelectEmbracingConstruct.CppSelectEmbracingConstructUtil.BuildNodeSelection(JetBrains.ReSharper.Psi.Tree.IFile,JetBrains.ReSharper.Psi.Tree.ITreeNode,JetBrains.ReSharper.Feature.Services.SelectEmbracingConstruct.ExtendToTheWholeLinePolicy)">
+            <summary>
+            Builds embracing selection construct for the individual node of PSI-tree
+            </summary>
+            <param name="fileNode">target file to peek into</param>
+            <param name="node">target node to build embracing selection construct around</param>
+            <param name="ewpl">extend-the-whole-line policy value</param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.SelectEmbracingConstruct.CppSelectEmbracingConstructUtil.ExtendRangeSelection(JetBrains.ReSharper.Psi.Tree.IFile,JetBrains.ReSharper.Psi.Tree.ITreeNode,JetBrains.ReSharper.Psi.Tree.ITreeNode)">
+            <summary>
+            Extends embracing selection construct for the given PSI-tree's nodes 'range'
+            </summary>
+            <param name="fileNode">target file to peek into</param>
+            <param name="first">head node of the range</param>
+            <param name="last">tail node of the range</param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Cpp.SelectEmbracingConstruct.CppSelectEmbracingConstructUtil.ExtendPPRangeSelection(JetBrains.ReSharper.Psi.Tree.IFile,JetBrains.ReSharper.Psi.Tree.ITreeNode,JetBrains.ReSharper.Psi.Tree.ITreeNode)">
+            <summary>
+            Extends embracing PP selection construct for the given PSI-tree's nodes 'range'
+            </summary>
+            <param name="fileNode">target file to peek into</param>
+            <param name="first">head node of the range</param>
+            <param name="last">tail node of the range</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

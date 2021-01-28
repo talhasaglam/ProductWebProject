@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Daemon</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.ReSharper.Daemon.CaretDependentFeatures.MatchingBraceContextHighlighterBase`1.IsValidNode(JetBrains.ReSharper.Psi.Tree.ITokenNode)">
+            <summary>
+            Checks if the node is valid (that is, may be highlighted)
+            In C++, currentNode may come from a macro substitution and therefore may have invalid document range
+            so we should find its prototype node
+            </summary>
+            <param name="currentToken">currentToken is a matched parenthesis/bracket/brace</param>
+            <returns>true if the token or its prototype can be highlighted</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CaretDependentFeatures.MatchingBraceContextHighlighterBase`1.GetActualToken(JetBrains.ReSharper.Psi.Tree.ITokenNode)">
+            <summary>
+            Returns the token itself or its prototype macro call
+            (should be overloaded in C++ to support macros)
+            </summary>
+            <param name="currentToken">currentToken is a matched parenthesis/bracket/brace</param>
+            <returns>corresponding visible token in the document</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CaretDependentFeatures.MatchingHighlightingsConsumer.ConsumeInvisibleBraceHint(JetBrains.ReSharper.Daemon.CaretDependentFeatures.InvisibleBraceHint)">
+            <summary>
+            Updates a InvisibleBraceHint
+            </summary>
+            <param name="invisibleBraceHint"></param>
+        </member>
+        <member name="P:JetBrains.ReSharper.Daemon.CaretDependentFeatures.MatchingHighlightingsConsumer.MatchingBraceCookie">
+            <summary>
+            A pair of braces used from <see cref="T:JetBrains.ReSharper.Daemon.CaretDependentFeatures.MatchingBraceSuggester"/> e.g. for matched brace navigation 
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CaretDependentFeatures.MatchingHighlightingsConsumer.ConsumeBraceCookie(JetBrains.DocumentModel.DocumentRange,JetBrains.DocumentModel.DocumentRange)">
+            <summary>
+            Updated a pair of ranges used for a cookie
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CaretDependentFeatures.MatchingHighlightingsConsumer.ConsumeMatchedBraces(JetBrains.DocumentModel.DocumentRange,JetBrains.DocumentModel.DocumentRange,System.Boolean)">
+            <summary>
+            Adds a pair of ranges to list of ones which should be highlighted as matched, updates the MatchingBraceCookie
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CaretDependentFeatures.MatchingHighlightingsConsumer.ConsumeUnmatchedBrace(JetBrains.DocumentModel.DocumentRange)">
+            <summary>
+            Addes a range to list of unmatched highlighters
+            </summary>
+            <param name="unmatchedBraceRange"></param>
+        </member>
+        <member name="F:JetBrains.ReSharper.Daemon.CodeFolding.CodeFoldingAttributes.DEFAULT_FOLDING_ATTRIBUTE">
+            <summary>
+            Default folding attribute id used for folding with no user customization on initial collapsed state
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CodeFolding.CodeFoldingUtil.AddFoldingForBracedConstruct(JetBrains.ReSharper.Daemon.CodeFolding.FoldingHighlightingConsumer,System.String,JetBrains.ReSharper.Psi.Tree.ITokenNode,JetBrains.ReSharper.Psi.Tree.ITokenNode,JetBrains.ReSharper.Psi.Tree.ITreeNode,JetBrains.ReSharper.Psi.Tree.ITreeNode,System.String)">
+            <summary>
+            Util method for creating folding ranges for { } blocks.
+            In case of code formatted with braces starting on a separate line, the code folding is shifted to the left where appropriate.
+            e.g Method()//folding-start
+            {
+              ...
+            }//folding-end
+            </summary>
+            <param name="context"> HighlighterConsumer</param>
+            <param name="attributeId"> attribute id of a corresponding highlighter <see cref="T:JetBrains.ReSharper.Daemon.CodeFolding.CodeFoldingAttributes"/></param>
+            <param name="lbrace">Offset of left brace of the block</param>
+            <param name="rbrace">Offset of the right brace of the block</param>
+            <param name="anchorToken">Token which limits the left-shifting of the folding range, e.g. RBrace in method declaration or name in a namespace declaration </param>
+            <param name="placeholder">Placeholder text shown when folding is collapsed</param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CodeFolding.FoldingHighlightingConsumer.AddDefaultPriorityFolding(System.String,JetBrains.DocumentModel.DocumentRange,System.String)">
+            <inheritdoc cref="M:JetBrains.ReSharper.Daemon.CodeFolding.FoldingHighlightingConsumer.AddFolding(System.String,JetBrains.DocumentModel.DocumentRange,JetBrains.DocumentModel.DocumentRange,System.String,JetBrains.ReSharper.Daemon.CodeFolding.CodeFoldingPriorities)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CodeFolding.FoldingHighlightingConsumer.AddDefaultPriorityFolding(System.String,JetBrains.DocumentModel.DocumentRange,JetBrains.DocumentModel.DocumentRange,System.String)">
+            <inheritdoc cref="M:JetBrains.ReSharper.Daemon.CodeFolding.FoldingHighlightingConsumer.AddFolding(System.String,JetBrains.DocumentModel.DocumentRange,JetBrains.DocumentModel.DocumentRange,System.String,JetBrains.ReSharper.Daemon.CodeFolding.CodeFoldingPriorities)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CodeFolding.FoldingHighlightingConsumer.AddLowerPriorityFolding(System.String,JetBrains.DocumentModel.DocumentRange,JetBrains.DocumentModel.DocumentRange,System.String)">
+            <inheritdoc cref="M:JetBrains.ReSharper.Daemon.CodeFolding.FoldingHighlightingConsumer.AddFolding(System.String,JetBrains.DocumentModel.DocumentRange,JetBrains.DocumentModel.DocumentRange,System.String,JetBrains.ReSharper.Daemon.CodeFolding.CodeFoldingPriorities)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.CodeFolding.FoldingHighlightingConsumer.AddFolding(System.String,JetBrains.DocumentModel.DocumentRange,JetBrains.DocumentModel.DocumentRange,System.String,JetBrains.ReSharper.Daemon.CodeFolding.CodeFoldingPriorities)">
+            <summary>
+            Adds code folding which can be overridden by more important ones according to priority.<br/>  
+            Checks for range validity and normalization inside
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Daemon.Impl.SlowTooltipProvider">
+            Calculates tooltip inside ShouldShowToolTip method which is called in UI thread. 
+            Use this provider only when there is no other way to calculate if a tooltip should be shown
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.Impl.DaemonImpl.OnPsiModulesChange(JetBrains.ReSharper.Psi.Modules.PsiModuleChange)">
+            <summary>
+            remove invalidated daemons
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Daemon.Impl.DaemonStageManager">
+            <summary>Stores stages in topologically sorted state and manages their lifetimes.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.Impl.VisibleDocumentDaemonProcess.Committer.DaemonResultCommitter.Step">
+            <summary>
+            Returns <c>true</c> when this Committer is done
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Daemon.NuGet.NuGetSolutionAnalysisSuppressor">
+            <summary>
+            This component suppress SWA on some NuGet activities
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.NuGet.NuGetSolutionAnalysisSuppressor.SuppressSwaWhenContentFileStorageIsBusy">
+            <summary>
+            Typically, NuGetContentFileStorage is busy when we discovered some new NuGet packages
+            (in some cases, it's busy "just in case", but we will optimize it later).
+            During the NuGetContentFileStorage processing session, SWA should be disabled because some projects may contain
+            content files from NuGet packages which should be ignored by SWA, but we don't know which files are content
+            files yet.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Daemon.OptionPages.Inspections.CodeInspectionSettingsPage">
+            <summary>
+              Main settings for the code inspection.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.SyntaxHighlighting.SyntaxHighlightingManager.CreateProcess(JetBrains.ReSharper.Feature.Services.Daemon.IDaemonProcess,JetBrains.Application.Settings.IContextBoundSettingsStore,JetBrains.ReSharper.Psi.Tree.IFile)">
+            <summary>
+            Method for providing syntax highlighting based on parsing and resolve results (soft keywords, doc comments, etc.) 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.SyntaxHighlighting.SyntaxHighlightingManager.CreateSyntaxHighlighting">
+            <summary>
+            !!!Currently not used!!!
+            Method for providing lexer-based syntax highlighting
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Daemon.SyntaxHighlighting.SyntaxHighlightingProcessor">
+            <summary>
+            A base class for providing syntax highlighing during <see cref="T:JetBrains.ReSharper.Feature.Services.Daemon.IDaemon"/> analysis
+            <see cref="T:JetBrains.ReSharper.Daemon.SyntaxHighlighting.SyntaxHighlightingManager"/> for registering a syntax highlighting.
+            Also it extends <see cref="T:JetBrains.ReSharper.Daemon.SyntaxHighlighting.DefaultSyntaxHighlighting"/> which is used for syntax highlighting
+            when only a lexer is available (e.g. for code samples in Settings UI). 
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.UsageChecking.SwaExtension.ISwaExtensionData.AddData(JetBrains.ReSharper.Daemon.UsageChecking.SwaExtension.ISwaExtensionData)">
+            <summary>
+            Add data from another `ISwaExtensionData`. This method is called when several data containers
+            was created for IPsiSourceFile (e.g, for each method in c# separated data container is created)
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.UsageChecking.SwaExtension.ISwaExtensionData.ToInfo(JetBrains.ReSharper.Daemon.UsageChecking.CollectUsagesStagePersistentData)">
+            <summary>
+            Convert extension data to serialized extension data
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.UsageChecking.SwaExtension.SwaExtensionProviderBase.CreateUsageDataElement(JetBrains.ReSharper.Daemon.UsageChecking.UsageData)">
+            <summary>
+            Creates new extension data container for current usage data.
+            </summary>
+            <param name="owner">Current usage data</param>
+            <returns>Extension data container</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.UsageChecking.SwaExtension.SwaExtensionProviderBase.Merge(JetBrains.ReSharper.Daemon.UsageChecking.SwaExtension.ISwaExtensionInfo,JetBrains.ReSharper.Daemon.UsageChecking.SwaExtension.ISwaExtensionInfo)">
+            <summary>
+            Calculates diff between `oldData` and `newData` and updates internal structures
+            </summary>
+            <param name="oldData">Previous data for source file. Can be null, e.g loading swa caches</param>
+            <param name="newData">Actual data for source file. Can be null, e.g file was deleted</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.UsageChecking.SwaExtension.SwaExtensionProviderBase.Clear">
+            <summary>
+            Clear internal data
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.Util.DaemonEnablingUtil.InvalidateCacheOnChange(JetBrains.ReSharper.Psi.GeneratedCode.DaemonExcludedFilesManager,JetBrains.DocumentModel.IDocument)">
+            <summary>
+            !HACKY!
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Daemon.DaemonBase">
+            <summary>
+            Class managing background code analysis
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Daemon.DaemonBase.IsSuspended">
+            <summary>
+            Suspend/resume error highlighting &amp; quickfixes activity
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Daemon.SolutionAnalysisConfiguration.PausedByUser">
+            <summary>
+            Whether the user has explicitly paused solution analysis in UI
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.SolutionAnalysisConfiguration.Pause(JetBrains.Lifetimes.Lifetime,System.String)">
+            <summary>
+            Temporary pauses the SWEA.
+            </summary>
+            <param name="pauseLifetime">pause interval</param>
+            <param name="reason">reason or caller of pause</param>
+        </member>
+        <member name="P:JetBrains.ReSharper.Daemon.SolutionAnalysisConfiguration.Paused">
+            <summary>
+            Whether SWEA is paused by any reason. Use <see cref="M:JetBrains.ReSharper.Daemon.SolutionAnalysisConfiguration.Pause(JetBrains.Lifetimes.Lifetime,System.String)"/> method to suspend the analysis temporary.
+            Will be set on UI thread
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Daemon.SolutionAnalysisConfiguration.CompletedOnceAfterStart">
+            <summary>
+            Analysis completed at least once after swa was enabled. Becomes false after disabling swa. 
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Daemon.IdentifierTooltipProvider`1.RIDER_TOOLTIP_SEPARATOR">
+            <summary>
+            A way to have tooltip separated with horizontal line (&lt;hr size=1 noshade&gt; in HTML equivalent).
+            Needed in fsharp where we can only receive a list of all tooltips on current offset from the Compiler.Services
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Daemon.SolutionAnalysisService">
+            <summary>
+            Interface which is used by daemon to interact with SWEA
+            </summary>
+        </member>
+    </members>
+</doc>

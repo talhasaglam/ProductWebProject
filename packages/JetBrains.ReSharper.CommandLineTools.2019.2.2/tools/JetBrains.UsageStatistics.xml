@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.UsageStatistics</name>
+    </assembly>
+    <members>
+        <member name="P:JetBrains.UsageStatistics.ActivityTrackingDefaultSettings.SubmitLogsInterval">
+            <summary>
+            First attempt to submit logs is with first dump (<see cref="P:JetBrains.UsageStatistics.ActivityTrackingDefaultSettings.DumpLogsInterval"/>). Next in <see cref="P:JetBrains.UsageStatistics.ActivityTrackingDefaultSettings.SubmitLogsInterval"/>.
+            </summary>
+        </member>
+    </members>
+</doc>

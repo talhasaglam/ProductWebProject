@@ -1,0 +1,259 @@
+﻿@model StajProje.Models.Cart
+@{
+    ViewBag.Title = "Index";
+}
+
+<section class="ftco-section ftco-cart">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mt-5 cart-wrap ftco-animate">
+
+                <div class="cart-list">
+                    <table class="table">
+                        <thead class="thead-primary">
+                        <tr class="text-center">
+                            <th>&nbsp;</th>
+                            <th>Product name</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in Model.CartLines)
+                        {
+
+                            <tr class="text-center">
+
+                                @*Html.Hidden("Id", item.Product.Id)*@
+                              @*  <td class="product-remove">
+
+                                    @*Burda sadece gönderimi yapmış oluyor begin formdur hiddendir hiç ihtiyaç yok
+                                    <span class="ion-ios-close">
+                                        @Html.ActionLink("Kaldır", "RemoveFromCart", "Cart", new { id = item.Product.Id }, new { })
+                                    </span>
+
+                                </td>
+                            *@
+
+
+                                <td class="image-prod" style="height: 10px; width: 10px;">
+
+                                    <div class="img"  style="background-image: url(/tema/@item.Product.Fotograf) ;"></div>
+                                </td>
+                                <td class="product-name" style="height: 25px; width: 25px;">
+                                    <h3>@item.Product.Ad</h3> 
+                                   
+                                </td>
+                                <td class="quantity" style="height: 10px; width: 10px;">
+                                    @item.Quantity 500
+                                </td>
+                                <td class="total">@((item.Product.Fiyat * item.Quantity).ToString("c")) 500@*pARA BİRİMİ*@</td>
+                            </tr><!-- END TR-->
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+                <div class="cart-total mb-3">
+                    <h3>Cart Totals</h3>
+                    <p class="d-flex">
+                        <span>Ara Toplam: </span>
+                        <span>@Model.Total().ToString("c")</span>
+                    </p>
+                    <p class="d-flex">
+                        <span>KDV (%8): </span>
+                        <span>0</span>
+                    </p>
+                    <hr>
+                    <p class="d-flex total-price">
+                        <span>Total</span>
+                        <span>@Model.Total().ToString("c")</span>
+                    </p>
+                </div>
+                <p><a href="/Cart/Checkout" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+
+
+            </div>
+        </div>
+
+                <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+                    <div class="cart-total mb-3">
+                        <h3>Coupon Code</h3>
+                        <p>Enter your coupon code if you have one</p>
+                        <form action="#" class="info">
+                            <div class="form-group">
+                                <label for="">Coupon code</label>
+                                <input type="text" class="form-control text-left px-3" placeholder="">
+                            </div>
+                        </form>
+                    </div>
+                    <p><a href="checkout.html" class="btn btn-primary py-3 px-4">Apply Coupon</a></p>
+                </div>
+                <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+                    <div class="cart-total mb-3">
+                        <h3>Estimate shipping and tax</h3>
+                        <p>Enter your destination to get a shipping estimate</p>
+                        <form action="#" class="info">
+                            <div class="form-group">
+                                <label for="">Country</label>
+                                <input type="text" class="form-control text-left px-3" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="country">State/Province</label>
+                                <input type="text" class="form-control text-left px-3" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Zip/Postal Code</label>
+                                <input type="text" class="form-control text-left px-3" placeholder="">
+                            </div>
+                        </form>
+                    </div>
+                    <p><a href="checkout.html" class="btn btn-primary py-3 px-4">Estimate</a></p>
+                </div>
+               
+
+        </div>
+    </section>
+
+
+
+
+
+    <div class="hero-wrap hero-bread" style="background-image: url('/tema/images/bg_1.jpg');">
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Cart</span></p>
+                    <h1 class="mb-0 bread">My Cart</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="container pb-5">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h2>Alışveriş Sepeti</h2>
+            <hr />
+
+            @if (Model.CartLines.Count > 0)
+            {
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Quantity</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Sub Total</th>
+                        <td></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model.CartLines)
+                    {
+                        <tr>
+                            <td>
+                                <img src="/Upload/@item.Product.Fotograf" width="50" />
+                            </td>
+                            <td>
+                                @item.Quantity
+                            </td>
+                            <td>
+                                @item.Product.Ad
+                            </td>
+                            <td>
+                                @item.Product.Fiyat
+                            </td>
+                            <td>
+                                @((item.Product.Fiyat * item.Quantity).ToString("c")) @*pARA BİRİMİ*@
+                            </td>
+                            <td>
+                                @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                                {
+                                    @Html.Hidden("Id", item.Product.Id)
+                                    <button type="submit" class="btn btn-danger">
+                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                        Delete
+                                    </button>
+                                }
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="5"></td>
+                        <td>
+                            @Model.Total().ToString("c")
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+                <div class="text-center">
+                    <a href="/Home/Urunler" class="btn btn-primary">
+                        <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                        Alışverişe Devam Et
+                    </a>
+                    <a href="/Cart/Checkout" class="btn btn-primary">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                        Alışverişi Tamamla
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-warning" role="alert">
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                    Alışveriş Sepetinizide Ürün Bulunmamaktadır.
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+
+        var quantitiy=0;
+        $('.quantity-right-plus').click(function(e){
+		        
+            // Stop acting like a button
+            e.preventDefault();
+            // Get the field name
+            var quantity = parseInt($('#quantity').val());
+		        
+            // If is not undefined
+		            
+            $('#quantity').val(quantity + 1);
+
+		          
+            // Increment
+		        
+        });
+
+        $('.quantity-left-minus').click(function(e){
+            // Stop acting like a button
+            e.preventDefault();
+            // Get the field name
+            var quantity = parseInt($('#quantity').val());
+		        
+            // If is not undefined
+		      
+            // Increment
+            if(quantity>0){
+                $('#quantity').val(quantity - 1);
+            }
+        });
+		    
+    });
+</script>
+
+
+    

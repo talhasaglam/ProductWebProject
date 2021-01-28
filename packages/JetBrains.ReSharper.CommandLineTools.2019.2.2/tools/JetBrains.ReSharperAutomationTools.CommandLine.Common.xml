@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharperAutomationTools.CommandLine.Common</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ReSharperAutomationTools.CommandLine.Common.Console.BatchTool.Psi.ZoneMarker">
+            <summary>
+            Prevents setting from upgrade in batch environments.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharperAutomationTools.CommandLine.Common.Console.BatchTool.Settings.ICommandLineToolSettings.Toolset">
+            <summary>
+            Explicitly specified MsBuild version
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharperAutomationTools.CommandLine.Common.Console.BatchTool.Settings.ICommandLineToolSettings.MonoPath">
+            <summary>
+            Empty - to ignore. Null - autodetect.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharperAutomationTools.CommandLine.Common.Console.BatchTool.Settings.ICommandLineToolSettings.DotNetCorePath">
+            <summary>
+            Empty - to ignore. Null - autodetect.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharperAutomationTools.CommandLine.Common.Console.BatchTool.ZoneMarker">
+            <summary>
+            Prevents setting from upgrade in batch environments.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharperAutomationTools.CommandLine.Common.Console.CommandLine.CommandLineShortcutsManager">
+            <summary>
+            in any command line environment completely disable shortcuts.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharperAutomationTools.CommandLine.Common.Console.CommandLine.Psi.ZoneMarker">
+            <summary>
+            Prevents setting from upgrade in batch environments.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharperAutomationTools.CommandLine.Common.Console.Util.Logging.ToolLoggerInstaller">
+            <summary>
+            Attaches logger listener to the logger from environment and replaces console logger.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharperAutomationTools.CommandLine.Common.Environment.IBatchToolEnvironmentZone">
+            <summary>
+            Tool that runs once and doesn't respond to changing environment or user actions. 
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharperAutomationTools.CommandLine.Common.Environment.IConsoleEnvironmentZone">
+            <summary>
+            All products running in a standalone fashion — not under VS nor unit testing.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharperAutomationTools.CommandLine.Common.TeamCity.Logging.TeamCityToolLogger">
+            <summary>
+            Log all messages in TeamCity's service messages format
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharperAutomationTools.CommandLine.Common.TeamCity.ZoneMarker">
+            <summary>
+            Set of assets for for TeamCity specific console environment.
+            </summary>
+        </member>
+    </members>
+</doc>

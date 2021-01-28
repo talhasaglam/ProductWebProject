@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Platform.IisExpressHost</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.Platform.IisExpressHost.Models.IisExpressWorkerModel">
+            <summary>
+            Generated from: IisExpressWorkerModel.kt:10
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.IisExpressHost.Models.RdIisExpressWorkerProcessOutput">
+            <summary>
+            Generated from: IisExpressWorkerModel.kt:18
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.IisExpressHost.IisExpressWorkerExternalProcess">
+            <summary>Represents the worker process that will be started as a child of IIS Express.</summary>
+        </member>
+    </members>
+</doc>

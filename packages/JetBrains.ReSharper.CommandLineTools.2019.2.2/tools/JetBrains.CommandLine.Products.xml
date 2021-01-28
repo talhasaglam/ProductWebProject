@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.CommandLine.Products</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.CommandLine.Products.Installer.AutomationToolsWithExtraPackagesListing">
+            <summary>
+            Lists the extra packages which should be added to the original RSAT packages to make <see cref="!:AutomationToolsWithExtraPackagesZipFile" />
+            </summary>
+        </member>
+        <member name="T:JetBrains.CommandLine.Products.Installer.AutomationToolsZipFile">
+            <summary>
+            The regular Automation Tools Zip file for the IPZ build. Takes just the RSAT product.
+            </summary>
+        </member>
+        <member name="T:JetBrains.CommandLine.Products.Installer.ReSharperAutomationToolsZipsDeployableFile">
+            <summary>
+            Target artifact for the TeamCity build named <c>ReSharperAutomationToolsZips</c>. Has been created to prototype adding the C++ support files to the RSAT ZIP file.
+            The main complication is that the IPZ build references the main CPP build which is 32-bit, while for the RSAT package we need the 64-bit version.
+            </summary>
+        </member>
+    </members>
+</doc>

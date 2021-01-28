@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Features.Environment</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ReSharper.Features.Environment.Options.FeaturesEnvironmentGeneralPageCaches">
+            <summary>The environment options page.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Environment.Options.FeaturesEnvironmentGeneralPageIcons">
+            <summary>The environment options page.</summary>
+        </member>
+    </members>
+</doc>
